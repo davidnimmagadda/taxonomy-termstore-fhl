@@ -5,6 +5,7 @@ import "react-toastify/dist/ReactToastify.css";
 import MainNav from "./common/MainNav";
 import { HomePage } from "./home/HomePage";
 import AboutPage from "./about/AboutPage";
+import TermsPage from "./terms/TermsPage";
 import { PageNotFound } from "./PageNotFound";
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
         <Switch>
           <Route exact path="/" component={HomePage} />
           <Route path="/about" component={AboutPage} />
+          <Route path="/terms" component={TermsPage} />
           <Route component={PageNotFound} />
         </Switch>
         <ToastContainer autoClose={3000} />

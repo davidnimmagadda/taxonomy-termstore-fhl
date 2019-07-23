@@ -4,9 +4,9 @@ import { Link } from "react-router-dom";
 export function HomePage() {
   return (
     <div className="jumbotron">
-      <h1>Pluralsight Administration</h1>
+      <h1>Taxonomy TermStore Administration</h1>
       <p>
-        Using React, Redux and React-Router to create ultra responsive web apps.
+        Using React, Redux and React-Router to create TermStore Admin Console.
       </p>
       <Link to="about" className="btn btn-primary btn-lg">
         Learn More
