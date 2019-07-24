@@ -2,9 +2,9 @@ import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { loadTerms } from "../../redux/actions/termActions";
-import TermList from "./TermList";
 import { Redirect } from "react-router-dom";
 import Spinner from "../common/Spinner";
+import TreeControl from "../TreeComponent/TreeControl";
 
 function TermsPage(props) {
   const [redirectToAddTermPage, setRedirectToAddTermPage] = useState(false);
@@ -31,7 +31,7 @@ function TermsPage(props) {
           >
             Add Course
           </button>
-          <TermList {...props} />
+          <TreeControl />
         </>
       )}
     </>
