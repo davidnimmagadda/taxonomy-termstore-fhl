@@ -9,7 +9,14 @@ export async function getTerms() {
     return handleError(error);
   }
 }
-
+export async function getTermDetails() {
+  try {
+    let response = await fetch(process.env.API_URL + "/termDetails");
+    return handleResponse(response);
+  } catch (error) {
+    return handleError(error);
+  }
+}
 export async function saveTerm(term) {
   try {
     let response = await fetch(baseUrl + (term.id || ""), {

@@ -83,7 +83,16 @@ const newTerm = {
   authorId: null,
   category: ""
 };
-
+const termDetails = [
+  {
+    id: "1",
+    details: "Term 1 details are here"
+  },
+  {
+    id: "2",
+    details: "Term 2 details are here"
+  }
+];
 const ts = [
   {
     id: "termstore",
@@ -150,5 +159,6 @@ module.exports = {
   newTerm,
   terms,
   authors,
-  ts
+  ts,
+  termDetails
 };
