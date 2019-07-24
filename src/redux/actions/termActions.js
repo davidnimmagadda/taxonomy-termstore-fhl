@@ -31,14 +31,14 @@ export function loadTermsSuccess(terms) {
   return { type: types.LOAD_TERMS_SUCCESS, terms };
 }
 export function loadTermDetailsSuccess(termDetails) {
-  return { type: types.LOAD_TERMS_DETAILS_SUCCESS, termDetails };
+  return { type: types.LOAD_TERM_DETAILS_SUCCESS, termDetails };
 }
 export function loadTermDetails() {
   return async function(dispatch) {
     try {
       dispatch(apiCallActions.apiCallTriggerred());
-      const terms = await termApi.getTermDetails();
-      dispatch(loadTermDetailsSuccess(terms));
+      const termDetails = await termApi.getTermDetails();
+      dispatch(loadTermDetailsSuccess(termDetails));
     } catch (error) {
       throw error;
     } finally {

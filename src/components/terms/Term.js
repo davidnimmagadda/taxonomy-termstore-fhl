@@ -6,8 +6,7 @@ function ManageTermsPage({ terms, ...props }) {
   const term = props.term;
   return (
     <>
-      <div>Term {term} is clicked</div>
-      <TermDetail {...props} />
+      <TermDetail term={term} />
     </>
   );
 }

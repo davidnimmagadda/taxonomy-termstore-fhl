@@ -85,12 +85,46 @@ const newTerm = {
 };
 const termDetails = [
   {
+    uniqueIdentifier: "xyzdsfjhweljrelwkenflm12143344",
     id: "1",
-    details: "Term 1 details are here"
+    name: "Term 1",
+    details:
+      "Term 1 details are here.It is a prt of XYZ term set and has been used since 2002.",
+    contacts: [
+      {
+        id: "1",
+        name: "lavanya.a@microsoft.com"
+      },
+      {
+        id: "2",
+        name: "david.nimmagadda@microsoft.com"
+      },
+      {
+        id: "3",
+        name: "gayathri.sns@microsoft.com"
+      }
+    ]
   },
   {
+    uniqueIdentifier: "dsjkjfdskriurskelkkl32948498",
     id: "2",
-    details: "Term 2 details are here"
+    name: "Term 2",
+    details:
+      "Term 2 details are here.It is a prt of ABC term set and has been used since 1992.",
+    contacts: [
+      {
+        id: "1",
+        name: "lavanya.a@microsoft.com"
+      },
+      {
+        id: "2",
+        name: "david.nimmagadda@microsoft.com"
+      },
+      {
+        id: "3",
+        name: "gayathri.sns@microsoft.com"
+      }
+    ]
   }
 ];
 const ts = [
