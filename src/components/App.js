@@ -7,6 +7,7 @@ import { HomePage } from "./home/HomePage";
 import AboutPage from "./about/AboutPage";
 import TermsPage from "./terms/TermsPage";
 import { PageNotFound } from "./PageNotFound";
+import ManageTermsPage from "./terms/Term";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route exact path="/" component={HomePage} />
           <Route path="/about" component={AboutPage} />
           <Route path="/terms" component={TermsPage} />
+          <Route path="/term/:slug" component={ManageTermsPage} />
           <Route component={PageNotFound} />
         </Switch>
         <ToastContainer autoClose={3000} />

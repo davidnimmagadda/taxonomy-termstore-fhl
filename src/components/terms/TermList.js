@@ -24,7 +24,7 @@ const TermList = ({ terms }) => (
             </a>
           </td>
           <td>
-            <Link to={"/term/" + term.slug}>{term.title}</Link>
+            <Link to={"/term/" + term.id}>{term.title}</Link>
           </td>
           <td>{term.authorId}</td>
           <td>{term.category}</td>
