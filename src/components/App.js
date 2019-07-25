@@ -3,7 +3,7 @@ import { Route, Switch } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import MainNav from "./common/MainNav";
-import { HomePage } from "./home/HomePage";
+import HomePage from "./home/HomePage";
 import AboutPage from "./about/AboutPage";
 import TermsPage from "./terms/TermsPage";
 import { PageNotFound } from "./PageNotFound";
@@ -11,7 +11,7 @@ import ManageTermsPage from "./terms/Term";
 
 function App() {
   return (
-    <div style={{ display: "flex" }}>
+    <div style={{ display: "inline-flex" }}>
       <MainNav />
       <div className="container-fluid">
         <Switch>
