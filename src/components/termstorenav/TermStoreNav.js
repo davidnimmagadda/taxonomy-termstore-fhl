@@ -7,6 +7,13 @@ function TermStoreNav(props) {
     <Nav
       expandButtonAriaLabel="Expand or collapse"
       onLinkClick={props.onLinkClick}
+      styles={{
+        root: {
+          boxSizing: "border-box",
+          border: "1px solid #eee",
+          overflowY: "auto"
+        }
+      }}
       groups={[
         {
           links: props.termstoreChildren
