@@ -5,76 +5,102 @@ import PropTypes from "prop-types";
 import TreeNode from "./TreeNode";
 
 const data = {
-  "/termstore": {
-    path: "/termstore",
+  "/Taxonomy": {
+    path: "/Taxonomy",
     type: "folder",
     isRoot: true,
-    children: ["/termstore/Group1", "/termstore/Group2"],
-    content: "This is a sample termstore"
+    children: ["/Taxonomy/People", "/Taxonomy/System"],
+    id : "Taxonomy"
   },
-  "/termstore/Group1": {
-    path: "/termstore/Group1",
+  "/Taxonomy/People": {
+    path: "/Taxonomy/People",
     type: "folder",
-    children: ["/termstore/Group1/TestTerm"]
+    children: ["/Taxonomy/People/Department", "/Taxonomy/People/JobTitle" , "/Taxonomy/People/Location"],
+    id : "People"
   },
-  "/termstore/Group1/TestTerm": {
-    id: "1",
-    path: "/termstore/Group1/TestTerm",
-    type: "folder",
-    name: "Term 1",
-    details:
-      "Term 1 details are here.It is a prt of XYZ term set and has been used since 2002.",
-    contacts: [
-      {
-        id: "1",
-        name: "lavanya.a@microsoft.com"
-      },
-      {
-        id: "2",
-        name: "david.nimmagadda@microsoft.com"
-      },
-      {
-        id: "3",
-        name: "gayathri.sns@microsoft.com"
-      }
-    ],
-    children: ["/termstore/Group1/TestTerm/SubTerm"]
+  "/Taxonomy/People/Department": {
+    id: "",
+    path: "/Taxonomy/People/Department",
+    type: "folder",    
+    children: [],
+    id : "Department"
   },
-
-  "/termstore/Group1/TestTerm/SubTerm": {
-    path: "/termstore/Group1/TestTerm/SubTerm",
-    type: "folder",
-    children: []
+  "/Taxonomy/People/JobTitle": {
+    id: "",
+    path: "/Taxonomy/People/JobTitle",
+    type: "folder",    
+    children: [],
+    id : "JobTitle"
   },
-  "/termstore/Group2": {
-    path: "/termstore/Group2",
-    type: "folder",
-    children: ["/termstore/Group2/TermSet1", "/termstore/Group2/TermSet2"]
+  "/Taxonomy/People/Location": {
+    id: "",
+    path: "/Taxonomy/People/Location",
+    type: "folder",    
+    children: ["/Taxonomy/People/Location/India","/Taxonomy/People/Location/US"],
+    id : "Location"
   },
-  "/termstore/Group2/TermSet1": {
-    id: "2",
-    path: "/termstore/Group2/TermSet1",
-    type: "folder",
-    children: [
-      "/termstore/Group2/TermSet1/Term1",
-      "/termstore/Group2/TermSet1/Term2"
-    ]
+  
+  "/Taxonomy/People/Location/India": {
+    id: "",
+    path: "/Taxonomy/People/Location/India",
+    type: "folder",    
+    children: ["/Taxonomy/People/Location/India/Hyderabad","/Taxonomy/People/Location/India/Banglore"],
+    id : "India"
   },
-  "/termstore/Group2/TermSet1/Term1": {
-    path: "/termstore/Group2/TermSet1/Term1",
-    type: "folder",
-    children: []
+  "/Taxonomy/People/Location/US": {
+    id: "",
+    path: "/Taxonomy/People/Location/US",
+    type: "folder",    
+    children: ["/Taxonomy/People/Location/US/Redmond"],
+    id : "US"
   },
-
-  "/termstore/Group2/TermSet1/Term2": {
-    path: "/termstore/Group2/TermSet1/Term2",
-    type: "folder",
-    children: []
+  "/Taxonomy/People/Location/US/Redmond": {
+    id: "",
+    path: "/Taxonomy/People/Location/US/Redmond",
+    type: "folder",    
+    children: [],
+    id : "Redmond"
   },
-  "/termstore/Group2/TermSet2": {
-    path: "/termstore/Group2/TermSet2",
+  "/Taxonomy/People/Location/India/Hyderabad": {
+    id: "",
+    path: "/Taxonomy/People/Location/India/Hyderabad",
+    type: "folder",    
+    children: [],
+    id : "Hyderabad"
+  },
+  
+  "/Taxonomy/People/Location/India/Bangalore": {
+    id: "",
+    path: "/Taxonomy/People/Location/India/Bangalore",
+    type: "folder",    
+    children: [],
+    id : "Bangalore"
+  },
+  
+  "/Taxonomy/System": {
+    path: "/Taxonomy/System",
     type: "folder",
-    children: []
+    children: ["/Taxonomy/System/Hastags","/Taxonomy/System/Keywords","/Taxonomy/System/OrphanedTerms"],
+    id : "System"
+  },
+  "/Taxonomy/System/Hastags": {
+    path: "/Taxonomy/System/Hastags",
+    type: "folder",
+    children: [],
+    id : "Hashtags"
+  },
+  "/Taxonomy/System/Keywords": {
+    path: "/Taxonomy/System/Keywords",
+    type: "folder",
+    children: [],
+    id : "Keywords"
+  },
+  
+  "/Taxonomy/System/OrphanedTerms": {
+    path: "/Taxonomy/System/OrphanedTerms",
+    type: "folder",
+    children: [],
+    id : "OrphanedTerms"
   }
 };
 
