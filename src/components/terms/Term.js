@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import TermDetail from "./TermDetail";
-function ManageTermsPage({ terms, ...props }) {
+function ManageTermsPage(props) {
   const term = props.term;
   return (
     <>
