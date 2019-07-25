@@ -49,7 +49,7 @@ const data = {
     type: "folder",
     children: [
       "/Taxonomy/People/Location/India/Hyderabad",
-      "/Taxonomy/People/Location/India/Banglore"
+      "/Taxonomy/People/Location/India/Bangalore"
     ],
     id: "India"
   },

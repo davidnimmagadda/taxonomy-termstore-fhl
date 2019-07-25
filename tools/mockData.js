@@ -7,13 +7,13 @@ const newTerm = {
 
 const ts = [
   {
-    id: "taxonomy",
-    path: "taxonomy",
+    id: "Taxonomy",
+    path: "Taxonomy",
     type: "folder",
     isRoot: true,
-    children: ["taxonomy:People", "taxonomy:System"],
+    children: ["Taxonomy:People", "Taxonomy:System"],
     uniqueIdentifier: "xyzdsfjhweljrelwkenflm12143344",
-    name: "taxonomy",
+    name: "Taxonomy",
     displayName: "TermStore Admins",
     details:
       "Term 1 details are here.It is a prt of XYZ term set and has been used since 2002.",
@@ -34,12 +34,12 @@ const ts = [
   },
   {
     id: "People",
-    path: "taxonomy:People",
+    path: "Taxonomy:People",
     type: "folder",
     children: [
-      "taxonomy:People:Department",
-      "taxonomy:People:JobTitle",
-      "taxonomy:People:Location"
+      "Taxonomy:People:Department",
+      "Taxonomy:People:JobTitle",
+      "Taxonomy:People:Location"
     ],
     name: "People",
     uniqueIdentifier: "xyzdsfjhweljrelwkenflm12143344",
@@ -62,12 +62,12 @@ const ts = [
   },
   {
     id: "System",
-    path: "taxonomy:System",
+    path: "Taxonomy:System",
     type: "folder",
     children: [
-      "taxonomy:System:Hashtags",
-      "taxonomy:System:Keywords",
-      "taxonomy:System:OrphanedTerms"
+      "Taxonomy:System:Hashtags",
+      "Taxonomy:System:Keywords",
+      "Taxonomy:System:OrphanedTerms"
     ],
     name: "System",
     uniqueIdentifier: "xyzdsfjhweljrelwkenflm12143344",
@@ -90,7 +90,7 @@ const ts = [
   },
   {
     id: "Department",
-    path: "taxonomy:People:Department",
+    path: "Taxonomy:People:Department",
     type: "folder",
     children: [],
     name: "Department",
@@ -114,7 +114,7 @@ const ts = [
   },
   {
     id: "JobTitle",
-    path: "taxonomy:People:JobTitle",
+    path: "Taxonomy:People:JobTitle",
     type: "folder",
     children: [],
     name: "JobTitle",
@@ -140,7 +140,7 @@ const ts = [
     id: "Location",
     path: "People:Location",
     type: "folder",
-    children: ["taxonomy:People:Location:India", "taxonomy:People:Location:US"],
+    children: ["Taxonomy:People:Location:India", "Taxonomy:People:Location:US"],
     name: "Location",
     uniqueIdentifier: "xyzdsfjhweljrelwkenflm12143344",
     details:
