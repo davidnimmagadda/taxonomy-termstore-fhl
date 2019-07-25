@@ -7,7 +7,7 @@ import { connect } from "react-redux";
 
 function HomePage(props) {
   useEffect(() => {
-    if (props.termstoreChildren.length === 0) {
+    if (props.termstore.termTree.length === 0) {
       props
         .loadTermChildren("termstore")
         .catch(error => alert("Loading Terms Failed : " + error));
@@ -26,7 +26,7 @@ function HomePage(props) {
       ) : (
         <>
           <TermStoreNav
-            termstoreChildren={props.termstoreChildren}
+            termstore={props.termstore}
             onLinkClick={handleLinkClick}
           />
         </>
@@ -36,13 +36,13 @@ function HomePage(props) {
 }
 
 HomePage.propTypes = {
-  termstoreChildren: PropTypes.array.isRequired,
+  termstore: PropTypes.object.isRequired,
   loading: PropTypes.bool.isRequired,
   loadTermChildren: PropTypes.func.isRequired
 };
 
-function mapStateToProps({ termstoreChildren, activeApiCalls }) {
-  return { termstoreChildren, loading: activeApiCalls > 0 };
+function mapStateToProps({ termstore, activeApiCalls }) {
+  return { termstore, loading: activeApiCalls > 0 };
 }
 
 const mapDispatchToProps = {

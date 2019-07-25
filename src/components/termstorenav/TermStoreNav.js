@@ -16,7 +16,7 @@ function TermStoreNav(props) {
       }}
       groups={[
         {
-          links: props.termstoreChildren
+          links: props.termstore.termTree
         }
       ]}
     />
@@ -24,7 +24,7 @@ function TermStoreNav(props) {
 }
 
 TermStoreNav.propTypes = {
-  termstoreChildren: PropTypes.array.isRequired,
+  termstore: PropTypes.object.isRequired,
   onLinkClick: PropTypes.func.isRequired
 };
 export default TermStoreNav;

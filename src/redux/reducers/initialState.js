@@ -1,4 +1,4 @@
 export default {
-  termstoreChildren: [],
+  termstore: { termTree: [], currentTerm: {} },
   activeApiCalls: 0
 };
