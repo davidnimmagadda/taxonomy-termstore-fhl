@@ -10,97 +10,103 @@ const data = {
     type: "folder",
     isRoot: true,
     children: ["/Taxonomy/People", "/Taxonomy/System"],
-    id : "Taxonomy"
+    id: "Taxonomy"
   },
   "/Taxonomy/People": {
     path: "/Taxonomy/People",
     type: "folder",
-    children: ["/Taxonomy/People/Department", "/Taxonomy/People/JobTitle" , "/Taxonomy/People/Location"],
-    id : "People"
+    children: [
+      "/Taxonomy/People/Department",
+      "/Taxonomy/People/JobTitle",
+      "/Taxonomy/People/Location"
+    ],
+    id: "People"
   },
   "/Taxonomy/People/Department": {
-    id: "",
     path: "/Taxonomy/People/Department",
-    type: "folder",    
+    type: "folder",
     children: [],
-    id : "Department"
+    id: "Department"
   },
   "/Taxonomy/People/JobTitle": {
-    id: "",
     path: "/Taxonomy/People/JobTitle",
-    type: "folder",    
+    type: "folder",
     children: [],
-    id : "JobTitle"
+    id: "JobTitle"
   },
   "/Taxonomy/People/Location": {
-    id: "",
     path: "/Taxonomy/People/Location",
-    type: "folder",    
-    children: ["/Taxonomy/People/Location/India","/Taxonomy/People/Location/US"],
-    id : "Location"
+    type: "folder",
+    children: [
+      "/Taxonomy/People/Location/India",
+      "/Taxonomy/People/Location/US"
+    ],
+    id: "Location"
   },
-  
+
   "/Taxonomy/People/Location/India": {
-    id: "",
     path: "/Taxonomy/People/Location/India",
-    type: "folder",    
-    children: ["/Taxonomy/People/Location/India/Hyderabad","/Taxonomy/People/Location/India/Banglore"],
-    id : "India"
+    type: "folder",
+    children: [
+      "/Taxonomy/People/Location/India/Hyderabad",
+      "/Taxonomy/People/Location/India/Banglore"
+    ],
+    id: "India"
   },
   "/Taxonomy/People/Location/US": {
-    id: "",
     path: "/Taxonomy/People/Location/US",
-    type: "folder",    
+    type: "folder",
     children: ["/Taxonomy/People/Location/US/Redmond"],
-    id : "US"
+    id: "US"
   },
   "/Taxonomy/People/Location/US/Redmond": {
-    id: "",
     path: "/Taxonomy/People/Location/US/Redmond",
-    type: "folder",    
+    type: "folder",
     children: [],
-    id : "Redmond"
+    id: "Redmond"
   },
   "/Taxonomy/People/Location/India/Hyderabad": {
-    id: "",
     path: "/Taxonomy/People/Location/India/Hyderabad",
-    type: "folder",    
+    type: "folder",
     children: [],
-    id : "Hyderabad"
+    id: "Hyderabad"
   },
-  
+
   "/Taxonomy/People/Location/India/Bangalore": {
-    id: "",
     path: "/Taxonomy/People/Location/India/Bangalore",
-    type: "folder",    
+    type: "folder",
     children: [],
-    id : "Bangalore"
+    id: "Bangalore"
   },
-  
+
   "/Taxonomy/System": {
     path: "/Taxonomy/System",
     type: "folder",
-    children: ["/Taxonomy/System/Hastags","/Taxonomy/System/Keywords","/Taxonomy/System/OrphanedTerms"],
-    id : "System"
+    children: [
+      "/Taxonomy/System/Hastags",
+      "/Taxonomy/System/Keywords",
+      "/Taxonomy/System/OrphanedTerms"
+    ],
+    id: "System"
   },
   "/Taxonomy/System/Hastags": {
     path: "/Taxonomy/System/Hastags",
     type: "folder",
     children: [],
-    id : "Hashtags"
+    id: "Hashtags"
   },
   "/Taxonomy/System/Keywords": {
     path: "/Taxonomy/System/Keywords",
     type: "folder",
     children: [],
-    id : "Keywords"
+    id: "Keywords"
   },
-  
+
   "/Taxonomy/System/OrphanedTerms": {
     path: "/Taxonomy/System/OrphanedTerms",
     type: "folder",
     children: [],
-    id : "OrphanedTerms"
+    id: "OrphanedTerms"
   }
 };
 
