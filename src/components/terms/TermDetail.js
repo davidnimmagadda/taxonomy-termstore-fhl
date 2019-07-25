@@ -5,7 +5,8 @@ import Contact from "./Contact";
 import "./TermDetail.css";
 
 function TermDetail({ termDetails }) {
-  return (
+  debugger;
+  return Object.keys(termDetails).length !== 0 ? (
     <div style={{ display: "block", marginLeft: 10 }}>
       <h2>{termDetails.name}</h2>
       <br />
@@ -24,6 +25,8 @@ function TermDetail({ termDetails }) {
         </tbody>
       </table>
     </div>
+  ) : (
+    <></>
   );
 }
 TermDetail.propTypes = {
