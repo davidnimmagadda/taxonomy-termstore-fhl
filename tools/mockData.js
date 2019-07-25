@@ -33,7 +33,7 @@ const ts = [
     ]
   },
   {
-    id: "People",
+    id: "Taxonomy:People",
     path: "Taxonomy:People",
     type: "folder",
     children: [
@@ -61,7 +61,7 @@ const ts = [
     ]
   },
   {
-    id: "System",
+    id: "Taxonomy:System",
     path: "Taxonomy:System",
     type: "folder",
     children: [
@@ -89,7 +89,7 @@ const ts = [
     ]
   },
   {
-    id: "Department",
+    id: "Taxonomy:People:Department",
     path: "Taxonomy:People:Department",
     type: "folder",
     children: [],
@@ -113,7 +113,7 @@ const ts = [
     ]
   },
   {
-    id: "JobTitle",
+    id: "Taxonomy:People:JobTitle",
     path: "Taxonomy:People:JobTitle",
     type: "folder",
     children: [],
@@ -137,8 +137,8 @@ const ts = [
     ]
   },
   {
-    id: "Location",
-    path: "People:Location",
+    id: "Taxonomy:People:Location",
+    path: "Taxonomy:People:Location",
     type: "folder",
     children: ["Taxonomy:People:Location:India", "Taxonomy:People:Location:US"],
     name: "Location",
@@ -161,12 +161,12 @@ const ts = [
     ]
   },
   {
-    id: "India",
-    path: "Taxonomy.People:Location:India",
+    id: "Taxonomy:People:Location:India",
+    path: "Taxonomy:People:Location:India",
     type: "folder",
     children: [
-      "Taxonomy.People:Location:India:Hyderabad",
-      "Taxonomy.People:Location:India:Bangalore"
+      "Taxonomy:People:Location:India:Hyderabad",
+      "Taxonomy:People:Location:India:Bangalore"
     ],
     name: "India",
     uniqueIdentifier: "xyzdsfjhweljrelwkenflm12143344",
@@ -188,10 +188,10 @@ const ts = [
     ]
   },
   {
-    id: "US",
-    path: "Taxonomy.People:Location:US",
+    id: "Taxonomy:People:Location:US",
+    path: "Taxonomy:People:Location:US",
     type: "folder",
-    children: ["Taxonomy.People:Location:US:Redmond"],
+    children: ["Taxonomy:People:Location:US:Redmond"],
     name: "US",
     uniqueIdentifier: "xyzdsfjhweljrelwkenflm12143344",
     details:
@@ -212,7 +212,7 @@ const ts = [
     ]
   },
   {
-    id: "Hashtags",
+    id: "Taxonomy:System:Hashtags",
     path: "Taxonomy:System:Hashtags",
     type: "folder",
     children: [],
@@ -236,7 +236,7 @@ const ts = [
     ]
   },
   {
-    id: "Keywords",
+    id: "Taxonomy:System:Keywords",
     path: "Taxonomy:System:Keywords",
     type: "folder",
     children: [],
@@ -260,7 +260,7 @@ const ts = [
     ]
   },
   {
-    id: "OrphanedTerms",
+    id: "Taxonomy:System:OrphanedTerms",
     path: "Taxonomy:System:OrphanedTerms",
     type: "folder",
     children: [],
