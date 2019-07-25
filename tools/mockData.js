@@ -36,7 +36,8 @@ const ts = [
     path: "/termstore:Group1",
     type: "folder",
     children: ["/termstore:Group1:TestTerm"],
-    name: "termstore",
+    name: "Group1",
+    uniqueIdentifier: "xyzdsfjhweljrelwkenflm12143344",
     details:
       "Term 1 details are here.It is a prt of XYZ term set and has been used since 2002.",
     contacts: [
@@ -59,7 +60,8 @@ const ts = [
     path: "/termstore:Group1:TestTerm",
     type: "folder",
     children: ["/termstore:Group1:TestTerm:SubTerm"],
-    name: "termstore",
+    name: "TestTerm",
+    uniqueIdentifier: "xyzdsfjhweljrelwkenflm12143344",
     details:
       "Term 1 details are here.It is a prt of XYZ term set and has been used since 2002.",
     contacts: [
@@ -82,7 +84,8 @@ const ts = [
     path: "/termstore:Group1:TestTerm:SubTerm",
     type: "folder",
     children: [],
-    name: "termstore",
+    name: "SubTerm",
+    uniqueIdentifier: "xyzdsfjhweljrelwkenflm12143344",
     details:
       "Term 1 details are here.It is a prt of XYZ term set and has been used since 2002.",
     contacts: [
@@ -105,7 +108,8 @@ const ts = [
     path: "/termstore:Group2",
     type: "folder",
     children: ["/termstore:Group2:TermSet1", "/termstore:Group2:TermSet2"],
-    name: "termstore",
+    name: "Group2",
+    uniqueIdentifier: "xyzdsfjhweljrelwkenflm12143344",
     details:
       "Term 1 details are here.It is a prt of XYZ term set and has been used since 2002.",
     contacts: [
@@ -131,7 +135,8 @@ const ts = [
       "/termstore:Group2:TermSet1:Term1",
       "/termstore:Group2:TermSet1:Term2"
     ],
-    name: "termstore",
+    name: "TermSet1",
+    uniqueIdentifier: "xyzdsfjhweljrelwkenflm12143344",
     details:
       "Term 1 details are here.It is a prt of XYZ term set and has been used since 2002.",
     contacts: [
@@ -154,7 +159,8 @@ const ts = [
     path: "/termstore:Group2:TermSet1:Term1",
     type: "folder",
     children: [],
-    name: "termstore",
+    name: "Term1",
+    uniqueIdentifier: "xyzdsfjhweljrelwkenflm12143344",
     details:
       "Term 1 details are here.It is a prt of XYZ term set and has been used since 2002.",
     contacts: [
@@ -177,7 +183,8 @@ const ts = [
     path: "/termstore:Group2:TermSet1:Term2",
     type: "folder",
     children: [],
-    name: "termstore",
+    name: "Term2",
+    uniqueIdentifier: "xyzdsfjhweljrelwkenflm12143344",
     details:
       "Term 1 details are here.It is a prt of XYZ term set and has been used since 2002.",
     contacts: [
@@ -200,7 +207,8 @@ const ts = [
     path: "/termstore:Group2:TermSet2",
     type: "folder",
     children: [],
-    name: "termstore",
+    name: "TermSet2",
+    uniqueIdentifier: "xyzdsfjhweljrelwkenflm12143344",
     details:
       "Term 1 details are here.It is a prt of XYZ term set and has been used since 2002.",
     contacts: [
