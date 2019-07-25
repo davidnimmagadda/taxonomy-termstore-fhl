@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 import "./Contact.css";
 function Contact(props) {
@@ -7,7 +7,9 @@ function Contact(props) {
     return (
       <table className="table">
         <thead>
-          <th>Contact</th>
+          <tr>
+            <th>Contact</th>
+          </tr>
         </thead>
         <tbody>
           {contacts.map(contact => (

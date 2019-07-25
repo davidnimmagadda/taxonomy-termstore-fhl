@@ -4,30 +4,27 @@ import { connect } from "react-redux";
 import Contact from "./Contact";
 import "./TermDetail.css";
 
-function TermDetail(props) {
-  let requiredDetails = "default";
-  if (props.termDetails) {
-    requiredDetails = props.termDetails;
-    return (
-      <div style={{ display: "block" }}>
-        <h2>{requiredDetails.name}</h2>
-        <br />
-        <p>{requiredDetails.details}</p>
-        <Contact className="left-div" contacts={requiredDetails.contacts} />
-        <table className="right-div">
-          <thead>
+function TermDetail({ termDetails }) {
+  return (
+    <div style={{ display: "block" }}>
+      <h2>{termDetails.name}</h2>
+      <br />
+      <p>{termDetails.details}</p>
+      <Contact className="left-div" contacts={termDetails.contacts} />
+      <table className="right-div">
+        <thead>
+          <tr>
             <th>Unique identifier</th>
-          </thead>
-          <tbody>
-            <tr>
-              <td>{requiredDetails.uniqueIdentifier}</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    );
-  }
-  return <h1>Default</h1>;
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{termDetails.uniqueIdentifier}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  );
 }
 TermDetail.propTypes = {
   termDetails: PropTypes.object.isRequired

@@ -8,10 +8,10 @@ const newTerm = {
 const ts = [
   {
     id: "termstore",
-    path: "/termstore",
+    path: "termstore",
     type: "folder",
     isRoot: true,
-    children: ["/termstore:Group1", "/termstore:Group2"],
+    children: ["termstore:Group1", "termstore:Group2"],
     uniqueIdentifier: "xyzdsfjhweljrelwkenflm12143344",
     name: "termstore",
     details:
@@ -33,9 +33,9 @@ const ts = [
   },
   {
     id: "termstore:Group1",
-    path: "/termstore:Group1",
+    path: "termstore:Group1",
     type: "folder",
-    children: ["/termstore:Group1:TestTerm"],
+    children: ["termstore:Group1:TestTerm"],
     name: "Group1",
     uniqueIdentifier: "xyzdsfjhweljrelwkenflm12143344",
     details:
@@ -57,9 +57,9 @@ const ts = [
   },
   {
     id: "termstore:Group1:TestTerm",
-    path: "/termstore:Group1:TestTerm",
+    path: "termstore:Group1:TestTerm",
     type: "folder",
-    children: ["/termstore:Group1:TestTerm:SubTerm"],
+    children: ["termstore:Group1:TestTerm:SubTerm"],
     name: "TestTerm",
     uniqueIdentifier: "xyzdsfjhweljrelwkenflm12143344",
     details:
@@ -81,7 +81,7 @@ const ts = [
   },
   {
     id: "termstore:Group1:TestTerm:SubTerm",
-    path: "/termstore:Group1:TestTerm:SubTerm",
+    path: "termstore:Group1:TestTerm:SubTerm",
     type: "folder",
     children: [],
     name: "SubTerm",
@@ -105,9 +105,9 @@ const ts = [
   },
   {
     id: "termstore:Group2",
-    path: "/termstore:Group2",
+    path: "termstore:Group2",
     type: "folder",
-    children: ["/termstore:Group2:TermSet1", "/termstore:Group2:TermSet2"],
+    children: ["termstore:Group2:TermSet1", "termstore:Group2:TermSet2"],
     name: "Group2",
     uniqueIdentifier: "xyzdsfjhweljrelwkenflm12143344",
     details:
@@ -129,11 +129,11 @@ const ts = [
   },
   {
     id: "termstore:Group2:TermSet1",
-    path: "/termstore:Group2:TermSet1",
+    path: "termstore:Group2:TermSet1",
     type: "folder",
     children: [
-      "/termstore:Group2:TermSet1:Term1",
-      "/termstore:Group2:TermSet1:Term2"
+      "termstore:Group2:TermSet1:Term1",
+      "termstore:Group2:TermSet1:Term2"
     ],
     name: "TermSet1",
     uniqueIdentifier: "xyzdsfjhweljrelwkenflm12143344",
@@ -156,7 +156,7 @@ const ts = [
   },
   {
     id: "termstore:Group2:TermSet1:Term1",
-    path: "/termstore:Group2:TermSet1:Term1",
+    path: "termstore:Group2:TermSet1:Term1",
     type: "folder",
     children: [],
     name: "Term1",
@@ -180,7 +180,7 @@ const ts = [
   },
   {
     id: "termstore:Group2:TermSet1:Term2",
-    path: "/termstore:Group2:TermSet1:Term2",
+    path: "termstore:Group2:TermSet1:Term2",
     type: "folder",
     children: [],
     name: "Term2",
@@ -204,7 +204,7 @@ const ts = [
   },
   {
     id: "termstore:Group2:TermSet2",
-    path: "/termstore:Group2:TermSet2",
+    path: "termstore:Group2:TermSet2",
     type: "folder",
     children: [],
     name: "TermSet2",
