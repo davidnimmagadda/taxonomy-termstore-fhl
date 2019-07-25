@@ -7,9 +7,7 @@ import HomePage from "./home/HomePage";
 import AboutPage from "./about/AboutPage";
 import TermsPage from "./terms/TermsPage";
 import { PageNotFound } from "./PageNotFound";
-import { initializeIcons } from "office-ui-fabric-react";
 
-initializeIcons();
 function App() {
   return (
     <div style={{ display: "flex" }}>

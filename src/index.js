@@ -6,7 +6,9 @@ import App from "./components/App";
 import "./index.css";
 import configureStore from "./redux/configureStore";
 import { Provider as ReduxProvider } from "react-redux";
+import { initializeIcons } from "office-ui-fabric-react";
 
+initializeIcons();
 const store = configureStore();
 
 render(
