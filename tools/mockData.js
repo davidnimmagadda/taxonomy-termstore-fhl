@@ -7,13 +7,14 @@ const newTerm = {
 
 const ts = [
   {
-    id: "termstore",
-    path: "termstore",
+    id: "taxonomy",
+    path: "taxonomy",
     type: "folder",
     isRoot: true,
-    children: ["termstore:Group1", "termstore:Group2"],
+    children: ["taxonomy:People", "taxonomy:System"],
     uniqueIdentifier: "xyzdsfjhweljrelwkenflm12143344",
-    name: "termstore",
+    name: "taxonomy",
+    displayName: "TermStore Admins",
     details:
       "Term 1 details are here.It is a prt of XYZ term set and has been used since 2002.",
     contacts: [
@@ -32,110 +33,15 @@ const ts = [
     ]
   },
   {
-    id: "termstore:Group1",
-    path: "termstore:Group1",
-    type: "folder",
-    children: ["termstore:Group1:TestTerm"],
-    name: "Group1",
-    uniqueIdentifier: "xyzdsfjhweljrelwkenflm12143344",
-    details:
-      "Term 1 details are here.It is a prt of XYZ term set and has been used since 2002.",
-    contacts: [
-      {
-        id: "1",
-        name: "lavanya.a@microsoft.com"
-      },
-      {
-        id: "2",
-        name: "david.nimmagadda@microsoft.com"
-      },
-      {
-        id: "3",
-        name: "gayathri.sns@microsoft.com"
-      }
-    ]
-  },
-  {
-    id: "termstore:Group1:TestTerm",
-    path: "termstore:Group1:TestTerm",
-    type: "folder",
-    children: ["termstore:Group1:TestTerm:SubTerm"],
-    name: "TestTerm",
-    uniqueIdentifier: "xyzdsfjhweljrelwkenflm12143344",
-    details:
-      "Term 1 details are here.It is a prt of XYZ term set and has been used since 2002.",
-    contacts: [
-      {
-        id: "1",
-        name: "lavanya.a@microsoft.com"
-      },
-      {
-        id: "2",
-        name: "david.nimmagadda@microsoft.com"
-      },
-      {
-        id: "3",
-        name: "gayathri.sns@microsoft.com"
-      }
-    ]
-  },
-  {
-    id: "termstore:Group1:TestTerm:SubTerm",
-    path: "termstore:Group1:TestTerm:SubTerm",
-    type: "folder",
-    children: [],
-    name: "SubTerm",
-    uniqueIdentifier: "xyzdsfjhweljrelwkenflm12143344",
-    details:
-      "Term 1 details are here.It is a prt of XYZ term set and has been used since 2002.",
-    contacts: [
-      {
-        id: "1",
-        name: "lavanya.a@microsoft.com"
-      },
-      {
-        id: "2",
-        name: "david.nimmagadda@microsoft.com"
-      },
-      {
-        id: "3",
-        name: "gayathri.sns@microsoft.com"
-      }
-    ]
-  },
-  {
-    id: "termstore:Group2",
-    path: "termstore:Group2",
-    type: "folder",
-    children: ["termstore:Group2:TermSet1", "termstore:Group2:TermSet2"],
-    name: "Group2",
-    uniqueIdentifier: "xyzdsfjhweljrelwkenflm12143344",
-    details:
-      "Term 1 details are here.It is a prt of XYZ term set and has been used since 2002.",
-    contacts: [
-      {
-        id: "1",
-        name: "lavanya.a@microsoft.com"
-      },
-      {
-        id: "2",
-        name: "david.nimmagadda@microsoft.com"
-      },
-      {
-        id: "3",
-        name: "gayathri.sns@microsoft.com"
-      }
-    ]
-  },
-  {
-    id: "termstore:Group2:TermSet1",
-    path: "termstore:Group2:TermSet1",
+    id: "People",
+    path: "taxonomy:People",
     type: "folder",
     children: [
-      "termstore:Group2:TermSet1:Term1",
-      "termstore:Group2:TermSet1:Term2"
+      "taxonomy:People:Department",
+      "taxonomy:People:JobTitle",
+      "taxonomy:People:Location"
     ],
-    name: "TermSet1",
+    name: "People",
     uniqueIdentifier: "xyzdsfjhweljrelwkenflm12143344",
     details:
       "Term 1 details are here.It is a prt of XYZ term set and has been used since 2002.",
@@ -155,11 +61,15 @@ const ts = [
     ]
   },
   {
-    id: "termstore:Group2:TermSet1:Term1",
-    path: "termstore:Group2:TermSet1:Term1",
+    id: "System",
+    path: "taxonomy:System",
     type: "folder",
-    children: [],
-    name: "Term1",
+    children: [
+      "taxonomy:System:Hashtags",
+      "taxonomy:System:Keywords",
+      "taxonomy:System:OrphanedTerms"
+    ],
+    name: "System",
     uniqueIdentifier: "xyzdsfjhweljrelwkenflm12143344",
     details:
       "Term 1 details are here.It is a prt of XYZ term set and has been used since 2002.",
@@ -179,11 +89,11 @@ const ts = [
     ]
   },
   {
-    id: "termstore:Group2:TermSet1:Term2",
-    path: "termstore:Group2:TermSet1:Term2",
+    id: "Department",
+    path: "taxonomy:People:Department",
     type: "folder",
     children: [],
-    name: "Term2",
+    name: "Department",
     uniqueIdentifier: "xyzdsfjhweljrelwkenflm12143344",
     details:
       "Term 1 details are here.It is a prt of XYZ term set and has been used since 2002.",
@@ -203,11 +113,158 @@ const ts = [
     ]
   },
   {
-    id: "termstore:Group2:TermSet2",
-    path: "termstore:Group2:TermSet2",
+    id: "JobTitle",
+    path: "taxonomy:People:JobTitle",
     type: "folder",
     children: [],
-    name: "TermSet2",
+    name: "JobTitle",
+    uniqueIdentifier: "xyzdsfjhweljrelwkenflm12143344",
+    details:
+      "Term 1 details are here.It is a prt of XYZ term set and has been used since 2002.",
+    contacts: [
+      {
+        id: "1",
+        name: "lavanya.a@microsoft.com"
+      },
+      {
+        id: "2",
+        name: "david.nimmagadda@microsoft.com"
+      },
+      {
+        id: "3",
+        name: "gayathri.sns@microsoft.com"
+      }
+    ]
+  },
+  {
+    id: "Location",
+    path: "People:Location",
+    type: "folder",
+    children: ["taxonomy:People:Location:India", "taxonomy:People:Location:US"],
+    name: "Location",
+    uniqueIdentifier: "xyzdsfjhweljrelwkenflm12143344",
+    details:
+      "Term 1 details are here.It is a prt of XYZ term set and has been used since 2002.",
+    contacts: [
+      {
+        id: "1",
+        name: "lavanya.a@microsoft.com"
+      },
+      {
+        id: "2",
+        name: "david.nimmagadda@microsoft.com"
+      },
+      {
+        id: "3",
+        name: "gayathri.sns@microsoft.com"
+      }
+    ]
+  },
+  {
+    id: "India",
+    path: "Taxonomy.People:Location:India",
+    type: "folder",
+    children: [
+      "Taxonomy.People:Location:India:Hyderabad",
+      "Taxonomy.People:Location:India:Bangalore"
+    ],
+    name: "India",
+    uniqueIdentifier: "xyzdsfjhweljrelwkenflm12143344",
+    details:
+      "Term 1 details are here.It is a prt of XYZ term set and has been used since 2002.",
+    contacts: [
+      {
+        id: "1",
+        name: "lavanya.a@microsoft.com"
+      },
+      {
+        id: "2",
+        name: "david.nimmagadda@microsoft.com"
+      },
+      {
+        id: "3",
+        name: "gayathri.sns@microsoft.com"
+      }
+    ]
+  },
+  {
+    id: "US",
+    path: "Taxonomy.People:Location:US",
+    type: "folder",
+    children: ["Taxonomy.People:Location:US:Redmond"],
+    name: "US",
+    uniqueIdentifier: "xyzdsfjhweljrelwkenflm12143344",
+    details:
+      "Term 1 details are here.It is a prt of XYZ term set and has been used since 2002.",
+    contacts: [
+      {
+        id: "1",
+        name: "lavanya.a@microsoft.com"
+      },
+      {
+        id: "2",
+        name: "david.nimmagadda@microsoft.com"
+      },
+      {
+        id: "3",
+        name: "gayathri.sns@microsoft.com"
+      }
+    ]
+  },
+  {
+    id: "Hashtags",
+    path: "Taxonomy:System:Hashtags",
+    type: "folder",
+    children: [],
+    name: "Hashtags",
+    uniqueIdentifier: "xyzdsfjhweljrelwkenflm12143344",
+    details:
+      "Term 1 details are here.It is a prt of XYZ term set and has been used since 2002.",
+    contacts: [
+      {
+        id: "1",
+        name: "lavanya.a@microsoft.com"
+      },
+      {
+        id: "2",
+        name: "david.nimmagadda@microsoft.com"
+      },
+      {
+        id: "3",
+        name: "gayathri.sns@microsoft.com"
+      }
+    ]
+  },
+  {
+    id: "Keywords",
+    path: "Taxonomy:System:Keywords",
+    type: "folder",
+    children: [],
+    name: "Keywords",
+    uniqueIdentifier: "xyzdsfjhweljrelwkenflm12143344",
+    details:
+      "Term 1 details are here.It is a prt of XYZ term set and has been used since 2002.",
+    contacts: [
+      {
+        id: "1",
+        name: "lavanya.a@microsoft.com"
+      },
+      {
+        id: "2",
+        name: "david.nimmagadda@microsoft.com"
+      },
+      {
+        id: "3",
+        name: "gayathri.sns@microsoft.com"
+      }
+    ]
+  },
+  {
+    id: "OrphanedTerms",
+    path: "Taxonomy:System:OrphanedTerms",
+    type: "folder",
+    children: [],
+    name: "Orphaned Terms",
     uniqueIdentifier: "xyzdsfjhweljrelwkenflm12143344",
     details:
       "Term 1 details are here.It is a prt of XYZ term set and has been used since 2002.",
