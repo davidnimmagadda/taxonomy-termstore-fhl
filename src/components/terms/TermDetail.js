@@ -30,7 +30,7 @@ function TermDetail(props) {
   return <h1>Default</h1>;
 }
 TermDetail.propTypes = {
-  termDetails: PropTypes.array.isRequired
+  termDetails: PropTypes.object.isRequired
 };
 function mapStateToProps({ termstore, activeApiCalls }) {
   return { termDetails: termstore.currentTerm, loading: activeApiCalls > 0 };

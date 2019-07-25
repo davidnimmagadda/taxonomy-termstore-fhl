@@ -4,6 +4,7 @@ import TermStoreNav from "../termstorenav/TermStoreNav";
 import PropTypes from "prop-types";
 import { loadTermChildren } from "../../redux/actions/termStoreActions";
 import { connect } from "react-redux";
+import TermDetail from "../terms/TermDetail";
 
 function HomePage(props) {
   useEffect(() => {
@@ -29,6 +30,7 @@ function HomePage(props) {
             termstore={props.termstore}
             onLinkClick={handleLinkClick}
           />
+          <TermDetail />
         </>
       )}
     </>
