@@ -6,7 +6,7 @@ import "./TermDetail.css";
 
 function TermDetail({ termDetails }) {
   return (
-    <div style={{ display: "block" }}>
+    <div style={{ display: "block", marginLeft: 10 }}>
       <h2>{termDetails.name}</h2>
       <br />
       <p>{termDetails.details}</p>
