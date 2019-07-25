@@ -1,0 +1,15 @@
+.table {
+  border-collapse: collapse;
+  width: 50% !important;
+  float: left;
+  width: 100px;
+  height: 20px;
+  margin-right: 8px;
+}
+thead {
+  border-top: 0;
+}
+.table td {
+  border-top: none;
+  white-space: nowrap;
+}

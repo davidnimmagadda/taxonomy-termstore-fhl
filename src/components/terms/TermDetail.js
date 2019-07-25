@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import Contact from "./Contact";
 import { loadTermDetails } from "../../redux/actions/termActions";
+import "./TermDetail.css";
 
 function TermDetail(props) {
   useEffect(() => {
@@ -13,17 +14,26 @@ function TermDetail(props) {
   let requiredDetails = "default";
   if (props.termDetails.length > 0) {
     requiredDetails = props.termDetails.find(a => a.id === props.term);
+    return (
+      <>
+        <h2>{requiredDetails.name}</h2>
+        <br />
+        <p>{requiredDetails.details}</p>
+        <Contact className="left-div" contacts={requiredDetails.contacts} />
+        <table className="right-div">
+          <thead>
+            <th>Unique identifier</th>
+          </thead>
+          <tbody>
+            <tr>
+              <td>{requiredDetails.uniqueIdentifier}</td>
+            </tr>
+          </tbody>
+        </table>
+      </>
+    );
   }
-  return (
-    <>
-      <h2>{requiredDetails.name}</h2>
-      <br />
-      <p>{requiredDetails.details}</p>
-      <hr />
-      <Contact className="left-div" contacts={requiredDetails.contacts} />
-      <div className="right-div">{requiredDetails.uniqueIdentifier}</div>
-    </>
-  );
+  return <h1>Default</h1>;
 }
 TermDetail.propTypes = {
   term: PropTypes.string.isRequired,

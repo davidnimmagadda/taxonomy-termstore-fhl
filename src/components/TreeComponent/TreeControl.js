@@ -1,9 +1,11 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 import Tree from "./Tree";
+import TermDetail from "../terms/TermDetail";
+import Route from "react-router-dom";
 
 const StyledTreeComponent = styled.div`
-  width: 800px;
+  width: 1000px;
   max-width: 100%;
   margin: 0 auto;
   display: flex;
@@ -21,15 +23,27 @@ export default class TreeControl extends Component {
   onSelect = file => this.setState({ selectedFile: file });
 
   render() {
-    const { selectedFile } = this.state;
+    let { selectedFile } = "";
+    selectedFile = this.state;
 
+    if (this.state.selectedFile == null) {
+      return (
+        <StyledTreeComponent>
+          <TreeWrapper>
+            <Tree onSelect={this.onSelect} />
+          </TreeWrapper>
+        </StyledTreeComponent>
+      );
+    }
     return (
-      <StyledTreeComponent>
-        <TreeWrapper>
-          <Tree onSelect={this.onSelect} />
-        </TreeWrapper>
-        <div>{selectedFile && selectedFile.content}</div>
-      </StyledTreeComponent>
+      <>
+        <StyledTreeComponent>
+          <TreeWrapper>
+            <Tree onSelect={this.onSelect} />
+          </TreeWrapper>
+          <TermDetail term={selectedFile.selectedFile.id} />
+        </StyledTreeComponent>
+      </>
     );
   }
 }

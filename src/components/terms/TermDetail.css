@@ -1,0 +1,8 @@
+.right-div {
+  margin-left: 108px;
+}
+.right-div td,
+.right-div th {
+  padding: 0.75rem;
+  border-top: 1px;
+}

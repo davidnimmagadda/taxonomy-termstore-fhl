@@ -18,8 +18,26 @@ const data = {
     children: ["/termstore/Group1/TestTerm"]
   },
   "/termstore/Group1/TestTerm": {
+    id: "1",
     path: "/termstore/Group1/TestTerm",
     type: "folder",
+    name: "Term 1",
+    details:
+      "Term 1 details are here.It is a prt of XYZ term set and has been used since 2002.",
+    contacts: [
+      {
+        id: "1",
+        name: "lavanya.a@microsoft.com"
+      },
+      {
+        id: "2",
+        name: "david.nimmagadda@microsoft.com"
+      },
+      {
+        id: "3",
+        name: "gayathri.sns@microsoft.com"
+      }
+    ],
     children: ["/termstore/Group1/TestTerm/SubTerm"]
   },
 
@@ -34,6 +52,7 @@ const data = {
     children: ["/termstore/Group2/TermSet1", "/termstore/Group2/TermSet2"]
   },
   "/termstore/Group2/TermSet1": {
+    id: "2",
     path: "/termstore/Group2/TermSet1",
     type: "folder",
     children: [

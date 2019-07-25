@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
-
+import "./Contact.css";
 function Contact(props) {
   const contacts = props.contacts;
   if (contacts) {
