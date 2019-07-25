@@ -30,7 +30,7 @@ function HomePage(props) {
             termstore={props.termstore}
             onLinkClick={handleLinkClick}
           />
-          <TermDetail />
+          <TermDetail termDetails={props.termstore.currentTerm} />
         </div>
       )}
     </>

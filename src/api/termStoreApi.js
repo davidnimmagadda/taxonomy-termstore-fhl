@@ -9,3 +9,12 @@ export async function getNode(path) {
     return handleError(error);
   }
 }
+
+export async function getAll() {
+  try {
+    let response = await fetch(baseUrl);
+    return handleResponse(response);
+  } catch (error) {
+    return handleError(error);
+  }
+}

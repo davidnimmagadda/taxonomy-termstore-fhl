@@ -1,6 +1,5 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { connect } from "react-redux";
 import Contact from "./Contact";
 import "./TermDetail.css";
 
@@ -31,8 +30,5 @@ function TermDetail({ termDetails }) {
 TermDetail.propTypes = {
   termDetails: PropTypes.object.isRequired
 };
-function mapStateToProps({ termstore, activeApiCalls }) {
-  return { termDetails: termstore.currentTerm, loading: activeApiCalls > 0 };
-}
 
-export default connect(mapStateToProps)(TermDetail);
+export default TermDetail;
