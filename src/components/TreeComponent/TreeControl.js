@@ -34,8 +34,6 @@ export default class TreeControl extends Component {
   };
 
   render() {
-    let { selectedFile } = "";
-    selectedFile = this.state;
     if (this.state.nodes.length === 0) return <></>;
     if (this.state.selectedFile == null) {
       return (
@@ -60,7 +58,7 @@ export default class TreeControl extends Component {
               onToggle={this.onToggle}
             />
           </TreeWrapper>
-          <TermDetail termDetails={selectedFile} />
+          <TermDetail termDetails={this.state.selectedFile} />
         </StyledTreeComponent>
       </>
     );
