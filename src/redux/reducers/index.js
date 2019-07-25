@@ -1,7 +1,10 @@
 import { combineReducers } from "redux";
-import terms from "./termReducer";
+import termstoreChildren from "./termStoreReducer";
 import activeApiCalls from "./apiCallReducer";
 
-const rootReducer = combineReducers({ terms, activeApiCalls });
+const rootReducer = combineReducers({
+  termstoreChildren,
+  activeApiCalls
+});
 
 export default rootReducer;

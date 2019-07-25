@@ -1,4 +1,4 @@
 export default {
-  terms: [],
+  termstoreChildren: [],
   activeApiCalls: 0
 };
