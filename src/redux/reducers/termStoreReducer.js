@@ -11,11 +11,18 @@ export default function termStoreReducer(
         return {
           termTree: [
             {
-              name: action.term.id,
+              name: action.term.name,
               target: "_blank",
+              termpath: action.term.id,
               isExpanded: true,
               links: action.term.children.map(v => {
-                return { name: v, target: "_blank", isExpanded: true };
+                const arr = v.split(":");
+                return {
+                  name: arr[arr.length - 1],
+                  termpath: v,
+                  target: "_blank",
+                  isExpanded: true
+                };
               })
             }
           ],
@@ -25,15 +32,21 @@ export default function termStoreReducer(
       const newstate = JSON.parse(JSON.stringify(state.termTree));
       let currState = newstate;
       action.term.id.split(":").forEach(p => {
-        let obj = currState.find(v => v.name.endsWith(p));
+        let obj = currState.find(v => v.name === p);
         if (obj) {
           if (!obj.links) obj.links = [];
           currState = obj.links;
         }
       });
-      action.term.children.forEach(v =>
-        currState.push({ name: v, target: "_blank", isExpanded: true })
-      );
+      action.term.children.forEach(v => {
+        const arr = v.split(":");
+        currState.push({
+          name: arr[arr.length - 1],
+          termpath: v,
+          target: "_blank",
+          isExpanded: true
+        });
+      });
 
       return { termTree: newstate, currentTerm: action.term };
     }

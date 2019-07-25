@@ -16,7 +16,7 @@ function HomePage(props) {
   }, []);
 
   function handleLinkClick(ev, item) {
-    props.loadTermChildren(item.name);
+    props.loadTermChildren(item.termpath);
   }
 
   return (
