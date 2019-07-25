@@ -25,13 +25,13 @@ function HomePage(props) {
       {props.loading ? (
         <Spinner />
       ) : (
-        <>
+        <div style={{ display: "flex" }}>
           <TermStoreNav
             termstore={props.termstore}
             onLinkClick={handleLinkClick}
           />
           <TermDetail />
-        </>
+        </div>
       )}
     </>
   );

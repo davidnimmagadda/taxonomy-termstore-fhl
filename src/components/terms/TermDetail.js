@@ -9,7 +9,7 @@ function TermDetail(props) {
   if (props.termDetails) {
     requiredDetails = props.termDetails;
     return (
-      <>
+      <div style={{ display: "block" }}>
         <h2>{requiredDetails.name}</h2>
         <br />
         <p>{requiredDetails.details}</p>
@@ -24,7 +24,7 @@ function TermDetail(props) {
             </tr>
           </tbody>
         </table>
-      </>
+      </div>
     );
   }
   return <h1>Default</h1>;
