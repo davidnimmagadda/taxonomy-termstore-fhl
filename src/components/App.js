@@ -10,7 +10,7 @@ import { PageNotFound } from "./PageNotFound";
 
 function App() {
   return (
-    <div style={{ display: "flex" }}>
+    <div style={{ display: "inline-flex" }}>
       <MainNav />
       <div className="container-fluid">
         <Switch>
