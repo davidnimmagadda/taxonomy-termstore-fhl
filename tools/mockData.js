@@ -188,11 +188,83 @@ const ts = [
     ]
   },
   {
+    id: "Taxonomy:People:Location:India:Bangalore",
+    path: "Taxonomy:People:Location:India:Bangalore",
+    type: "folder",
+    children: [],
+    name: "Bangalore",
+    uniqueIdentifier: "xyzdsfjhweljrelwkenflm12143344",
+    details:
+      "Term 1 details are here.It is a prt of XYZ term set and has been used since 2002.",
+    contacts: [
+      {
+        id: "1",
+        name: "lavanya.a@microsoft.com"
+      },
+      {
+        id: "2",
+        name: "david.nimmagadda@microsoft.com"
+      },
+      {
+        id: "3",
+        name: "gayathri.sns@microsoft.com"
+      }
+    ]
+  },
+  {
+    id: "Taxonomy:People:Location:India:Hyderabad",
+    path: "Taxonomy:People:Location:India:Hyderabad",
+    type: "folder",
+    children: [],
+    name: "Hyderabad",
+    uniqueIdentifier: "xyzdsfjhweljrelwkenflm12143344",
+    details:
+      "Term 1 details are here.It is a prt of XYZ term set and has been used since 2002.",
+    contacts: [
+      {
+        id: "1",
+        name: "lavanya.a@microsoft.com"
+      },
+      {
+        id: "2",
+        name: "david.nimmagadda@microsoft.com"
+      },
+      {
+        id: "3",
+        name: "gayathri.sns@microsoft.com"
+      }
+    ]
+  },
+  {
     id: "Taxonomy:People:Location:US",
     path: "Taxonomy:People:Location:US",
     type: "folder",
     children: ["Taxonomy:People:Location:US:Redmond"],
     name: "US",
+    uniqueIdentifier: "xyzdsfjhweljrelwkenflm12143344",
+    details:
+      "Term 1 details are here.It is a prt of XYZ term set and has been used since 2002.",
+    contacts: [
+      {
+        id: "1",
+        name: "lavanya.a@microsoft.com"
+      },
+      {
+        id: "2",
+        name: "david.nimmagadda@microsoft.com"
+      },
+      {
+        id: "3",
+        name: "gayathri.sns@microsoft.com"
+      }
+    ]
+  },
+  {
+    id: "Taxonomy:People:Location:US:Redmond",
+    path: "Taxonomy:People:Location:US:Redmond",
+    type: "folder",
+    children: [],
+    name: "Redmond",
     uniqueIdentifier: "xyzdsfjhweljrelwkenflm12143344",
     details:
       "Term 1 details are here.It is a prt of XYZ term set and has been used since 2002.",
