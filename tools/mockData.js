@@ -20,15 +20,15 @@ const ts = [
     contacts: [
       {
         id: "1",
-        name: "lavanya.a@microsoft.com"
+        name: "laa@microsoft.com"
       },
       {
         id: "2",
-        name: "david.nimmagadda@microsoft.com"
+        name: "danimmag@microsoft.com"
       },
       {
         id: "3",
-        name: "gayathri.sns@microsoft.com"
+        name: "gasns@microsoft.com"
       }
     ]
   },
@@ -49,19 +49,19 @@ const ts = [
     contacts: [
       {
         id: "1",
-        name: "lavanya.a@microsoft.com"
+        name: "laa@microsoft.com"
       },
       {
         id: "2",
-        name: "david.nimmagadda@microsoft.com"
+        name: "danimmag@microsoft.com"
       },
       {
         id: "3",
-        name: "gayathri.sns@microsoft.com"
+        name: "gasns@microsoft.com"
       },
       {
         id: "4",
-        name: "ravi.gopinath@microsoft.com"
+        name: "ravikg@microsoft.com"
       }
     ]
   },
@@ -181,15 +181,15 @@ const ts = [
     contacts: [
       {
         id: "1",
-        name: "lavanya.a@microsoft.com"
+        name: "laa@microsoft.com"
       },
       {
         id: "2",
-        name: "david.nimmagadda@microsoft.com"
+        name: "danimmag@microsoft.com"
       },
       {
         id: "3",
-        name: "gayathri.sns@microsoft.com"
+        name: "gasns@microsoft.com"
       }
     ]
   },
@@ -206,15 +206,15 @@ const ts = [
     contacts: [
       {
         id: "1",
-        name: "lavanya.a@microsoft.com"
+        name: "laa@microsoft.com"
       },
       {
         id: "2",
-        name: "david.nimmagadda@microsoft.com"
+        name: "danimma@microsoft.com"
       },
       {
         id: "3",
-        name: "gayathri.sns@microsoft.com"
+        name: "gasns@microsoft.com"
       }
     ]
   },
@@ -231,7 +231,7 @@ const ts = [
     contacts: [
       {
         id: "1",
-        name: "swshriva@microsoft.com"
+        name: "swsingh@microsoft.com"
       }
     ]
   },
@@ -265,7 +265,7 @@ const ts = [
     contacts: [
       {
         id: "1",
-        name: "swshriva@microsoft.com"
+        name: "swmitta@microsoft.com"
       }
     ]
   },
@@ -282,7 +282,7 @@ const ts = [
     contacts: [
       {
         id: "1",
-        name: "lavanya.a@microsoft.com"
+        name: "laa@microsoft.com"
       }
     ]
   },
@@ -299,7 +299,7 @@ const ts = [
     contacts: [
       {
         id: "1",
-        name: "gayathri.sns@microsoft.com"
+        name: "gasns@microsoft.com"
       }
     ]
   },
