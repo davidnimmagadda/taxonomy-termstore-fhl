@@ -15,24 +15,19 @@ const navlinks = [
     url: "/about"
   },
   {
-    name: "Terms",
+    name: "Term Store Admin Center",
     key: "key4",
     url: "/terms"
   },
   {
-    name: "Notebook",
+    name: "Term Store Analytics",
     key: "key5",
     url: "/notebook"
   },
   {
-    name: "Communication and Media",
+    name: "Content Type Admin Center",
     key: "key6",
     url: "/communication-media"
-  },
-  {
-    name: "News",
-    key: "key7",
-    url: "/news"
   }
 ];
 
