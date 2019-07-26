@@ -7,9 +7,12 @@ function Contact(props) {
     return (
       <table className="table">
         <thead>
-          <tr>
-            <th>Contact</th>
-          </tr>
+          <div style={{ display: "flex" }} className="contact-edit">
+            <tr>
+              <th>Contact</th>
+            </tr>
+            <a href="#">Edit</a>
+          </div>
         </thead>
         <tbody>
           {contacts.map(contact => (

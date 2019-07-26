@@ -16,7 +16,7 @@ const ts = [
     name: "Taxonomy",
     displayName: "TermStore Admins",
     details:
-      "Term 1 details are here.It is a prt of XYZ term set and has been used since 2002.",
+      "This is the centralized term store for the Contoso client.It contains different termgroups , termsets and terms. Please click the nested termgroups to get access to the terms.Some termgroups may be disabled for editing due to improper rights to access.",
     contacts: [
       {
         id: "1",
@@ -33,7 +33,7 @@ const ts = [
     ]
   },
   {
-    id: "People",
+    id: "Taxonomy:People",
     path: "Taxonomy:People",
     type: "folder",
     children: [
@@ -42,9 +42,10 @@ const ts = [
       "Taxonomy:People:Location"
     ],
     name: "People",
-    uniqueIdentifier: "xyzdsfjhweljrelwkenflm12143344",
+    displayName: "TermGroup Managers",
+    uniqueIdentifier: "yzdsfjhweljrelwkenflm12143344x",
     details:
-      "Term 1 details are here.It is a prt of XYZ term set and has been used since 2002.",
+      "The termGroup people is responsible for holding different termsets and terms related to people working location, departments,designations, teams and the organization details.",
     contacts: [
       {
         id: "1",
@@ -57,11 +58,15 @@ const ts = [
       {
         id: "3",
         name: "gayathri.sns@microsoft.com"
+      },
+      {
+        id: "4",
+        name: "ravi.gopinath@microsoft.com"
       }
     ]
   },
   {
-    id: "System",
+    id: "Taxonomy:System",
     path: "Taxonomy:System",
     type: "folder",
     children: [
@@ -70,108 +75,109 @@ const ts = [
       "Taxonomy:System:OrphanedTerms"
     ],
     name: "System",
-    uniqueIdentifier: "xyzdsfjhweljrelwkenflm12143344",
+    displayName: "TermGroup Managers",
+    uniqueIdentifier: "zdsfjhweljrelwkenflm12143344xy",
     details:
-      "Term 1 details are here.It is a prt of XYZ term set and has been used since 2002.",
+      "The termGroup people is responsible for holding different termsets and terms related to system settings.",
     contacts: [
       {
         id: "1",
-        name: "lavanya.a@microsoft.com"
+        name: "laa@microsoft.com"
       },
       {
         id: "2",
-        name: "david.nimmagadda@microsoft.com"
-      },
-      {
-        id: "3",
-        name: "gayathri.sns@microsoft.com"
+        name: "mimanika@microsoft.com"
       }
     ]
   },
   {
-    id: "Department",
+    id: "Taxonomy:People:Department",
     path: "Taxonomy:People:Department",
     type: "folder",
     children: [],
     name: "Department",
-    uniqueIdentifier: "xyzdsfjhweljrelwkenflm12143344",
+    uniqueIdentifier: "dsfjhweljrelwkenflm12143344xyz",
+    displayName: "Contacts",
     details:
-      "Term 1 details are here.It is a prt of XYZ term set and has been used since 2002.",
+      "The term set department is responsible for holding all the terms related to department related terms in IDC.The MSIT related termsets are categorized in a different termset(MSIT_DEPT) as suggested from 2011.The visibility or enablement of termsets is subject to proper access rights.Please contact your root administrator in case of any rights discrepancy.",
     contacts: [
       {
         id: "1",
-        name: "lavanya.a@microsoft.com"
+        name: "mimanika@microsoft.com"
       },
       {
         id: "2",
-        name: "david.nimmagadda@microsoft.com"
-      },
-      {
-        id: "3",
-        name: "gayathri.sns@microsoft.com"
+        name: "gasns@microsoft.com"
       }
     ]
   },
   {
-    id: "JobTitle",
+    id: "Taxonomy:People:JobTitle",
     path: "Taxonomy:People:JobTitle",
     type: "folder",
     children: [],
     name: "JobTitle",
-    uniqueIdentifier: "xyzdsfjhweljrelwkenflm12143344",
+    uniqueIdentifier: "sfjhweljrelwkenflm12143344xyzd",
+    displayName: "Contacts",
     details:
-      "Term 1 details are here.It is a prt of XYZ term set and has been used since 2002.",
+      "The term set job title is responsible for holding all the terms related to job title related terms in Engineering job role.Please refer to the other termsets for other job roles and responsibilities.The visibility or enablement of termsets is subject to proper access rights.Please contact your root administrator in case of any rights discrepancy.",
     contacts: [
       {
         id: "1",
-        name: "lavanya.a@microsoft.com"
+        name: "laa@microsoft.com"
       },
       {
         id: "2",
-        name: "david.nimmagadda@microsoft.com"
+        name: "danimmag@microsoft.com"
       },
       {
         id: "3",
-        name: "gayathri.sns@microsoft.com"
+        name: "gans@microsoft.com"
+      },
+      {
+        id: "4",
+        name: "ravikg@microsoft.com"
       }
     ]
   },
   {
-    id: "Location",
-    path: "People:Location",
+    id: "Taxonomy:People:Location",
+    path: "Taxonomy:People:Location",
     type: "folder",
     children: ["Taxonomy:People:Location:India", "Taxonomy:People:Location:US"],
     name: "Location",
-    uniqueIdentifier: "xyzdsfjhweljrelwkenflm12143344",
+    displayName: "Contacts",
+    uniqueIdentifier: "fjhweljrelwkenflm12143344xyzds",
     details:
-      "Term 1 details are here.It is a prt of XYZ term set and has been used since 2002.",
+      "The term set location is responsible for holding all the terms related to work location and the relevant terms used according to the location. The visibility or enablement of termsets is subject to proper access rights.Please contact your root administrator in case of any rights discrepancy.",
     contacts: [
       {
         id: "1",
-        name: "lavanya.a@microsoft.com"
+        name: "laa@microsoft.com"
       },
       {
         id: "2",
-        name: "david.nimmagadda@microsoft.com"
+        name: "danimmag@microsoft.com"
       },
       {
         id: "3",
-        name: "gayathri.sns@microsoft.com"
+        name: "risja@microsoft.com"
       }
     ]
   },
   {
-    id: "India",
-    path: "Taxonomy.People:Location:India",
+    id: "Taxonomy:People:Location:India",
+    path: "Taxonomy:People:Location:India",
     type: "folder",
+    displayName: "Contacts",
     children: [
-      "Taxonomy.People:Location:India:Hyderabad",
-      "Taxonomy.People:Location:India:Bangalore"
+      "Taxonomy:People:Location:India:Hyderabad",
+      "Taxonomy:People:Location:India:Bangalore"
     ],
     name: "India",
-    uniqueIdentifier: "xyzdsfjhweljrelwkenflm12143344",
+    uniqueIdentifier: "jhweljrelwkenflm12143344xyzdsf",
     details:
-      "Term 1 details are here.It is a prt of XYZ term set and has been used since 2002.",
+      "This is the term India in the location term set.The enablement of addition /editing the terms is subject to access rights.Please contact administrator for any discrepancy.",
     contacts: [
       {
         id: "1",
@@ -188,14 +194,15 @@ const ts = [
     ]
   },
   {
-    id: "US",
-    path: "Taxonomy.People:Location:US",
+    id: "Taxonomy:People:Location:US",
+    path: "Taxonomy:People:Location:US",
     type: "folder",
-    children: ["Taxonomy.People:Location:US:Redmond"],
+    children: ["Taxonomy:People:Location:US:Redmond"],
     name: "US",
-    uniqueIdentifier: "xyzdsfjhweljrelwkenflm12143344",
+    displayName: "Contacts",
+    uniqueIdentifier: "jhweljrelwkenflm12143344xyzdsf",
     details:
-      "Term 1 details are here.It is a prt of XYZ term set and has been used since 2002.",
+      "This is the term US in the location term set.The enablement of addition /editing the terms is subject to access rights.Please contact administrator for any discrepancy.",
     contacts: [
       {
         id: "1",
@@ -212,74 +219,108 @@ const ts = [
     ]
   },
   {
-    id: "Hashtags",
+    id: "Taxonomy:People:Location:India:Hyderabad",
+    path: "Taxonomy:People:Location:India:Hyderabad",
+    type: "folder",
+    displayName: "Contacts",
+    children: [],
+    name: "Hyderabad",
+    uniqueIdentifier: "hweljrelwkenflm12143344xyzdsfj",
+    details:
+      "This is the term Hyderabad under term India.The enablement of addition /editing the terms is subject to access rights.Please contact administrator for any discrepancy.",
+    contacts: [
+      {
+        id: "1",
+        name: "swshriva@microsoft.com"
+      }
+    ]
+  },
+  {
+    id: "Taxonomy:People:Location:India:Bangalore",
+    path: "Taxonomy:People:Location:India:Bangalore",
+    type: "folder",
+    displayName: "Contacts",
+    children: [],
+    name: "Bangalore",
+    uniqueIdentifier: "weljrelwkenflm12143344xyzdsfjh",
+    details:
+      "This is the term Bangalore under term India.The enablement of addition /editing the terms is subject to access rights.Please contact administrator for any discrepancy.",
+    contacts: [
+      {
+        id: "1",
+        name: "swshriva@microsoft.com"
+      }
+    ]
+  },
+  {
+    id: "Taxonomy:People:Location:US:Redmond",
+    path: "Taxonomy:People:Location:US:Redmond",
+    type: "folder",
+    displayName: "Contacts",
+    children: [],
+    name: "Redmond",
+    uniqueIdentifier: "eljrelwkenflm12143344xyzdsfjhw",
+    details:
+      "This is the term Redmond under term US.The enablement of addition /editing the terms is subject to access rights.Please contact administrator for any discrepancy.",
+    contacts: [
+      {
+        id: "1",
+        name: "swshriva@microsoft.com"
+      }
+    ]
+  },
+  {
+    id: "Taxonomy:System:Hashtags",
     path: "Taxonomy:System:Hashtags",
     type: "folder",
     children: [],
     name: "Hashtags",
-    uniqueIdentifier: "xyzdsfjhweljrelwkenflm12143344",
+    displayName: "Contacts",
+    uniqueIdentifier: "ljrelwkenflm12143344xyzdsfjhwe",
     details:
-      "Term 1 details are here.It is a prt of XYZ term set and has been used since 2002.",
+      "The term set Hashtags is responsible for holding hastags used across organization for easy search,storage and retrieval of content. The visibility or enablement of termsets is subject to proper access rights.Please contact your root administrator in case of any rights discrepancy.",
     contacts: [
       {
         id: "1",
         name: "lavanya.a@microsoft.com"
-      },
-      {
-        id: "2",
-        name: "david.nimmagadda@microsoft.com"
-      },
-      {
-        id: "3",
-        name: "gayathri.sns@microsoft.com"
       }
     ]
   },
   {
-    id: "Keywords",
+    id: "Taxonomy:System:Keywords",
     path: "Taxonomy:System:Keywords",
     type: "folder",
     children: [],
     name: "Keywords",
-    uniqueIdentifier: "xyzdsfjhweljrelwkenflm12143344",
+    displayName: "Contacts",
+    uniqueIdentifier: "jrelwkenflm12143344xyzdsfjhwel",
     details:
-      "Term 1 details are here.It is a prt of XYZ term set and has been used since 2002.",
+      "The term set Keywords is responsible for holding hastags used across organization for easy search,storage and retrieval of content. The visibility or enablement of termsets is subject to proper access rights.Please contact your root administrator in case of any rights discrepancy.",
     contacts: [
       {
         id: "1",
-        name: "lavanya.a@microsoft.com"
-      },
-      {
-        id: "2",
-        name: "david.nimmagadda@microsoft.com"
-      },
-      {
-        id: "3",
         name: "gayathri.sns@microsoft.com"
       }
     ]
   },
   {
-    id: "OrphanedTerms",
+    id: "Taxonomy:System:OrphanedTerms",
     path: "Taxonomy:System:OrphanedTerms",
     type: "folder",
     children: [],
+    displayName: "Contacts",
     name: "Orphaned Terms",
-    uniqueIdentifier: "xyzdsfjhweljrelwkenflm12143344",
+    uniqueIdentifier: "relwkenflm12143344xyzdsfjhwelj",
     details:
-      "Term 1 details are here.It is a prt of XYZ term set and has been used since 2002.",
+      "The term set Orphaned terms is responsible for holding orphaned terms. The visibility or enablement of termsets is subject to proper access rights.Please contact your root administrator in case of any rights discrepancy.",
     contacts: [
       {
         id: "1",
-        name: "lavanya.a@microsoft.com"
+        name: "gasns@microsoft.com"
       },
       {
         id: "2",
-        name: "david.nimmagadda@microsoft.com"
-      },
-      {
-        id: "3",
-        name: "gayathri.sns@microsoft.com"
+        name: "ravikg@microsoft.com"
       }
     ]
   }

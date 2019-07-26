@@ -6,8 +6,11 @@ import "./TermDetail.css";
 
 function TermDetail({ termDetails }) {
   return (
-    <div style={{ display: "block", marginLeft: 10 }}>
-      <h2>{termDetails.name}</h2>
+    <div style={{ display: "block", marginLeft: 10, width: 1000 }}>
+      <div style={{ display: "flex" }}>
+        <h3>{termDetails.name}</h3>
+        <a href="#">Edit</a>
+      </div>{" "}
       <br />
       <p>{termDetails.details}</p>
       <Contact className="left-div" contacts={termDetails.contacts} />

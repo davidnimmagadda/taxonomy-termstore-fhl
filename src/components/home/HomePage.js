@@ -10,7 +10,7 @@ function HomePage(props) {
   useEffect(() => {
     if (props.termstore.termTree.length === 0) {
       props
-        .loadTermChildren("termstore")
+        .loadTermChildren("Taxonomy")
         .catch(error => alert("Loading Terms Failed : " + error));
     }
   }, []);
