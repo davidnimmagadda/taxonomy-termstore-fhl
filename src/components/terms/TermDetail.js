@@ -9,19 +9,21 @@ function TermDetail({ termDetails }) {
       <h2>{termDetails.name}</h2>
       <br />
       <p>{termDetails.details}</p>
-      <Contact className="left-div" contacts={termDetails.contacts} />
-      <table className="right-div">
-        <thead>
-          <tr>
-            <th>Unique identifier</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>{termDetails.uniqueIdentifier}</td>
-          </tr>
-        </tbody>
-      </table>
+      <div style={{ display: "flex" }}>
+        <Contact className="left-div" contacts={termDetails.contacts} />
+        <table className="right-div">
+          <thead>
+            <tr>
+              <th>Unique identifier</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>{termDetails.uniqueIdentifier}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   ) : (
     <></>

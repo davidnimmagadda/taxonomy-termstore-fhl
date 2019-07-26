@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import styled from "styled-components";
-import Tree from "./Tree";
-import TermDetail from "../terms/TermDetail";
 import { getAll } from "../../api/termStoreApi";
-
+import TermDetail from "../terms/TermDetail";
+import Tree from "./Tree";
+import "./TreeControl.css";
 const StyledTreeComponent = styled.div`
   width: 1000px;
   max-width: 100%;
@@ -58,7 +58,9 @@ export default class TreeControl extends Component {
               onToggle={this.onToggle}
             />
           </TreeWrapper>
-          <TermDetail termDetails={this.state.selectedFile} />
+          <div className="details-edit">
+            <TermDetail termDetails={this.state.selectedFile} />
+          </div>
         </StyledTreeComponent>
       </>
     );
