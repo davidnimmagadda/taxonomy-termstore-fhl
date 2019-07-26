@@ -6,7 +6,7 @@ import "./TermDetail.css";
 function TermDetail({ termDetails }) {
   return Object.keys(termDetails).length !== 0 ? (
     <div style={{ display: "block", marginLeft: 10 }}>
-      <h2>{termDetails.name}</h2>
+      <h4>{termDetails.name}</h4>
       <br />
       <p>{termDetails.details}</p>
       <div style={{ display: "flex" }}>
