@@ -6,16 +6,21 @@
 .right-div th {
   border-top: 1px solid #dee2e6;
   border-spacing: 15px;
+  width: 25%;
 }
 .right-div td {
   border-bottom: 1px solid #dee2e6;
 }
 .right-div {
-  padding-left: 1000px;
+  padding-left: 1px;
   border: 1px;
+  width: 25%;
 }
 a {
-  margin-left: 400px;
+  margin-left: 4px;
   font-size: 12px;
   margin-top: 5px;
+}
+p {
+  font-size: 14px;
 }
