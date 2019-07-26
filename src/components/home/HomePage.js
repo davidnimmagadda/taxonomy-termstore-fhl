@@ -16,7 +16,7 @@ function HomePage(props) {
   }, []);
 
   function handleLinkClick(ev, item) {
-    props.loadTermChildren(item.name);
+    props.loadTermChildren(item.termpath);
   }
 
   return (
@@ -30,7 +30,7 @@ function HomePage(props) {
             termstore={props.termstore}
             onLinkClick={handleLinkClick}
           />
-          <TermDetail />
+          <TermDetail termDetails={props.termstore.currentTerm} />
         </div>
       )}
     </>

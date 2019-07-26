@@ -33,11 +33,10 @@ const NodeIcon = styled.div`
   margin-right: ${props => (props.marginRight ? props.marginRight : 5)}px;
 `;
 
-const getNodeLabel = node => last(node.path.split("/"));
+const getNodeLabel = node => last(node.path.split(":"));
 
 const TreeNode = props => {
   const { node, getChildNodes, level, onToggle, onNodeSelect } = props;
-
   return (
     <React.Fragment>
       <StyledTreeNode level={level} type={node.type}>
@@ -58,8 +57,13 @@ const TreeNode = props => {
       </StyledTreeNode>
 
       {node.isOpen &&
-        getChildNodes(node).map((childNode, i) => (
-          <TreeNode {...props} key={i} node={childNode} level={level + 1} />
+        getChildNodes(node).map(childNode => (
+          <TreeNode
+            {...props}
+            key={node.id}
+            node={childNode}
+            level={level + 1}
+          />
         ))}
     </React.Fragment>
   );

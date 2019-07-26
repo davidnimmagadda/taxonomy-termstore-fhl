@@ -11,7 +11,8 @@ function TermStoreNav(props) {
         root: {
           boxSizing: "border-box",
           border: "1px solid #eee",
-          overflowY: "auto"
+          overflowY: "auto",
+          width: "250px"
         }
       }}
       groups={[

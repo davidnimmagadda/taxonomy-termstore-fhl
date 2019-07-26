@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { withRouter } from "react-router-dom";
 import { Nav } from "office-ui-fabric-react";
 import PropTypes from "prop-types";
@@ -37,14 +37,17 @@ const navlinks = [
 ];
 
 function MainNav({ history }) {
+  const [selectedKey, setSelectedKey] = useState("key1");
+
   function handleLinkClick(ev, item) {
+    setSelectedKey(item.key);
     history.push(navlinks.find(_ => _.key === item.key).url);
   }
 
   return (
     <Nav
       onLinkClick={handleLinkClick}
-      selectedKey="key1"
+      selectedKey={selectedKey}
       expandButtonAriaLabel="Expand or collapse"
       styles={{
         root: {

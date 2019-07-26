@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import styled from "styled-components";
 import Tree from "./Tree";
 import TermDetail from "../terms/TermDetail";
-import Route from "react-router-dom";
+import { getAll } from "../../api/termStoreApi";
 
 const StyledTreeComponent = styled.div`
   width: 1000px;
@@ -17,20 +17,33 @@ const TreeWrapper = styled.div`
 
 export default class TreeControl extends Component {
   state = {
-    selectedFile: null
+    selectedFile: null,
+    nodes: []
   };
+
+  componentDidMount() {
+    getAll().then(resp => this.setState({ ...this.state, nodes: resp }));
+  }
 
   onSelect = file => this.setState({ selectedFile: file });
 
-  render() {
-    let { selectedFile } = "";
-    selectedFile = this.state;
+  onToggle = node => {
+    const { nodes } = this.state;
+    nodes.find(_ => _.id === node.id).isOpen = !node.isOpen;
+    this.setState({ nodes });
+  };
 
+  render() {
+    if (this.state.nodes.length === 0) return <></>;
     if (this.state.selectedFile == null) {
       return (
         <StyledTreeComponent>
           <TreeWrapper>
-            <Tree onSelect={this.onSelect} />
+            <Tree
+              onSelect={this.onSelect}
+              nodes={this.state.nodes}
+              onToggle={this.onToggle}
+            />
           </TreeWrapper>
         </StyledTreeComponent>
       );
@@ -39,9 +52,13 @@ export default class TreeControl extends Component {
       <>
         <StyledTreeComponent>
           <TreeWrapper>
-            <Tree onSelect={this.onSelect} />
+            <Tree
+              onSelect={this.onSelect}
+              nodes={this.state.nodes}
+              onToggle={this.onToggle}
+            />
           </TreeWrapper>
-          <TermDetail term={selectedFile.selectedFile.id} />
+          <TermDetail termDetails={this.state.selectedFile} />
         </StyledTreeComponent>
       </>
     );
