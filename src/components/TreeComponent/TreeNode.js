@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+import { connect } from "react-redux";
 import {
   FaFile,
   FaFolder,
@@ -7,8 +8,10 @@ import {
   FaChevronRight
 } from "react-icons/fa";
 import styled from "styled-components";
-import last from "lodash/last";
 import PropTypes from "prop-types";
+import { getNode } from "../../api/termApi";
+import { setCurrentTerm } from "../../redux/actions/termActions";
+import TreeNodeHelper from "./TreeNodeHelper";
 
 const getPaddingLeft = level => {
   let paddingLeft = level * 20;
@@ -33,12 +36,46 @@ const NodeIcon = styled.div`
   margin-right: ${props => (props.marginRight ? props.marginRight : 5)}px;
 `;
 
-const getNodeLabel = node => last(node.path.split(":"));
+function TreeNode({ level, currNode, uri, setCurrentTerm }) {
+  const [node, setNode] = useState(currNode);
+  const [children, setChildren] = useState([]);
 
-const TreeNode = props => {
-  const { node, getChildNodes, level, onToggle, onNodeSelect } = props;
+  function onToggle() {
+    if (!node.isOpen) {
+      // call load children
+      loadChildren();
+      // set node isOpen true
+      setNode({ ...node, isOpen: true });
+    } else {
+      setNode({ ...node, isOpen: false });
+    }
+  }
+
+  async function loadChildren() {
+    if (children.length === 0 && node.type === "folder") {
+      const response = await getNode(uri);
+      setChildren(response);
+    }
+  }
+
+  function onNodeSelect() {
+    loadChildren();
+    setCurrentTerm(node);
+  }
+
+  function getUri(childNode) {
+    switch (level) {
+      case 0:
+        return uri + "/" + childNode.id + "/termSets";
+      case 1:
+        return uri + "/" + childNode.id + "/terms";
+      default:
+        return "terms/" + childNode.id + "/terms";
+    }
+  }
+
   return (
-    <React.Fragment>
+    <>
       <StyledTreeNode level={level} type={node.type}>
         <NodeIcon onClick={() => onToggle(node)}>
           {node.type === "folder" &&
@@ -51,34 +88,45 @@ const TreeNode = props => {
           {node.type === "folder" && !node.isOpen && <FaFolder />}
         </NodeIcon>
 
-        <span role="button" onClick={() => onNodeSelect(node)}>
-          {getNodeLabel(node)}
+        <span role="button" onClick={onNodeSelect}>
+          {node.name}
         </span>
       </StyledTreeNode>
 
       {node.isOpen &&
-        getChildNodes(node).map(childNode => (
-          <TreeNode
-            {...props}
-            key={node.id}
-            node={childNode}
+        children.map(childNode => (
+          <TreeNodeHelper
+            key={childNode.id}
+            currNode={childNode}
             level={level + 1}
+            uri={getUri(childNode)}
           />
         ))}
-    </React.Fragment>
+    </>
   );
-};
+}
 
 TreeNode.propTypes = {
-  node: PropTypes.object.isRequired,
-  getChildNodes: PropTypes.func.isRequired,
   level: PropTypes.number.isRequired,
-  onToggle: PropTypes.func.isRequired,
-  onNodeSelect: PropTypes.func.isRequired
+  currNode: PropTypes.object.isRequired,
+  uri: PropTypes.string.isRequired,
+  setCurrentTerm: PropTypes.func.isRequired
 };
 
 TreeNode.defaultProps = {
-  level: 0
+  level: 0,
+  currNode: {
+    name: "term store",
+    type: "folder"
+  },
+  uri: "termGroups"
 };
 
-export default TreeNode;
+export default connect(
+  () => {
+    return {};
+  },
+  {
+    setCurrentTerm
+  }
+)(TreeNode);

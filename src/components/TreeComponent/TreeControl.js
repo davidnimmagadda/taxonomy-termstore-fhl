@@ -1,9 +1,11 @@
-import React, { Component } from "react";
+import React from "react";
+import { connect } from "react-redux";
 import styled from "styled-components";
-import { getAll } from "../../api/termStoreApi";
 import TermDetail from "../terms/TermDetail";
-import Tree from "./Tree";
 import "./TreeControl.css";
+import PropTypes from "prop-types";
+import TreeNode from "./TreeNode";
+
 const StyledTreeComponent = styled.div`
   width: 1000px;
   max-width: 100%;
@@ -15,54 +17,25 @@ const TreeWrapper = styled.div`
   width: 250px;
 `;
 
-export default class TreeControl extends Component {
-  state = {
-    selectedFile: null,
-    nodes: []
-  };
-
-  componentDidMount() {
-    getAll().then(resp => this.setState({ ...this.state, nodes: resp }));
-  }
-
-  onSelect = file => this.setState({ selectedFile: file });
-
-  onToggle = node => {
-    const { nodes } = this.state;
-    nodes.find(_ => _.id === node.id).isOpen = !node.isOpen;
-    this.setState({ nodes });
-  };
-
-  render() {
-    if (this.state.nodes.length === 0) return <></>;
-    if (this.state.selectedFile == null) {
-      return (
-        <StyledTreeComponent>
-          <TreeWrapper>
-            <Tree
-              onSelect={this.onSelect}
-              nodes={this.state.nodes}
-              onToggle={this.onToggle}
-            />
-          </TreeWrapper>
-        </StyledTreeComponent>
-      );
-    }
-    return (
-      <>
-        <StyledTreeComponent>
-          <TreeWrapper>
-            <Tree
-              onSelect={this.onSelect}
-              nodes={this.state.nodes}
-              onToggle={this.onToggle}
-            />
-          </TreeWrapper>
-          <div className="details-edit">
-            <TermDetail termDetails={this.state.selectedFile} />
-          </div>
-        </StyledTreeComponent>
-      </>
-    );
-  }
+function TreeControl({ currentItem }) {
+  return (
+    <StyledTreeComponent>
+      <TreeWrapper>
+        <TreeNode />
+      </TreeWrapper>
+      <div className="details-edit">
+        <TermDetail termDetails={currentItem} />
+      </div>
+    </StyledTreeComponent>
+  );
 }
+
+TreeControl.propTypes = {
+  currentItem: PropTypes.object.isRequired
+};
+
+function mapStateToProps({ currentItem }) {
+  return { currentItem };
+}
+
+export default connect(mapStateToProps)(TreeControl);
