@@ -326,6 +326,43 @@ const ts = [
   }
 ];
 
+// https://prepspo.spgrid.com/_api/v2.1/termstore/termGroups/635e69f3-fbcf-4952-8370-fbef46d401e1
+const req2 = {
+  "@odata.context":
+    "https://prepspo.spgrid.com/_api/v2.1/$metadata#termStore('global')/termGroups/$entity",
+  Id: "635e69f3-fbcf-4952-8370-fbef46d401e1",
+  description: "",
+  Name: "Group1"
+};
+
+// https://prepspo.spgrid.com/_api/v2.1/termstore/termGroups/635e69f3-fbcf-4952-8370-fbef46d401e1/termSets/7d61e43c-429f-44a1-b28b-4c30c7c0f35a
+const req3 = {
+  "@odata.context":
+    "https://prepspo.spgrid.com/_api/v2.1/$metadata#termStore('global')/termGroups('635e69f3-fbcf-4952-8370-fbef46d401e1')/termSets/$entity",
+  Id: "7d61e43c-429f-44a1-b28b-4c30c7c0f35a",
+  Name: "Set1"
+};
+
+// https://prepspo.spgrid.com/_api/v2.1/termstore/termGroups/635e69f3-fbcf-4952-8370-fbef46d401e1/termSets/7d61e43c-429f-44a1-b28b-4c30c7c0f35a/terms
+const req4 = {
+  "@odata.context":
+    "https://prepspo.spgrid.com/_api/v2.1/$metadata#termStore('global')/termGroups('635e69f3-fbcf-4952-8370-fbef46d401e1')/termSets('7d61e43c-429f-44a1-b28b-4c30c7c0f35a')/terms",
+  value: [
+    {
+      Id: "b324c3c5-4c63-4ec8-a787-2dd964ab2c05",
+      Label: [{ Name: "Term1", isDefaultLabel: true, Language: 1033 }]
+    }
+  ]
+};
+
+// https://prepspo.spgrid.com/_api/v2.1/termstore/termGroups/635e69f3-fbcf-4952-8370-fbef46d401e1/termSets/7d61e43c-429f-44a1-b28b-4c30c7c0f35a/terms/b324c3c5-4c63-4ec8-a787-2dd964ab2c05
+const req5 = {
+  "@odata.context":
+    "https://prepspo.spgrid.com/_api/v2.1/$metadata#termStore('global')/termGroups('635e69f3-fbcf-4952-8370-fbef46d401e1')/termSets('7d61e43c-429f-44a1-b28b-4c30c7c0f35a')/terms/$entity",
+  Id: "b324c3c5-4c63-4ec8-a787-2dd964ab2c05",
+  Label: [{ Name: "Term1", isDefaultLabel: true, Language: 1033 }]
+};
+
 // Using CommonJS style export so we can consume via Node (without using Babel-node)
 module.exports = {
   newTerm,
