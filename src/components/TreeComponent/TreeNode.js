@@ -12,6 +12,7 @@ import PropTypes from "prop-types";
 import { getNode } from "../../api/termApi";
 import { setCurrentTerm } from "../../redux/actions/termActions";
 import TreeNodeHelper from "./TreeNodeHelper";
+import { Spinner } from "office-ui-fabric-react";
 
 const getPaddingLeft = level => {
   let paddingLeft = level * 20;
@@ -39,6 +40,7 @@ const NodeIcon = styled.div`
 function TreeNode({ level, currNode, uri, setCurrentTerm }) {
   const [node, setNode] = useState(currNode);
   const [children, setChildren] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   function onToggle() {
     if (!node.isOpen) {
@@ -53,13 +55,14 @@ function TreeNode({ level, currNode, uri, setCurrentTerm }) {
 
   async function loadChildren() {
     if (children.length === 0 && node.type === "folder") {
+      setLoading(true);
       const response = await getNode(uri);
+      setLoading(false);
       setChildren(response);
     }
   }
 
   function onNodeSelect() {
-    loadChildren();
     setCurrentTerm(node);
   }
 
@@ -74,7 +77,9 @@ function TreeNode({ level, currNode, uri, setCurrentTerm }) {
     }
   }
 
-  return (
+  return loading ? (
+    <Spinner />
+  ) : (
     <>
       <StyledTreeNode level={level} type={node.type}>
         <NodeIcon onClick={() => onToggle(node)}>
