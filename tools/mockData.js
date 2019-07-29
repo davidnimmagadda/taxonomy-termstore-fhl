@@ -326,8 +326,286 @@ const ts = [
   }
 ];
 
+const termGroups = [
+  {
+    id: "635e69f3-fbcf-4952-8370-fbef46d401e1",
+    type: "folder",
+    name: "People",
+    displayName: "TermGroup Managers",
+    uniqueIdentifier: "yzdsfjhweljrelwkenflm12143344x",
+    details:
+      "The termGroup people is responsible for holding different termsets and terms related to people working location, departments,designations, teams and the organization details.",
+    contacts: [
+      {
+        id: "1",
+        name: "laa@microsoft.com"
+      },
+      {
+        id: "2",
+        name: "danimmag@microsoft.com"
+      },
+      {
+        id: "3",
+        name: "gasns@microsoft.com"
+      },
+      {
+        id: "4",
+        name: "ravikg@microsoft.com"
+      }
+    ]
+  },
+  {
+    id: "635e69f3-fbcf-4952-8370-fbef46d401e2",
+    type: "folder",
+    name: "System",
+    displayName: "TermGroup Managers",
+    uniqueIdentifier: "zdsfjhweljrelwkenflm12143344xy",
+    details:
+      "The termGroup people is responsible for holding different termsets and terms related to system settings.",
+    contacts: [
+      {
+        id: "1",
+        name: "laa@microsoft.com"
+      },
+      {
+        id: "2",
+        name: "mimanika@microsoft.com"
+      }
+    ]
+  }
+];
+
+const termSets = [
+  {
+    id: "635e69f3-fbcf-4952-8370-fbef46d401e1",
+    type: "folder",
+    name: "Department",
+    uniqueIdentifier: "dsfjhweljrelwkenflm12143344xyz",
+    displayName: "Contacts",
+    details:
+      "The term set department is responsible for holding all the terms related to department related terms in IDC.The MSIT related termsets are categorized in a different termset(MSIT_DEPT) as suggested from 2011.The visibility or enablement of termsets is subject to proper access rights.Please contact your root administrator in case of any rights discrepancy.",
+    contacts: [
+      {
+        id: "1",
+        name: "mimanika@microsoft.com"
+      },
+      {
+        id: "2",
+        name: "gasns@microsoft.com"
+      }
+    ],
+    termGroupId: "635e69f3-fbcf-4952-8370-fbef46d401e1"
+  },
+  {
+    id: "635e69f3-fbcf-4952-8370-fbef46d401e2",
+    type: "folder",
+    name: "JobTitle",
+    uniqueIdentifier: "sfjhweljrelwkenflm12143344xyzd",
+    displayName: "Contacts",
+    details:
+      "The term set job title is responsible for holding all the terms related to job title related terms in Engineering job role.Please refer to the other termsets for other job roles and responsibilities.The visibility or enablement of termsets is subject to proper access rights.Please contact your root administrator in case of any rights discrepancy.",
+    contacts: [
+      {
+        id: "1",
+        name: "laa@microsoft.com"
+      },
+      {
+        id: "2",
+        name: "danimmag@microsoft.com"
+      },
+      {
+        id: "3",
+        name: "gans@microsoft.com"
+      },
+      {
+        id: "4",
+        name: "ravikg@microsoft.com"
+      }
+    ],
+    termGroupId: "635e69f3-fbcf-4952-8370-fbef46d401e1"
+  },
+  {
+    id: "635e69f3-fbcf-4952-8370-fbef46d401e3",
+    type: "folder",
+    name: "Location",
+    displayName: "Contacts",
+    uniqueIdentifier: "fjhweljrelwkenflm12143344xyzds",
+    details:
+      "The term set location is responsible for holding all the terms related to work location and the relevant terms used according to the location. The visibility or enablement of termsets is subject to proper access rights.Please contact your root administrator in case of any rights discrepancy.",
+    contacts: [
+      {
+        id: "1",
+        name: "laa@microsoft.com"
+      },
+      {
+        id: "2",
+        name: "danimmag@microsoft.com"
+      },
+      {
+        id: "3",
+        name: "risja@microsoft.com"
+      }
+    ],
+    termGroupId: "635e69f3-fbcf-4952-8370-fbef46d401e1"
+  },
+  {
+    id: "635e69f3-fbcf-4952-8370-fbef46d401e4",
+    type: "folder",
+    name: "Hashtags",
+    displayName: "Contacts",
+    uniqueIdentifier: "ljrelwkenflm12143344xyzdsfjhwe",
+    details:
+      "The term set Hashtags is responsible for holding hastags used across organization for easy search,storage and retrieval of content. The visibility or enablement of termsets is subject to proper access rights.Please contact your root administrator in case of any rights discrepancy.",
+    contacts: [
+      {
+        id: "1",
+        name: "laa@microsoft.com"
+      }
+    ],
+    termGroupId: "635e69f3-fbcf-4952-8370-fbef46d401e2"
+  },
+  {
+    id: "635e69f3-fbcf-4952-8370-fbef46d401e5",
+    type: "folder",
+    name: "Keywords",
+    displayName: "Contacts",
+    uniqueIdentifier: "jrelwkenflm12143344xyzdsfjhwel",
+    details:
+      "The term set Keywords is responsible for holding hastags used across organization for easy search,storage and retrieval of content. The visibility or enablement of termsets is subject to proper access rights.Please contact your root administrator in case of any rights discrepancy.",
+    contacts: [
+      {
+        id: "1",
+        name: "gasns@microsoft.com"
+      }
+    ],
+    termGroupId: "635e69f3-fbcf-4952-8370-fbef46d401e2"
+  },
+  {
+    id: "635e69f3-fbcf-4952-8370-fbef46d401e6",
+    type: "folder",
+    displayName: "Contacts",
+    name: "Orphaned Terms",
+    uniqueIdentifier: "relwkenflm12143344xyzdsfjhwelj",
+    details:
+      "The term set Orphaned terms is responsible for holding orphaned terms. The visibility or enablement of termsets is subject to proper access rights.Please contact your root administrator in case of any rights discrepancy.",
+    contacts: [
+      {
+        id: "1",
+        name: "gasns@microsoft.com"
+      },
+      {
+        id: "2",
+        name: "ravikg@microsoft.com"
+      }
+    ],
+    termGroupId: "635e69f3-fbcf-4952-8370-fbef46d401e2"
+  }
+];
+
+const terms = [
+  {
+    id: "635e69f3-fbcf-4952-8370-fbef46d401e1",
+    type: "folder",
+    displayName: "Contacts",
+    name: "India",
+    uniqueIdentifier: "jhweljrelwkenflm12143344xyzdsf",
+    details:
+      "This is the term India in the location term set.The enablement of addition /editing the terms is subject to access rights.Please contact administrator for any discrepancy.",
+    contacts: [
+      {
+        id: "1",
+        name: "laa@microsoft.com"
+      },
+      {
+        id: "2",
+        name: "danimmag@microsoft.com"
+      },
+      {
+        id: "3",
+        name: "gasns@microsoft.com"
+      }
+    ],
+    termSetId: "635e69f3-fbcf-4952-8370-fbef46d401e3"
+  },
+  {
+    id: "635e69f3-fbcf-4952-8370-fbef46d401e2",
+    type: "folder",
+    name: "US",
+    displayName: "Contacts",
+    uniqueIdentifier: "jhweljrelwkenflm12143344xyzdsf",
+    details:
+      "This is the term US in the location term set.The enablement of addition /editing the terms is subject to access rights.Please contact administrator for any discrepancy.",
+    contacts: [
+      {
+        id: "1",
+        name: "laa@microsoft.com"
+      },
+      {
+        id: "2",
+        name: "danimma@microsoft.com"
+      },
+      {
+        id: "3",
+        name: "gasns@microsoft.com"
+      }
+    ],
+    termSetId: "635e69f3-fbcf-4952-8370-fbef46d401e3"
+  },
+  {
+    id: "635e69f3-fbcf-4952-8370-fbef46d401e3",
+    type: "folder",
+    displayName: "Contacts",
+    name: "Hyderabad",
+    uniqueIdentifier: "hweljrelwkenflm12143344xyzdsfj",
+    details:
+      "This is the term Hyderabad under term India.The enablement of addition /editing the terms is subject to access rights.Please contact administrator for any discrepancy.",
+    contacts: [
+      {
+        id: "1",
+        name: "swsingh@microsoft.com"
+      }
+    ],
+    termId: "635e69f3-fbcf-4952-8370-fbef46d401e1"
+  },
+  {
+    id: "635e69f3-fbcf-4952-8370-fbef46d401e4",
+    type: "folder",
+    displayName: "Contacts",
+    name: "Bangalore",
+    uniqueIdentifier: "weljrelwkenflm12143344xyzdsfjh",
+    details:
+      "This is the term Bangalore under term India.The enablement of addition /editing the terms is subject to access rights.Please contact administrator for any discrepancy.",
+    contacts: [
+      {
+        id: "1",
+        name: "swshriva@microsoft.com"
+      }
+    ],
+    termId: "635e69f3-fbcf-4952-8370-fbef46d401e1"
+  },
+  {
+    id: "635e69f3-fbcf-4952-8370-fbef46d401e5",
+    type: "folder",
+    displayName: "Contacts",
+    name: "Redmond",
+    uniqueIdentifier: "eljrelwkenflm12143344xyzdsfjhw",
+    details:
+      "This is the term Redmond under term US.The enablement of addition /editing the terms is subject to access rights.Please contact administrator for any discrepancy.",
+    contacts: [
+      {
+        id: "1",
+        name: "swmitta@microsoft.com"
+      }
+    ],
+    termId: "635e69f3-fbcf-4952-8370-fbef46d401e2"
+  }
+];
+
 // Using CommonJS style export so we can consume via Node (without using Babel-node)
 module.exports = {
   newTerm,
-  ts
+  ts,
+  termGroups,
+  termSets,
+  terms
 };
