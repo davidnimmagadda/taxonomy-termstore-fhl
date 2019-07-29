@@ -1,19 +1,10 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
-import {
-  FaFile,
-  FaFolder,
-  FaFolderOpen,
-  FaChevronDown,
-  FaChevronRight
-} from "react-icons/fa";
-import { MdMoreVert } from "react-icons/md";
-import styled from "styled-components";
 import PropTypes from "prop-types";
 import { getNode } from "../../api/termApi";
 import { setCurrentTerm } from "../../redux/actions/termActions";
 import TreeNodeHelper from "./TreeNodeHelper";
-import { Spinner } from "office-ui-fabric-react";
+import { Spinner, IconButton, Icon } from "office-ui-fabric-react";
 
 const getPaddingLeft = level => {
   let paddingLeft = level * 20;
@@ -21,27 +12,11 @@ const getPaddingLeft = level => {
   return paddingLeft;
 };
 
-const StyledTreeNode = styled.div`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  padding: 5px 8px;
-  padding-left: ${props => getPaddingLeft(props.level, props.type)}px;
-
-  &:hover {
-    background: lightgray;
-  }
-`;
-
-const NodeIcon = styled.div`
-  font-size: 12px;
-  margin-right: ${props => (props.marginRight ? props.marginRight : 5)}px;
-`;
-
 function TreeNode({ level, currNode, uri, setCurrentTerm }) {
   const [node, setNode] = useState(currNode);
   const [children, setChildren] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [highlighted, setHighLighted] = useState(false);
 
   function onToggle() {
     if (!node.isOpen) {
@@ -78,22 +53,39 @@ function TreeNode({ level, currNode, uri, setCurrentTerm }) {
     }
   }
 
+  function getChevron() {
+    return node.type === "folder" && node.isOpen
+      ? "ChevronDown"
+      : "ChevronRight";
+  }
+
+  function getFolderIcon() {
+    return node.type === "file"
+      ? "Script"
+      : node.type === "folder" && node.isOpen
+      ? "FabricOpenFolderHorizontal"
+      : node.type === "folder" && !node.isOpen
+      ? "FabricFolderFill"
+      : "";
+  }
+
   return loading ? (
     <Spinner />
   ) : (
     <>
-      <StyledTreeNode level={level} type={node.type}>
-        <NodeIcon onClick={() => onToggle(node)}>
-          {node.type === "folder" &&
-            (node.isOpen ? <FaChevronDown /> : <FaChevronRight />)}
-        </NodeIcon>
-
-        <NodeIcon marginRight={10}>
-          {node.type === "file" && <FaFile />}
-          {node.type === "folder" && node.isOpen === true && <FaFolderOpen />}
-          {node.type === "folder" && !node.isOpen && <FaFolder />}
-        </NodeIcon>
-
+      <div
+        className="treeNode"
+        style={{ paddingLeft: getPaddingLeft(level, node.type) }}
+        level={level}
+        type={node.type}
+        onMouseEnter={() => setHighLighted(true)}
+        onMouseLeave={() => setHighLighted(false)}
+      >
+        <IconButton
+          onClick={() => onToggle(node)}
+          iconProps={{ iconName: getChevron() }}
+        />
+        <Icon style={{ marginRight: 10 }} iconName={getFolderIcon()} />
         <span
           role="button"
           style={{ whiteSpace: "nowrap", width: "100%" }}
@@ -101,10 +93,13 @@ function TreeNode({ level, currNode, uri, setCurrentTerm }) {
         >
           {node.name}
         </span>
-        <div role="button" onClick={() => alert("Clicked Me!")}>
-          <MdMoreVert />
-        </div>
-      </StyledTreeNode>
+        {highlighted && (
+          <IconButton
+            iconProps={{ iconName: "MoreVertical" }}
+            onClick={() => alert("I'm Clicked!")}
+          />
+        )}
+      </div>
 
       {node.isOpen &&
         children.map(childNode => (

@@ -1,3 +1,13 @@
 .details-edit {
   width: 70%;
 }
+
+.treeNode {
+  display: flex;
+  align-items: center;
+  padding: 2px 2px;
+}
+
+.treeNode:hover {
+  background: rgb(237, 237, 237);
+}

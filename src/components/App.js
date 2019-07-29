@@ -11,7 +11,7 @@ import ManageTermsPage from "./terms/Term";
 
 function App() {
   return (
-    <div style={{ display: "inline-flex" }}>
+    <div className="ms-Fabric" style={{ display: "inline-flex" }}>
       <MainNav />
       <div className="container-fluid">
         <Switch>

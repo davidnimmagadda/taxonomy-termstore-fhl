@@ -553,7 +553,7 @@ const terms = [
   },
   {
     id: "635e69f3-fbcf-4952-8370-fbef46d401e3",
-    type: "folder",
+    type: "file",
     displayName: "Contacts",
     name: "Hyderabad",
     uniqueIdentifier: "hweljrelwkenflm12143344xyzdsfj",
@@ -569,7 +569,7 @@ const terms = [
   },
   {
     id: "635e69f3-fbcf-4952-8370-fbef46d401e4",
-    type: "folder",
+    type: "file",
     displayName: "Contacts",
     name: "Bangalore",
     uniqueIdentifier: "weljrelwkenflm12143344xyzdsfjh",
@@ -585,7 +585,7 @@ const terms = [
   },
   {
     id: "635e69f3-fbcf-4952-8370-fbef46d401e5",
-    type: "folder",
+    type: "file",
     displayName: "Contacts",
     name: "Redmond",
     uniqueIdentifier: "eljrelwkenflm12143344xyzdsfjhw",
