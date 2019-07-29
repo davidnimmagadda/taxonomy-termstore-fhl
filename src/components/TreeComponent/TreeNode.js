@@ -94,7 +94,11 @@ function TreeNode({ level, currNode, uri, setCurrentTerm }) {
           {node.type === "folder" && !node.isOpen && <FaFolder />}
         </NodeIcon>
 
-        <span role="button" onClick={onNodeSelect}>
+        <span
+          role="button"
+          style={{ whiteSpace: "nowrap", width: "100%" }}
+          onClick={onNodeSelect}
+        >
           {node.name}
         </span>
         <div role="button" onClick={() => alert("Clicked Me!")}>
