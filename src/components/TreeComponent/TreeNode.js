@@ -7,6 +7,7 @@ import {
   FaChevronDown,
   FaChevronRight
 } from "react-icons/fa";
+import { MdMoreVert } from "react-icons/md";
 import styled from "styled-components";
 import PropTypes from "prop-types";
 import { getNode } from "../../api/termApi";
@@ -96,6 +97,9 @@ function TreeNode({ level, currNode, uri, setCurrentTerm }) {
         <span role="button" onClick={onNodeSelect}>
           {node.name}
         </span>
+        <div role="button" onClick={() => alert("Clicked Me!")}>
+          <MdMoreVert />
+        </div>
       </StyledTreeNode>
 
       {node.isOpen &&
