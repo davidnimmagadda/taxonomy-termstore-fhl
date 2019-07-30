@@ -55,8 +55,8 @@ function TreeNode({ level, currNode, uri, setCurrentTerm }) {
 
   function getChevron() {
     return node.type === "folder" && node.isOpen
-      ? "ChevronDown"
-      : "ChevronRight";
+      ? "ChevronDownMed"
+      : "ChevronRightMed";
   }
 
   function getFolderIcon() {
@@ -81,10 +81,12 @@ function TreeNode({ level, currNode, uri, setCurrentTerm }) {
         onMouseEnter={() => setHighLighted(true)}
         onMouseLeave={() => setHighLighted(false)}
       >
-        <IconButton
-          onClick={() => onToggle(node)}
-          iconProps={{ iconName: getChevron() }}
-        />
+        <span role="button" onClick={() => onToggle(node)}>
+          <Icon
+            style={{ marginLeft: 5, marginRight: 5 }}
+            iconName={getChevron()}
+          />
+        </span>
         <Icon style={{ marginRight: 10 }} iconName={getFolderIcon()} />
         <span
           role="button"
