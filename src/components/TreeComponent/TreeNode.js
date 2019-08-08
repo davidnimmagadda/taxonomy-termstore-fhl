@@ -12,7 +12,7 @@ const getPaddingLeft = level => {
   return paddingLeft;
 };
 
-function TreeNode({ level, currNode, uri, setCurrentTerm }) {
+function TreeNode({ level, currNode, uri, setCurrentTerm, show }) {
   const [node, setNode] = useState(currNode);
   const [children, setChildren] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -75,7 +75,10 @@ function TreeNode({ level, currNode, uri, setCurrentTerm }) {
     <>
       <div
         className="treeNode"
-        style={{ paddingLeft: getPaddingLeft(level, node.type) }}
+        style={{
+          paddingLeft: getPaddingLeft(level, node.type),
+          display: show ? "flex" : "none"
+        }}
         level={level}
         type={node.type}
         onMouseEnter={() => setHighLighted(true)}
@@ -103,15 +106,15 @@ function TreeNode({ level, currNode, uri, setCurrentTerm }) {
         )}
       </div>
 
-      {node.isOpen &&
-        children.map(childNode => (
-          <TreeNodeHelper
-            key={childNode.id}
-            currNode={childNode}
-            level={level + 1}
-            uri={getUri(childNode)}
-          />
-        ))}
+      {children.map(childNode => (
+        <TreeNodeHelper
+          key={childNode.id}
+          show={show && node.isOpen}
+          currNode={childNode}
+          level={level + 1}
+          uri={getUri(childNode)}
+        />
+      ))}
     </>
   );
 }
@@ -129,6 +132,7 @@ TreeNode.defaultProps = {
     name: "term store",
     type: "folder"
   },
+  show: true,
   uri: "termGroups"
 };
 
