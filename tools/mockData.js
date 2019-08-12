@@ -326,6 +326,14 @@ const ts = [
   }
 ];
 
+const termStores = [
+  {
+    id: 0,
+    name: "term store",
+    type: "folder"
+  }
+];
+
 const termGroups = [
   {
     id: "635e69f3-fbcf-4952-8370-fbef46d401e1",
@@ -941,6 +949,7 @@ const terms = [
 module.exports = {
   newTerm,
   ts,
+  termStores,
   termGroups,
   termSets,
   terms
