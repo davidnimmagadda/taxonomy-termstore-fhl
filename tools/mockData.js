@@ -394,6 +394,26 @@ const termSets = [
         name: "gasns@microsoft.com"
       }
     ],
+    owners: [
+      {
+        id: "1",
+        name: "mimanika@microsoft.com"
+      },
+      {
+        id: "2",
+        name: "gasns@microsoft.com"
+      }
+    ],
+    stakeholders: [
+      {
+        id: "1",
+        name: "mimanika@microsoft.com"
+      },
+      {
+        id: "2",
+        name: "gasns@microsoft.com"
+      }
+    ],
     termGroupId: "635e69f3-fbcf-4952-8370-fbef46d401e1"
   },
   {
@@ -422,6 +442,45 @@ const termSets = [
         name: "ravikg@microsoft.com"
       }
     ],
+    owners: [
+      {
+        id: "1",
+        name: "laa@microsoft.com"
+      },
+      {
+        id: "2",
+        name: "danimmag@microsoft.com"
+      },
+      {
+        id: "3",
+        name: "gans@microsoft.com"
+      },
+      {
+        id: "4",
+        name: "ravikg@microsoft.com"
+      }
+    ],
+    stakeholders: [
+      {
+        id: "1",
+        name: "laa@microsoft.com"
+      },
+      {
+        id: "2",
+        name: "danimmag@microsoft.com"
+      },
+      {
+        id: "3",
+        name: "gans@microsoft.com"
+      },
+      {
+        id: "4",
+        name: "ravikg@microsoft.com"
+      }
+    ],
+    isAvailableForTagging: true,
+    isOpen: true,
+    CustomSortOrder: [],
     termGroupId: "635e69f3-fbcf-4952-8370-fbef46d401e1"
   },
   {
@@ -446,6 +505,37 @@ const termSets = [
         name: "risja@microsoft.com"
       }
     ],
+    owners: [
+      {
+        id: "1",
+        name: "laa@microsoft.com"
+      },
+      {
+        id: "2",
+        name: "danimmag@microsoft.com"
+      },
+      {
+        id: "3",
+        name: "risja@microsoft.com"
+      }
+    ],
+    stakeholders: [
+      {
+        id: "1",
+        name: "laa@microsoft.com"
+      },
+      {
+        id: "2",
+        name: "danimmag@microsoft.com"
+      },
+      {
+        id: "3",
+        name: "risja@microsoft.com"
+      }
+    ],
+    isAvailableForTagging: true,
+    isOpen: true,
+    CustomSortOrder: [],
     termGroupId: "635e69f3-fbcf-4952-8370-fbef46d401e1"
   },
   {
@@ -462,6 +552,9 @@ const termSets = [
         name: "laa@microsoft.com"
       }
     ],
+    isAvailableForTagging: true,
+    isOpen: true,
+    CustomSortOrder: [],
     termGroupId: "635e69f3-fbcf-4952-8370-fbef46d401e2"
   },
   {
@@ -478,6 +571,9 @@ const termSets = [
         name: "gasns@microsoft.com"
       }
     ],
+    isAvailableForTagging: true,
+    isOpen: true,
+    CustomSortOrder: [],
     termGroupId: "635e69f3-fbcf-4952-8370-fbef46d401e2"
   },
   {
