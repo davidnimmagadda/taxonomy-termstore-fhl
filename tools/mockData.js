@@ -329,7 +329,7 @@ const ts = [
 const termStores = [
   {
     id: 0,
-    name: "term store",
+    name: "Taxonomy term store",
     type: "folder",
     admins: [
       {
@@ -347,7 +347,24 @@ const termStores = [
         name: "Tony Stark",
         role: "CEO Stark Industries"
       }
-    ]
+    ],
+    languages: [
+      {
+        key: 1033,
+        name: "English",
+        default: true
+      },
+      {
+        key: 1031,
+        name: "German"
+      },
+      {
+        key: 1036,
+        name: "French"
+      }
+    ],
+    serviceApps: ["Taxonomy_oCW7RZ2M/WGbI1901ptpzw=="],
+    UID: "471ba91225a7437daa289558bc7597da471ba91225a7437daa289558bc7597da"
   }
 ];
 
