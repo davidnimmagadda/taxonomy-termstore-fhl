@@ -123,20 +123,41 @@ const ts = [
       "The term set job title is responsible for holding all the terms related to job title related terms in Engineering job role.Please refer to the other termsets for other job roles and responsibilities.The visibility or enablement of termsets is subject to proper access rights.Please contact your root administrator in case of any rights discrepancy.",
     contacts: [
       {
+        email: "admin@tenantadminnewhope.onmicrosoft.com",
+        name: "Admin",
+        role: "SDE 2"
+      },
+      {
+        email: "brucewayne@tenantadminnewhope.onmicrosoft.com",
+        name: "Bruce Wayne",
+        role: "Gotham's Vigilante"
+      },
+      {
+        email: "tonystark@tenantadminnewhope.onmicrosoft.com",
+        name: "Tony Stark",
+        role: "CEO Stark Industries"
+      }
+    ],
+    owners: [
+      {
+        email: "admin@tenantadminnewhope.onmicrosoft.com",
+        name: "Admin",
+        role: "SDE 2"
+      },
+      {
+        email: "brucewayne@tenantadminnewhope.onmicrosoft.com",
+        name: "Bruce Wayne",
+        role: "Gotham's Vigilante"
+      }
+    ],
+    stakeholders: [
+      {
         id: "1",
-        name: "laa@microsoft.com"
+        name: "mimanika@microsoft.com"
       },
       {
         id: "2",
-        name: "danimmag@microsoft.com"
-      },
-      {
-        id: "3",
-        name: "gans@microsoft.com"
-      },
-      {
-        id: "4",
-        name: "ravikg@microsoft.com"
+        name: "gasns@microsoft.com"
       }
     ]
   },
@@ -152,16 +173,41 @@ const ts = [
       "The term set location is responsible for holding all the terms related to work location and the relevant terms used according to the location. The visibility or enablement of termsets is subject to proper access rights.Please contact your root administrator in case of any rights discrepancy.",
     contacts: [
       {
+        email: "admin@tenantadminnewhope.onmicrosoft.com",
+        name: "Admin",
+        role: "SDE 2"
+      },
+      {
+        email: "brucewayne@tenantadminnewhope.onmicrosoft.com",
+        name: "Bruce Wayne",
+        role: "Gotham's Vigilante"
+      },
+      {
+        email: "tonystark@tenantadminnewhope.onmicrosoft.com",
+        name: "Tony Stark",
+        role: "CEO Stark Industries"
+      }
+    ],
+    owners: [
+      {
+        email: "admin@tenantadminnewhope.onmicrosoft.com",
+        name: "Admin",
+        role: "SDE 2"
+      },
+      {
+        email: "brucewayne@tenantadminnewhope.onmicrosoft.com",
+        name: "Bruce Wayne",
+        role: "Gotham's Vigilante"
+      }
+    ],
+    stakeholders: [
+      {
         id: "1",
-        name: "laa@microsoft.com"
+        name: "mimanika@microsoft.com"
       },
       {
         id: "2",
-        name: "danimmag@microsoft.com"
-      },
-      {
-        id: "3",
-        name: "risja@microsoft.com"
+        name: "gasns@microsoft.com"
       }
     ]
   },
@@ -411,22 +457,31 @@ const termSets = [
       "The term set department is responsible for holding all the terms related to department related terms in IDC.The MSIT related termsets are categorized in a different termset(MSIT_DEPT) as suggested from 2011.The visibility or enablement of termsets is subject to proper access rights.Please contact your root administrator in case of any rights discrepancy.",
     contacts: [
       {
-        id: "1",
-        name: "mimanika@microsoft.com"
+        email: "admin@tenantadminnewhope.onmicrosoft.com",
+        name: "Admin",
+        role: "SDE 2"
       },
       {
-        id: "2",
-        name: "gasns@microsoft.com"
+        email: "brucewayne@tenantadminnewhope.onmicrosoft.com",
+        name: "Bruce Wayne",
+        role: "Gotham's Vigilante"
+      },
+      {
+        email: "tonystark@tenantadminnewhope.onmicrosoft.com",
+        name: "Tony Stark",
+        role: "CEO Stark Industries"
       }
     ],
     owners: [
       {
-        id: "1",
-        name: "mimanika@microsoft.com"
+        email: "admin@tenantadminnewhope.onmicrosoft.com",
+        name: "Admin",
+        role: "SDE 2"
       },
       {
-        id: "2",
-        name: "gasns@microsoft.com"
+        email: "brucewayne@tenantadminnewhope.onmicrosoft.com",
+        name: "Bruce Wayne",
+        role: "Gotham's Vigilante"
       }
     ],
     stakeholders: [
@@ -451,56 +506,43 @@ const termSets = [
       "The term set job title is responsible for holding all the terms related to job title related terms in Engineering job role.Please refer to the other termsets for other job roles and responsibilities.The visibility or enablement of termsets is subject to proper access rights.Please contact your root administrator in case of any rights discrepancy.",
     contacts: [
       {
-        id: "1",
-        name: "laa@microsoft.com"
+        email: "admin@tenantadminnewhope.onmicrosoft.com",
+        name: "Admin",
+        role: "SDE 2"
       },
       {
-        id: "2",
-        name: "danimmag@microsoft.com"
+        email: "brucewayne@tenantadminnewhope.onmicrosoft.com",
+        name: "Bruce Wayne",
+        role: "Gotham's Vigilante"
       },
       {
-        id: "3",
-        name: "gans@microsoft.com"
-      },
-      {
-        id: "4",
-        name: "ravikg@microsoft.com"
+        email: "tonystark@tenantadminnewhope.onmicrosoft.com",
+        name: "Tony Stark",
+        role: "CEO Stark Industries"
       }
     ],
     owners: [
       {
-        id: "1",
-        name: "laa@microsoft.com"
+        email: "admin@tenantadminnewhope.onmicrosoft.com",
+        name: "Admin",
+        role: "SDE 2"
       },
       {
-        id: "2",
-        name: "danimmag@microsoft.com"
-      },
-      {
-        id: "3",
-        name: "gans@microsoft.com"
-      },
-      {
-        id: "4",
-        name: "ravikg@microsoft.com"
+        email: "brucewayne@tenantadminnewhope.onmicrosoft.com",
+        name: "Bruce Wayne",
+        role: "Gotham's Vigilante"
       }
     ],
     stakeholders: [
       {
-        id: "1",
-        name: "laa@microsoft.com"
+        email: "admin@tenantadminnewhope.onmicrosoft.com",
+        name: "Admin",
+        role: "SDE 2"
       },
       {
-        id: "2",
-        name: "danimmag@microsoft.com"
-      },
-      {
-        id: "3",
-        name: "gans@microsoft.com"
-      },
-      {
-        id: "4",
-        name: "ravikg@microsoft.com"
+        email: "brucewayne@tenantadminnewhope.onmicrosoft.com",
+        name: "Bruce Wayne",
+        role: "Gotham's Vigilante"
       }
     ],
     isAvailableForTagging: true,
@@ -518,49 +560,51 @@ const termSets = [
       "The term set location is responsible for holding all the terms related to work location and the relevant terms used according to the location. The visibility or enablement of termsets is subject to proper access rights.Please contact your root administrator in case of any rights discrepancy.",
     contacts: [
       {
-        id: "1",
-        name: "laa@microsoft.com"
+        email: "admin@tenantadminnewhope.onmicrosoft.com",
+        name: "Admin",
+        role: "SDE 2"
       },
       {
-        id: "2",
-        name: "danimmag@microsoft.com"
+        email: "brucewayne@tenantadminnewhope.onmicrosoft.com",
+        name: "Bruce Wayne",
+        role: "Gotham's Vigilante"
       },
       {
-        id: "3",
-        name: "risja@microsoft.com"
+        email: "tonystark@tenantadminnewhope.onmicrosoft.com",
+        name: "Tony Stark",
+        role: "CEO Stark Industries"
       }
     ],
     owners: [
       {
-        id: "1",
-        name: "laa@microsoft.com"
+        email: "admin@tenantadminnewhope.onmicrosoft.com",
+        name: "Admin",
+        role: "SDE 2"
       },
       {
-        id: "2",
-        name: "danimmag@microsoft.com"
-      },
-      {
-        id: "3",
-        name: "risja@microsoft.com"
+        email: "brucewayne@tenantadminnewhope.onmicrosoft.com",
+        name: "Bruce Wayne",
+        role: "Gotham's Vigilante"
       }
     ],
     stakeholders: [
       {
         id: "1",
-        name: "laa@microsoft.com"
+        name: "mimanika@microsoft.com"
       },
       {
         id: "2",
-        name: "danimmag@microsoft.com"
-      },
-      {
-        id: "3",
-        name: "risja@microsoft.com"
+        name: "gasns@microsoft.com"
       }
     ],
     isAvailableForTagging: true,
     isOpen: true,
-    CustomSortOrder: [],
+    CustomSortOrder: [
+      "635e69f3-fbcf-4952-8370-fbef46d401e1",
+      "635e69f3-fbcf-4952-8370-fbef46d401e2",
+      "635e71f3-fbcf-4952-8370-fbef46d401e1",
+      "635e70f3-fbcf-4952-8370-fbef46d401e1"
+    ],
     termGroupId: "635e69f3-fbcf-4952-8370-fbef46d401e1"
   },
   {
@@ -664,6 +708,54 @@ const terms = [
       {
         id: "2",
         name: "danimma@microsoft.com"
+      },
+      {
+        id: "3",
+        name: "gasns@microsoft.com"
+      }
+    ],
+    termSetId: "635e69f3-fbcf-4952-8370-fbef46d401e3"
+  },
+  {
+    id: "635e70f3-fbcf-4952-8370-fbef46d401e1",
+    type: "folder",
+    displayName: "Contacts",
+    name: "UK",
+    uniqueIdentifier: "jhweljrelwkenflm12143344xyzdsf",
+    details:
+      "This is the term UK in the location term set.The enablement of addition /editing the terms is subject to access rights.Please contact administrator for any discrepancy.",
+    contacts: [
+      {
+        id: "1",
+        name: "laa@microsoft.com"
+      },
+      {
+        id: "2",
+        name: "danimmag@microsoft.com"
+      },
+      {
+        id: "3",
+        name: "gasns@microsoft.com"
+      }
+    ],
+    termSetId: "635e69f3-fbcf-4952-8370-fbef46d401e3"
+  },
+  {
+    id: "635e71f3-fbcf-4952-8370-fbef46d401e1",
+    type: "folder",
+    displayName: "Contacts",
+    name: "Australia",
+    uniqueIdentifier: "jhweljrelwkenflm12143344xyzdsf",
+    details:
+      "This is the term Australia in the location term set.The enablement of addition /editing the terms is subject to access rights.Please contact administrator for any discrepancy.",
+    contacts: [
+      {
+        id: "1",
+        name: "laa@microsoft.com"
+      },
+      {
+        id: "2",
+        name: "danimmag@microsoft.com"
       },
       {
         id: "3",
