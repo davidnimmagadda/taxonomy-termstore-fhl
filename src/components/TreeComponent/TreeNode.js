@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
-import { getNode } from "../../api/termApi";
 import { setCurrentTerm } from "../../redux/actions/termActions";
 import TreeNodeHelper from "./TreeNodeHelper";
 import { Spinner, IconButton, Icon } from "office-ui-fabric-react";
+import { tsConstructorType } from "@babel/types";
 
 const getPaddingLeft = level => {
   let paddingLeft = level * 20;
@@ -12,111 +12,127 @@ const getPaddingLeft = level => {
   return paddingLeft;
 };
 
-function TreeNode({ level, currNode, uri, setCurrentTerm, show }) {
-  const [node, setNode] = useState(currNode);
-  const [children, setChildren] = useState([]);
-  const [loading, setLoading] = useState(false);
-  const [highlighted, setHighLighted] = useState(false);
+export class TreeNode extends React.Component{
 
-  function onToggle() {
-    if (!node.isOpen) {
+  // const [node, setNode] = useState(currNode);
+  // const [children, setChildren] = useState([]);
+  // const [loading, setLoading] = useState(false);
+  // const [highlighted, setHighLighted] = useState(false);
+
+  constructor(props){
+    let { level, currNode, uri, setCurrentTerm, show } = props;
+
+    super(props)
+    this.state = {
+      node: props.currNode,
+      children: [],
+      loading: false,
+      highlighted: false
+    }
+  }
+
+  onToggle() {
+    if (!this.state.node.isOpen) {
       // call load children
-      loadChildren();
+      this.loadChildren();
       // set node isOpen true
-      setNode({ ...node, isOpen: true });
+      this.setState({node: { ...this.state.node, isOpen: true }});
     } else {
-      setNode({ ...node, isOpen: false });
+      this.setState({node: { ...this.state.node, isOpen: false }});
     }
   }
 
-  async function loadChildren() {
-    if (children.length === 0 && node.type === "folder") {
-      setLoading(true);
-      const response = await getNode(uri);
-      setLoading(false);
-      setChildren(response);
+  async loadChildren() {
+    if (this.state.children.length === 0 && this.state.node.type === "folder") {
+      this.setState({loading: true});
+      const response = await this.props.getNodeCallback(this.props.uri);
+      this.setState({loading:false});
+      this.setState({children:response});
     }
   }
 
-  function onNodeSelect() {
-    setCurrentTerm(node);
+  onNodeSelect() {
+    this.props.setCurrentTerm(this.state.node);
   }
 
-  function getUri(childNode) {
-    switch (level) {
+  getUri(childNode) {
+    switch (this.props.level) {
       case 0:
-        return uri + "/" + childNode.id + "/termSets";
+        return this.props.uri + "/" + childNode.id + "/termSets";
       case 1:
-        return uri + "/" + childNode.id + "/terms";
+        return this.props.uri + "/" + childNode.id + "/terms";
       default:
         return "terms/" + childNode.id + "/terms";
     }
   }
 
-  function getChevron() {
-    return node.type === "folder" && node.isOpen
+  getChevron() {
+    return this.state.node.type === "folder" && this.state.node.isOpen
       ? "ChevronDownMed"
       : "ChevronRightMed";
   }
 
-  function getFolderIcon() {
-    return node.type === "file"
+  getFolderIcon() {
+    return this.state.node.type === "file"
       ? "Script"
-      : node.type === "folder" && node.isOpen
+      : this.state.node.type === "folder" && this.state.node.isOpen
       ? "FabricOpenFolderHorizontal"
-      : node.type === "folder" && !node.isOpen
+      : this.state.node.type === "folder" && !this.state.node.isOpen
       ? "FabricFolderFill"
       : "";
   }
-
-  return loading ? (
-    <Spinner />
-  ) : (
-    <>
-      <div
-        className="treeNode"
-        style={{
-          paddingLeft: getPaddingLeft(level, node.type),
-          display: show ? "flex" : "none"
-        }}
-        level={level}
-        type={node.type}
-        onMouseEnter={() => setHighLighted(true)}
-        onMouseLeave={() => setHighLighted(false)}
-      >
-        <span role="button" onClick={() => onToggle(node)}>
-          <Icon
-            style={{ marginLeft: 5, marginRight: 5 }}
-            iconName={getChevron()}
-          />
-        </span>
-        <Icon style={{ marginRight: 10 }} iconName={getFolderIcon()} />
-        <span
-          role="button"
-          style={{ whiteSpace: "nowrap", width: "100%" }}
-          onClick={onNodeSelect}
+  render(){
+    return this.state.loading ? (
+      <Spinner />
+    ) : (
+      <>
+        <div
+          className="treeNode"
+          style={{
+            paddingLeft: getPaddingLeft(this.props.level, this.state.node.type),
+            display: this.props.show ? "flex" : "none"
+          }}
+          level={this.props.level}
+          type={this.state.node.type}
+          onMouseEnter={() => this.setState({highlighted:true})}
+          onMouseLeave={() => this.setState({highlighted:false})}
         >
-          {node.name}
-        </span>
-        {highlighted && (
-          <IconButton
-            iconProps={{ iconName: "MoreVertical" }}
-            onClick={() => alert("I'm Clicked!")}
-          />
-        )}
-      </div>
+          <span role="button" onClick={() => this.onToggle()}>
+            <Icon
+              style={{ marginLeft: 5, marginRight: 5 }}
+              iconName={this.getChevron()}
+            />
+          </span>
+          <Icon style={{ marginRight: 10 }} iconName={this.getFolderIcon()} />
+          <span
+            role="button"
+            style={{ whiteSpace: "nowrap", width: "100%" }}
+            onClick={() => this.onNodeSelect()}
+          >
+            {this.state.node.name}
+          </span>
+          {this.state.highlighted && (
+            <IconButton
+              iconProps={{ iconName: "MoreVertical" }}
+              onClick={() => alert("I'm Clicked!")}
+            />
+          )}
+        </div>
 
-      {children.map(childNode => (
-        <TreeNodeHelper
-          key={childNode.id}
-          show={show && node.isOpen}
-          currNode={childNode}
-          level={level + 1}
-          uri={getUri(childNode)}
-        />
-      ))}
-    </>
-  );
+        {this.state.children.map(childNode => (
+          <TreeNodeHelper
+            key={childNode.id}
+            show={this.props.show && this.state.node.isOpen}
+            currNode={childNode}
+            level={this.props.level + 1}
+            uri={this.getUri(childNode)}
+            getNodeCallback = {this.props.getNodeCallback.bind(this)}
+          />
+        ))}
+      </>
+    );
+}
+
 }
 
 TreeNode.propTypes = {

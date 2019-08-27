@@ -4,6 +4,8 @@ import TermDetail from "../terms/TermDetail";
 import "./TreeControl.css";
 import PropTypes from "prop-types";
 import TreeNode from "./TreeNode";
+import { getNode } from "../../api/termApi";
+
 
 function TreeControl({ currentItem }) {
   return (
@@ -23,7 +25,10 @@ function TreeControl({ currentItem }) {
           borderStyle: "solid"
         }}
       >
-        <TreeNode />
+        <TreeNode
+          getNodeCallback = {getNode.bind(this)}
+
+        />
       </div>
       <div className="details-edit">
         <TermDetail termDetails={currentItem} />
