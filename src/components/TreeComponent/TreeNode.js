@@ -84,7 +84,7 @@ export class TreeNode extends React.Component{
   render(){
 
 
-    let nodeLabel = <span><Icon style={{ marginRight: 10 }} iconName={this.getFolderIcon()} />
+    let nodeLabel = <span style={{ whiteSpace: "nowrap", width: "100%" }}><Icon style={{ marginRight: 10 }} iconName={this.getFolderIcon()} />
     <span
       role="button"
       style={{ whiteSpace: "nowrap", width: "100%" }}
