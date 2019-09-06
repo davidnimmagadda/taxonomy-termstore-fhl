@@ -26,7 +26,8 @@ function TreeControl({ currentItem }) {
         }}
       >
         <TreeNode
-          getNodeCallback = {getNode.bind(this)}
+          onGetNode = {getNode.bind(this)}
+          selectionMode = {1}
 
         />
       </div>

@@ -45,7 +45,7 @@ export class TreeNode extends React.Component{
   async loadChildren() {
     if (this.state.children.length === 0 && this.state.node.type === "folder") {
       this.setState({loading: true});
-      const response = await this.props.getNodeCallback(this.props.uri);
+      const response = await this.props.onGetNode(this.props.uri);
       this.setState({loading:false});
       this.setState({children:response});
     }
@@ -126,7 +126,7 @@ export class TreeNode extends React.Component{
             currNode={childNode}
             level={this.props.level + 1}
             uri={this.getUri(childNode)}
-            getNodeCallback = {this.props.getNodeCallback.bind(this)}
+            onGetNode = {this.props.onGetNode.bind(this)}
           />
         ))}
       </>
