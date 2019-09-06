@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { setCurrentTerm } from "../../redux/actions/termActions";
 import TreeNodeHelper from "./TreeNodeHelper";
-import { Spinner, IconButton, Icon } from "office-ui-fabric-react";
+import { Spinner, IconButton, Icon, Checkbox } from "office-ui-fabric-react";
 import { tsConstructorType } from "@babel/types";
 
 const getPaddingLeft = level => {
@@ -82,6 +82,36 @@ export class TreeNode extends React.Component{
       : "";
   }
   render(){
+
+
+    let nodeLabel = <span><Icon style={{ marginRight: 10 }} iconName={this.getFolderIcon()} />
+    <span
+      role="button"
+      style={{ whiteSpace: "nowrap", width: "100%" }}
+      onClick={() => this.onNodeSelect()}
+    >
+      {this.state.node.name}
+    </span></span>
+
+    switch(this.props.selectionMode){
+      case 2:{
+        const checkboxStyles = () => {
+          return {
+            root: {
+              whiteSpace: "nowrap",
+              width: "100%"
+            },
+            label: {
+              whiteSpace: "nowrap",
+              width: "100%"
+            }
+          };
+        };
+        nodeLabel = <Checkbox label={this.state.node.name} onChange={(_ev, checked) =>{if(checked){ this.onNodeSelect();}}} styles={checkboxStyles}/>
+        break;
+      }
+    }
+
     return this.state.loading ? (
       <Spinner />
     ) : (
@@ -103,14 +133,8 @@ export class TreeNode extends React.Component{
               iconName={this.getChevron()}
             />
           </span>
-          <Icon style={{ marginRight: 10 }} iconName={this.getFolderIcon()} />
-          <span
-            role="button"
-            style={{ whiteSpace: "nowrap", width: "100%" }}
-            onClick={() => this.onNodeSelect()}
-          >
-            {this.state.node.name}
-          </span>
+          {nodeLabel}
+
           {this.state.highlighted && (
             <IconButton
               iconProps={{ iconName: "MoreVertical" }}
@@ -127,6 +151,7 @@ export class TreeNode extends React.Component{
             level={this.props.level + 1}
             uri={this.getUri(childNode)}
             onGetNode = {this.props.onGetNode.bind(this)}
+            selectionMode = {this.props.selectionMode}
           />
         ))}
       </>
