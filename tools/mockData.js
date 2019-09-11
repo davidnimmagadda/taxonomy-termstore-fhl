@@ -370,7 +370,7 @@ const termStores = [
 
 const termGroups = [
   {
-    id: "635e69f3-fbcf-4952-8370-fbef46d401e1",
+    id: "ai",
     type: "folder",
     name: "People",
     displayName: "TermGroup Managers",
@@ -397,7 +397,7 @@ const termGroups = [
     ]
   },
   {
-    id: "635e69f3-fbcf-4952-8370-fbef46d401e2",
+    id: "ac",
     type: "folder",
     name: "System",
     displayName: "TermGroup Managers",
@@ -419,7 +419,7 @@ const termGroups = [
 
 const termSets = [
   {
-    id: "635e69f3-fbcf-4952-8370-fbef46d401e1",
+    id: "aa",
     type: "folder",
     name: "Department",
     uniqueIdentifier: "dsfjhweljrelwkenflm12143344xyz",
@@ -436,10 +436,10 @@ const termSets = [
         name: "gasns@microsoft.com"
       }
     ],
-    termGroupId: "635e69f3-fbcf-4952-8370-fbef46d401e1"
+    termGroupId: "ai"
   },
   {
-    id: "635e69f3-fbcf-4952-8370-fbef46d401e2",
+    id: "ab",
     type: "folder",
     name: "JobTitle",
     uniqueIdentifier: "sfjhweljrelwkenflm12143344xyzd",
@@ -464,10 +464,10 @@ const termSets = [
         name: "ravikg@microsoft.com"
       }
     ],
-    termGroupId: "635e69f3-fbcf-4952-8370-fbef46d401e1"
+    termGroupId: "ai"
   },
   {
-    id: "635e69f3-fbcf-4952-8370-fbef46d401e3",
+    id: "ad",
     type: "folder",
     name: "Location",
     displayName: "Contacts",
@@ -488,10 +488,10 @@ const termSets = [
         name: "risja@microsoft.com"
       }
     ],
-    termGroupId: "635e69f3-fbcf-4952-8370-fbef46d401e1"
+    termGroupId: "ai"
   },
   {
-    id: "635e69f3-fbcf-4952-8370-fbef46d401e4",
+    id: "ae",
     type: "folder",
     name: "Hashtags",
     displayName: "Contacts",
@@ -504,10 +504,10 @@ const termSets = [
         name: "laa@microsoft.com"
       }
     ],
-    termGroupId: "635e69f3-fbcf-4952-8370-fbef46d401e2"
+    termGroupId: "ac"
   },
   {
-    id: "635e69f3-fbcf-4952-8370-fbef46d401e5",
+    id: "af",
     type: "folder",
     name: "Keywords",
     displayName: "Contacts",
@@ -520,10 +520,10 @@ const termSets = [
         name: "gasns@microsoft.com"
       }
     ],
-    termGroupId: "635e69f3-fbcf-4952-8370-fbef46d401e2"
+    termGroupId: "ac"
   },
   {
-    id: "635e69f3-fbcf-4952-8370-fbef46d401e6",
+    id: "ag",
     type: "folder",
     displayName: "Contacts",
     name: "Orphaned Terms",
@@ -540,13 +540,13 @@ const termSets = [
         name: "ravikg@microsoft.com"
       }
     ],
-    termGroupId: "635e69f3-fbcf-4952-8370-fbef46d401e2"
+    termGroupId: "ac"
   }
 ];
 
 const terms = [
   {
-    id: "635e69f3-fbcf-4952-8370-fbef46d401e1",
+    id: "z",
     type: "folder",
     displayName: "Contacts",
     name: "India",
@@ -567,10 +567,10 @@ const terms = [
         name: "gasns@microsoft.com"
       }
     ],
-    termSetId: "635e69f3-fbcf-4952-8370-fbef46d401e3"
+    termSetId: "ad"
   },
   {
-    id: "635e69f3-fbcf-4952-8370-fbef46d401e2",
+    id: "y",
     type: "folder",
     name: "US",
     displayName: "Contacts",
@@ -591,10 +591,10 @@ const terms = [
         name: "gasns@microsoft.com"
       }
     ],
-    termSetId: "635e69f3-fbcf-4952-8370-fbef46d401e3"
+    termSetId: "ad"
   },
   {
-    id: "635e69f3-fbcf-4952-8370-fbef46d401e3",
+    id: "x",
     type: "file",
     displayName: "Contacts",
     name: "Hyderabad",
@@ -607,10 +607,10 @@ const terms = [
         name: "swsingh@microsoft.com"
       }
     ],
-    termId: "635e69f3-fbcf-4952-8370-fbef46d401e1"
+    termSetId: "aa"
   },
   {
-    id: "635e69f3-fbcf-4952-8370-fbef46d401e4",
+    id: "w",
     type: "file",
     displayName: "Contacts",
     name: "Bangalore",
@@ -623,10 +623,10 @@ const terms = [
         name: "swshriva@microsoft.com"
       }
     ],
-    termId: "635e69f3-fbcf-4952-8370-fbef46d401e1"
+    termSetId: "ad"
   },
   {
-    id: "1",
+    id: "v",
     type: "file",
     displayName: "Contacts",
     name: "Hyderabad",
@@ -639,10 +639,10 @@ const terms = [
         name: "swsingh@microsoft.com"
       }
     ],
-    termId: "635e69f3-fbcf-4952-8370-fbef46d401e1"
+    termSetId: "ad"
   },
   {
-    id: "2",
+    id: "u",
     type: "file",
     displayName: "Contacts",
     name: "Hyderabad",
@@ -655,10 +655,10 @@ const terms = [
         name: "swsingh@microsoft.com"
       }
     ],
-    termId: "635e69f3-fbcf-4952-8370-fbef46d401e1"
+    termSetId: "ad"
   },
   {
-    id: "3",
+    id: "t",
     type: "file",
     displayName: "Contacts",
     name: "Hyderabad",
@@ -671,10 +671,10 @@ const terms = [
         name: "swsingh@microsoft.com"
       }
     ],
-    termId: "635e69f3-fbcf-4952-8370-fbef46d401e1"
+    termSetId: "ad"
   },
   {
-    id: "4",
+    id: "s",
     type: "file",
     displayName: "Contacts",
     name: "Hyderabad",
@@ -687,10 +687,10 @@ const terms = [
         name: "swsingh@microsoft.com"
       }
     ],
-    termId: "635e69f3-fbcf-4952-8370-fbef46d401e1"
+    termSetId: "ad"
   },
   {
-    id: "5",
+    id: "r",
     type: "file",
     displayName: "Contacts",
     name: "Hyderabad",
@@ -703,10 +703,10 @@ const terms = [
         name: "swsingh@microsoft.com"
       }
     ],
-    termId: "635e69f3-fbcf-4952-8370-fbef46d401e1"
+    termSetId: "ad"
   },
   {
-    id: "6",
+    id: "q",
     type: "file",
     displayName: "Contacts",
     name: "Hyderabad",
@@ -719,10 +719,10 @@ const terms = [
         name: "swsingh@microsoft.com"
       }
     ],
-    termId: "635e69f3-fbcf-4952-8370-fbef46d401e1"
+    termSetId: "ad"
   },
   {
-    id: "7",
+    id: "p",
     type: "file",
     displayName: "Contacts",
     name: "Hyderabad",
@@ -735,10 +735,10 @@ const terms = [
         name: "swsingh@microsoft.com"
       }
     ],
-    termId: "635e69f3-fbcf-4952-8370-fbef46d401e1"
+    termSetId: "ad"
   },
   {
-    id: "8",
+    id: "o",
     type: "file",
     displayName: "Contacts",
     name: "Hyderabad",
@@ -751,10 +751,10 @@ const terms = [
         name: "swsingh@microsoft.com"
       }
     ],
-    termId: "635e69f3-fbcf-4952-8370-fbef46d401e1"
+    termSetId: "ad"
   },
   {
-    id: "9",
+    id: "n",
     type: "file",
     displayName: "Contacts",
     name: "Hyderabad",
@@ -767,10 +767,10 @@ const terms = [
         name: "swsingh@microsoft.com"
       }
     ],
-    termId: "635e69f3-fbcf-4952-8370-fbef46d401e1"
+    termSetId: "ad"
   },
   {
-    id: "10",
+    id: "m",
     type: "file",
     displayName: "Contacts",
     name: "Hyderabad",
@@ -783,10 +783,10 @@ const terms = [
         name: "swsingh@microsoft.com"
       }
     ],
-    termId: "635e69f3-fbcf-4952-8370-fbef46d401e1"
+    termSetId: "ad"
   },
   {
-    id: "11",
+    id: "l",
     type: "file",
     displayName: "Contacts",
     name: "Hyderabad",
@@ -799,10 +799,10 @@ const terms = [
         name: "swsingh@microsoft.com"
       }
     ],
-    termId: "635e69f3-fbcf-4952-8370-fbef46d401e1"
+    termSetId: "ad"
   },
   {
-    id: "12",
+    id: "k",
     type: "file",
     displayName: "Contacts",
     name: "Hyderabad",
@@ -815,10 +815,10 @@ const terms = [
         name: "swsingh@microsoft.com"
       }
     ],
-    termId: "635e69f3-fbcf-4952-8370-fbef46d401e1"
+    termSetId: "ad"
   },
   {
-    id: "13",
+    id: "j",
     type: "file",
     displayName: "Contacts",
     name: "Hyderabad",
@@ -831,10 +831,10 @@ const terms = [
         name: "swsingh@microsoft.com"
       }
     ],
-    termId: "635e69f3-fbcf-4952-8370-fbef46d401e1"
+    termSetId: "ad"
   },
   {
-    id: "14",
+    id: "i",
     type: "file",
     displayName: "Contacts",
     name: "Hyderabad",
@@ -847,10 +847,10 @@ const terms = [
         name: "swsingh@microsoft.com"
       }
     ],
-    termId: "635e69f3-fbcf-4952-8370-fbef46d401e1"
+    termSetId: "ad"
   },
   {
-    id: "15",
+    id: "h",
     type: "file",
     displayName: "Contacts",
     name: "Hyderabad",
@@ -863,10 +863,10 @@ const terms = [
         name: "swsingh@microsoft.com"
       }
     ],
-    termId: "635e69f3-fbcf-4952-8370-fbef46d401e1"
+    termSetId: "ad"
   },
   {
-    id: "16",
+    id: "g",
     type: "file",
     displayName: "Contacts",
     name: "Hyderabad",
@@ -879,10 +879,10 @@ const terms = [
         name: "swsingh@microsoft.com"
       }
     ],
-    termId: "635e69f3-fbcf-4952-8370-fbef46d401e1"
+    termSetId: "ad"
   },
   {
-    id: "17",
+    id: "f",
     type: "file",
     displayName: "Contacts",
     name: "Hyderabad",
@@ -895,10 +895,10 @@ const terms = [
         name: "swsingh@microsoft.com"
       }
     ],
-    termId: "635e69f3-fbcf-4952-8370-fbef46d401e1"
+    termSetId: "ad"
   },
   {
-    id: "18",
+    id: "e",
     type: "file",
     displayName: "Contacts",
     name: "Hyderabad",
@@ -911,10 +911,10 @@ const terms = [
         name: "swsingh@microsoft.com"
       }
     ],
-    termId: "635e69f3-fbcf-4952-8370-fbef46d401e1"
+    termSetId: "ad"
   },
   {
-    id: "19",
+    id: "d",
     type: "file",
     displayName: "Contacts",
     name: "Hyderabad",
@@ -927,10 +927,10 @@ const terms = [
         name: "swsingh@microsoft.com"
       }
     ],
-    termId: "635e69f3-fbcf-4952-8370-fbef46d401e1"
+    termSetId: "ad"
   },
   {
-    id: "20",
+    id: "c",
     type: "file",
     displayName: "Contacts",
     name: "Hyderabad",
@@ -943,10 +943,10 @@ const terms = [
         name: "swsingh@microsoft.com"
       }
     ],
-    termId: "635e69f3-fbcf-4952-8370-fbef46d401e1"
+    termSetId: "ad"
   },
   {
-    id: "21",
+    id: "b",
     type: "file",
     displayName: "Contacts",
     name: "Hyderabad",
@@ -959,10 +959,10 @@ const terms = [
         name: "swsingh@microsoft.com"
       }
     ],
-    termId: "635e69f3-fbcf-4952-8370-fbef46d401e1"
+    termSetId: "ad"
   },
   {
-    id: "635e69f3-fbcf-4952-8370-fbef46d401e5",
+    id: "a",
     type: "file",
     displayName: "Contacts",
     name: "Redmond",
@@ -975,7 +975,7 @@ const terms = [
         name: "swmitta@microsoft.com"
       }
     ],
-    termId: "635e69f3-fbcf-4952-8370-fbef46d401e2"
+    termSetId: "ab"
   }
 ];
 

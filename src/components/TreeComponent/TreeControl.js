@@ -4,10 +4,21 @@ import TermDetail from "../terms/TermDetail";
 import "./TreeControl.css";
 import PropTypes from "prop-types";
 import TreeNode from "./TreeNode";
+import TreeComponent from "./TreeComponent";
+
 import { getNode } from "../../api/termApi";
 
+let handleOnSelect = (terms) => {
+
+  Array.from(terms).forEach((term) => {
+    document.getElementById("selectedTermsInTree").innerText += term.label + "(" + term.id + ")";
+  });
+
+}
 
 function TreeControl({ currentItem }) {
+
+
   return (
     <div
       style={{
@@ -25,11 +36,26 @@ function TreeControl({ currentItem }) {
           borderStyle: "solid"
         }}
       >
-        <TreeNode
+        <div id="selectedTermsInTree">
+        </div>
+        <TreeComponent
           onGetNode = {getNode.bind(this)}
-          selectionMode = {1}
+          selectionMode = {2}
+          currNode = {{
+            name: "term store",
+            type: "folder",
+            id: "1"
+          }}
+
+          uri = {"termGroups"}
+
+          onSelect = {handleOnSelect.bind(this)}
 
         />
+
+
+
+
       </div>
       <div className="details-edit">
         <TermDetail termDetails={currentItem} />

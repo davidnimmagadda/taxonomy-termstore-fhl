@@ -20,39 +20,45 @@ export class TreeNode extends React.Component{
   // const [highlighted, setHighLighted] = useState(false);
 
   constructor(props){
-    let { level, currNode, uri, setCurrentTerm, show } = props;
+    let { level, currNode, uri, setCurrentTerm, show, nodeState } = props;
 
     super(props)
-    this.state = {
-      node: props.currNode,
-      children: [],
-      loading: false,
-      highlighted: false
-    }
+    // this.state = {
+    //   node: props.currNode,
+    //   children: [],
+    //   loading: false,
+    //   highlighted: false
+    // }
+
+    console.log("tree node constructrer")
+    // this.props.onToggle = this.props.onToggle.bind(this);
+    // this.props.addNodeInState = this.props.addNodeInState.bind(this);
+
+
   }
 
-  onToggle() {
-    if (!this.state.node.isOpen) {
-      // call load children
-      this.loadChildren();
-      // set node isOpen true
-      this.setState({node: { ...this.state.node, isOpen: true }});
-    } else {
-      this.setState({node: { ...this.state.node, isOpen: false }});
-    }
-  }
+  // onToggle() {
+  //   if (!this.state.node.isOpen) {
+  //     // call load children
+  //     this.loadChildren();
+  //     // set node isOpen true
+  //     this.setState({node: { ...this.state.node, isOpen: true }});
+  //   } else {
+  //     this.setState({node: { ...this.state.node, isOpen: false }});
+  //   }
+  // }
 
-  async loadChildren() {
-    if (this.state.children.length === 0 && this.state.node.type === "folder") {
-      this.setState({loading: true});
-      const response = await this.props.onGetNode(this.props.uri);
-      this.setState({loading:false});
-      this.setState({children:response});
-    }
-  }
+  // async loadChildren() {
+  //   if (this.state.children.length === 0 && this.state.node.type === "folder") {
+  //     this.setState({loading: true});
+  //     const response = await this.props.onGetNode(this.props.uri);
+  //     this.setState({loading:false});
+  //     this.setState({children:response});
+  //   }
+  // }
 
   onNodeSelect() {
-    this.props.setCurrentTerm(this.state.node);
+    this.props.setCurrentTerm(this.props.currNode);
   }
 
   getUri(childNode) {
@@ -67,19 +73,20 @@ export class TreeNode extends React.Component{
   }
 
   getChevron() {
-    return this.state.node.type === "folder" && this.state.node.isOpen
+    return this.props.currNode.type === "folder" && this.props.nodeState.isOpen
       ? "ChevronDownMed"
       : "ChevronRightMed";
   }
 
   getFolderIcon() {
-    return this.state.node.type === "file"
-      ? "Script"
-      : this.state.node.type === "folder" && this.state.node.isOpen
-      ? "FabricOpenFolderHorizontal"
-      : this.state.node.type === "folder" && !this.state.node.isOpen
-      ? "FabricFolderFill"
-      : "";
+    return "FabricFolderFill"
+    // return this.props.currNode.type === "file"
+    //   ? "Script"
+    //   : this.props.currNode.type === "folder" && this.state[this.props.currNode.id].node.isOpen
+    //   ? "FabricOpenFolderHorizontal"
+    //   : this.props.currNode.type === "folder" && !this.state[this.props.currNode.id].node.isOpen
+    //   ? "FabricFolderFill"
+    //   : "";
   }
   render(){
 
@@ -90,7 +97,7 @@ export class TreeNode extends React.Component{
       style={{ whiteSpace: "nowrap", width: "100%" }}
       onClick={() => this.onNodeSelect()}
     >
-      {this.state.node.name}
+      {this.props.currNode.name}({this.props.currNode.id})
     </span></span>
 
     switch(this.props.selectionMode){
@@ -107,27 +114,39 @@ export class TreeNode extends React.Component{
             }
           };
         };
-        nodeLabel = <Checkbox label={this.state.node.name} onChange={(_ev, checked) =>{if(checked){ this.onNodeSelect();}}} styles={checkboxStyles}/>
+        nodeLabel = <Checkbox label={this.props.currNode.name} onChange={(_ev, checked) =>{if(checked){ this.onNodeSelect();}}} styles={checkboxStyles}/>
         break;
       }
     }
 
-    return this.state.loading ? (
+
+    return (this.props.nodeState.loading) ? (
       <Spinner />
-    ) : (
+      ) : (
       <>
         <div
           className="treeNode"
           style={{
-            paddingLeft: getPaddingLeft(this.props.level, this.state.node.type),
+            paddingLeft: getPaddingLeft(this.props.level, this.props.currNode.type),
             display: this.props.show ? "flex" : "none"
           }}
           level={this.props.level}
-          type={this.state.node.type}
-          onMouseEnter={() => this.setState({highlighted:true})}
-          onMouseLeave={() => this.setState({highlighted:false})}
+          type={this.props.currNode.type}
+          // onMouseEnter={() => this.setState((prevState) => {
+          //   let nodeId = this.props.currNode.id;
+          //   return {
+          //     nodeId: {...prevState[nodeId], highlighted: true}
+          //   }
+          // })}
+          // onMouseLeave={() => this.setState((prevState) => {
+          //   let nodeId = this.props.currNode.id;
+          //   return {
+          //     nodeId: {...prevState[nodeId], highlighted: false}
+          //   }
+          // })}
         >
-          <span role="button" onClick={() => this.onToggle()}>
+
+          <span role="button" onClick={(e) => {this.props.onToggle(this.props.currNode.id, this.props.uri)}}>
             <Icon
               style={{ marginLeft: 5, marginRight: 5 }}
               iconName={this.getChevron()}
@@ -135,7 +154,7 @@ export class TreeNode extends React.Component{
           </span>
           {nodeLabel}
 
-          {this.state.highlighted && (
+          {this.props.nodeState.highlighted && (
             <IconButton
               iconProps={{ iconName: "MoreVertical" }}
               onClick={() => alert("I'm Clicked!")}
@@ -143,19 +162,25 @@ export class TreeNode extends React.Component{
           )}
         </div>
 
-        {this.state.children.map(childNode => (
+
+        {this.props.nodeState.children.map(childNode => (
+
           <TreeNodeHelper
             key={childNode.id}
-            show={this.props.show && this.state.node.isOpen}
+            show={this.props.show && this.props.nodeState.isOpen}
             currNode={childNode}
             level={this.props.level + 1}
             uri={this.getUri(childNode)}
             onGetNode = {this.props.onGetNode.bind(this)}
             selectionMode = {this.props.selectionMode}
+            nodeState = {this.props.treeState[childNode.id]}
+            onToggle={this.props.onToggle}
+            treeState = {this.props.treeState}
           />
         ))}
       </>
     );
+    // return <div>hi</div>;
 }
 
 }
