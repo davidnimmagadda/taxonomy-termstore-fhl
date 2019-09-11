@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { setCurrentTerm } from "../../redux/actions/termActions";
 import TreeNodeHelper from "./TreeNodeHelper";
-import { Spinner, IconButton, Icon, Checkbox } from "office-ui-fabric-react";
+import { Spinner, IconButton, Icon, Checkbox, ChoiceGroup } from "office-ui-fabric-react";
 import { tsConstructorType } from "@babel/types";
 
 const getPaddingLeft = level => {
@@ -69,6 +69,12 @@ export class TreeNode extends React.Component{
     this.props.onSelect( this.props.currNode.name,this.props.currNode.id);
   }
 
+  onNodeSingleSelect() {
+
+    this.props.setCurrentTerm(this.props.currNode);
+    this.props.onSingleSelect( this.props.currNode.name,this.props.currNode.id);
+  }
+
   getUri(childNode) {
     switch (this.props.level) {
       case 0:
@@ -109,6 +115,22 @@ export class TreeNode extends React.Component{
     </span></span>
 
     switch(this.props.selectionMode){
+
+      case 1:{
+        nodeLabel =  <ChoiceGroup
+        className="defaultChoiceGroup"
+        options={[
+          {
+            key: JSON.stringify({label: this.props.currNode.name,id:  this.props.currNode.id}),
+             text: this.props.currNode.name
+          }
+        ]}
+        selectedKey = {String(Array.from(this.props.selectedNodes)[0])}
+        onChange = {() => this.onNodeSingleSelect()}
+      />
+        break;
+      }
+
       case 2:{
         const checkboxStyles = () => {
           return {
@@ -187,6 +209,7 @@ export class TreeNode extends React.Component{
             onSelect = {this.props.onSelect}
             onDeselect={this.props.onDeselect}
             selectedNodes = {this.props.selectedNodes}
+            onSingleSelect= {this.props.onSingleSelect}
           />
         ))}
       </>

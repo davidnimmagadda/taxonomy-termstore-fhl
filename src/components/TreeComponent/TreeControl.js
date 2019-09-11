@@ -42,7 +42,7 @@ function TreeControl({ currentItem }) {
         </div>
         <TreeComponent
           onGetNode = {getNode.bind(this)}
-          selectionMode = {2}
+          selectionMode = {1}
           currNode = {{
             name: "term store",
             type: "folder",

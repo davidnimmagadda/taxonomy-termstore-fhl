@@ -27,6 +27,7 @@ class TreeComponent extends React.Component{
     this.onToggle = this.onToggle.bind(this);
     this.onSelect = this.onSelect.bind(this);
     this.onDeselect = this.onDeselect.bind(this);
+    this.onSingleSelect = this.onSingleSelect.bind(this);
     // this.addNodeInState = this.addNodeInState.bind(this);
   }
 
@@ -73,6 +74,17 @@ class TreeComponent extends React.Component{
     }
     )
     //this.props.onSelect(selectedNodes);
+  }
+
+  onSingleSelect(nodeLabel, nodeId){
+    this.setState((prevState) =>{
+
+      let selectedNodes = new Set([]);
+      selectedNodes.add(JSON.stringify({label: nodeLabel, id: nodeId}));
+      this.props.onSelect(selectedNodes);
+      return {selectedNodes : selectedNodes};
+    }
+    )
   }
 
   onDeselect(nodeLabel, nodeId){
@@ -154,6 +166,7 @@ class TreeComponent extends React.Component{
     return <div>
     <TreeNode {...this.props} nodeState = {this.state[this.props.currNode.id]} onToggle={this.onToggle}
     treeState = {this.state} onSelect={this.onSelect} onDeselect={this.onDeselect} selectedNodes = {this.state.selectedNodes}
+    onSingleSelect= {this.onSingleSelect}
      />      <span>{JSON.stringify(Array.from(this.state.selectedNodes))}</span>
      </div>;
   }
