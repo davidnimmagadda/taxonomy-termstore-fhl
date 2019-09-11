@@ -20,7 +20,7 @@ export class TreeNode extends React.Component{
   // const [highlighted, setHighLighted] = useState(false);
 
   constructor(props){
-    let { level, currNode, uri, setCurrentTerm, show, nodeState } = props;
+    // let { level, currNode, uri, setCurrentTerm, show, nodeState } = props;
 
     super(props)
     // this.state = {
@@ -57,8 +57,16 @@ export class TreeNode extends React.Component{
   //   }
   // }
 
+  onNodeDeselect() {
+
+    //this.props.setCurrentTerm(this.props.currNode);
+    this.props.onDeselect( this.props.currNode.name,this.props.currNode.id);
+  }
+
   onNodeSelect() {
+
     this.props.setCurrentTerm(this.props.currNode);
+    this.props.onSelect( this.props.currNode.name,this.props.currNode.id);
   }
 
   getUri(childNode) {
@@ -114,7 +122,7 @@ export class TreeNode extends React.Component{
             }
           };
         };
-        nodeLabel = <Checkbox label={this.props.currNode.name} onChange={(_ev, checked) =>{if(checked){ this.onNodeSelect();}}} styles={checkboxStyles}/>
+        nodeLabel = <Checkbox checked={this.props.selectedNodes.has(JSON.stringify({label: this.props.currNode.name,id:  this.props.currNode.id}))}label={this.props.currNode.name} onChange={(_ev, checked) =>{if(checked){ this.onNodeSelect();}else{this.onNodeDeselect()}}} styles={checkboxStyles}/>
         break;
       }
     }
@@ -176,6 +184,9 @@ export class TreeNode extends React.Component{
             nodeState = {this.props.treeState[childNode.id]}
             onToggle={this.props.onToggle}
             treeState = {this.props.treeState}
+            onSelect = {this.props.onSelect}
+            onDeselect={this.props.onDeselect}
+            selectedNodes = {this.props.selectedNodes}
           />
         ))}
       </>

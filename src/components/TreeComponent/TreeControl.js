@@ -9,10 +9,12 @@ import TreeComponent from "./TreeComponent";
 import { getNode } from "../../api/termApi";
 
 let handleOnSelect = (terms) => {
-
+  let termString = ""
   Array.from(terms).forEach((term) => {
-    document.getElementById("selectedTermsInTree").innerText += term.label + "(" + term.id + ")";
+    let parsedTerm = JSON.parse(term)
+    termString += parsedTerm.label + "(" + parsedTerm.id + ")";
   });
+  document.getElementById("selectedTermsInTree").innerText = termString;
 
 }
 
