@@ -162,18 +162,13 @@ export class TreeNode extends React.Component{
           }}
           level={this.props.level}
           type={this.props.currNode.type}
-          // onMouseEnter={() => this.setState((prevState) => {
-          //   let nodeId = this.props.currNode.id;
-          //   return {
-          //     nodeId: {...prevState[nodeId], highlighted: true}
-          //   }
-          // })}
-          // onMouseLeave={() => this.setState((prevState) => {
-          //   let nodeId = this.props.currNode.id;
-          //   return {
-          //     nodeId: {...prevState[nodeId], highlighted: false}
-          //   }
-          // })}
+          onMouseEnter={() => {
+            this.props.setHighlighted(this.props.currNode.id, true)
+          }}
+          onMouseLeave={() => {
+            this.props.setHighlighted(this.props.currNode.id, false)
+          }}
+
         >
 
           <span role="button" onClick={(e) => {this.props.onToggle(this.props.currNode.id, this.props.uri)}}>
@@ -185,10 +180,11 @@ export class TreeNode extends React.Component{
           {nodeLabel}
 
           {this.props.nodeState.highlighted && (
+            <span style={{"margin-left":"auto", "margin-right":"0px"}}>
             <IconButton
               iconProps={{ iconName: "MoreVertical" }}
               onClick={() => alert("I'm Clicked!")}
-            />
+            /></span>
           )}
         </div>
 
@@ -210,6 +206,7 @@ export class TreeNode extends React.Component{
             onDeselect={this.props.onDeselect}
             selectedNodes = {this.props.selectedNodes}
             onSingleSelect= {this.props.onSingleSelect}
+            setHighlighted = {this.props.setHighlighted}
           />
         ))}
       </>
