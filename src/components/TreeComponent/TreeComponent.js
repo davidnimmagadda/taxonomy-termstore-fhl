@@ -25,7 +25,7 @@ class TreeComponent extends React.Component{
     this.state = treeState;
 
     this.onToggle = this.onToggle.bind(this);
-    this.addNodeInState = this.addNodeInState.bind(this);
+    // this.addNodeInState = this.addNodeInState.bind(this);
   }
 
   onToggle(nodeId, uri) {
@@ -60,17 +60,17 @@ class TreeComponent extends React.Component{
 
   }
 
-  addNodeInState(currNode){
-    let nodeState = {};
-    nodeState[currNode.id] = {
-      node: currNode,
-      children: [],
-      loading: false,
-      highlighted: false
-    }
+  // addNodeInState(currNode){
+  //   let nodeState = {};
+  //   nodeState[currNode.id] = {
+  //     node: currNode,
+  //     children: [],
+  //     loading: false,
+  //     highlighted: false
+  //   }
 
-    this.setState((prevState) => { return nodeState})
-  }
+  //   this.setState((prevState) => { return nodeState})
+  // }
 
   async loadChildren(nodeId, uri) {
     if (this.state[nodeId].children.length === 0 && this.state[nodeId].node.type === "folder") {
@@ -125,7 +125,7 @@ class TreeComponent extends React.Component{
 
 
     return <TreeNode {...this.props} nodeState = {this.state[this.props.currNode.id]} onToggle={this.onToggle}
-    treeState = {this.state} addNodeInState={this.addNodeInState}
+    treeState = {this.state}
      />;
   }
 }
