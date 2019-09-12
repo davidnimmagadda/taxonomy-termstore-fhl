@@ -52,6 +52,8 @@ function TreeControl({ currentItem }) {
           uri = {"termGroups"}
 
           onSelect = {handleOnSelect.bind(this)}
+          height={300}
+          width={400}
 
         />
 

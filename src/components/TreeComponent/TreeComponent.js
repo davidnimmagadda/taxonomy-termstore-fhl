@@ -176,12 +176,16 @@ class TreeComponent extends React.Component{
   render(){
 
 
-    return <div>
+    return <div><div style={{
+      height: this.props.height + "px",
+      maxWidth: this.props.width + "px",
+      overflow: "auto"
+    }}>
     <TreeNode {...this.props} nodeState = {this.state[this.props.currNode.id]} onToggle={this.onToggle}
     treeState = {this.state} onSelect={this.onSelect} onDeselect={this.onDeselect} selectedNodes = {this.state.selectedNodes}
     setHighlighted = {this.setHighlighted}
     onSingleSelect= {this.onSingleSelect}
-     />      <span>{JSON.stringify(Array.from(this.state.selectedNodes))}</span>
+     /></div>      <span>{JSON.stringify(Array.from(this.state.selectedNodes))}</span>
      </div>;
   }
 }
