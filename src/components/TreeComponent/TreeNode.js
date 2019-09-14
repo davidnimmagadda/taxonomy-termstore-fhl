@@ -87,7 +87,7 @@ export class TreeNode extends React.Component{
   }
 
   getChevron() {
-    return this.props.currNode.type === "folder" && this.props.nodeState.isOpen
+    return this.props.currNode.type === "folder" && this.props.nodeState.node.isOpen
       ? "ChevronDownMed"
       : "ChevronRightMed";
   }
@@ -193,7 +193,7 @@ export class TreeNode extends React.Component{
 
           <TreeNodeHelper
             key={childNode.id}
-            show={this.props.show && this.props.nodeState.isOpen}
+            show={this.props.show && this.props.nodeState.node.isOpen}
             currNode={childNode}
             level={this.props.level + 1}
             uri={this.getUri(childNode)}
