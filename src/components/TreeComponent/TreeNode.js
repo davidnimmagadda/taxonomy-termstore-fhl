@@ -180,7 +180,7 @@ export class TreeNode extends React.Component{
           {nodeLabel}
 
           {this.props.nodeState.highlighted && (
-            <span style={{"margin-left":"auto", "margin-right":"0px"}}>
+            <span style={{"marginLeft":"auto", "marginRight":"0px"}}>
             <IconButton
               iconProps={{ iconName: "MoreVertical" }}
               onClick={() => alert("I'm Clicked!")}
