@@ -104,9 +104,9 @@ export class TreeNode extends React.Component{
     <span
       role="button"
       style={{ whiteSpace: "nowrap", width: "100%" }}
-      onClick={() => this.onNodeSelect()}
+      onClick={() => this.onNodeSingleSelect()}
     >
-      {this.props.currNode.name}({this.props.currNode.id})
+      {this.props.currNode.name}
     </span></span>
 
     switch(this.props.selectionMode){
