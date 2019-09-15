@@ -20,9 +20,10 @@
   display: block;
 }
 
-#selectedTermsInTree{
+.selectedNodes{
   height:100px;
   padding: 10px;
   border: thick solid black;
   margin: 10x 10px;
+  overflow: auto;
 }

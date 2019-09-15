@@ -101,7 +101,7 @@ render(){
         onChange = {(ev, checkedValue) => this.onSelectionModeChange(ev,checkedValue)}
       />
         </div>
-        <div id="selectedTermsInTree">
+        <div className="selectedNodes" id="selectedTermsInTree">
         </div>
         <TreeComponent
           onGetNode = {onLoadNode.bind(this)}

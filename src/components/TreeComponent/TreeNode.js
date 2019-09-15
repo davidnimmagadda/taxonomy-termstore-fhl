@@ -193,7 +193,6 @@ export class TreeNode extends React.Component{
             onDeselect={this.props.onDeselect}
             selectedNodes = {this.props.selectedNodes}
             onSingleSelect= {this.props.onSingleSelect}
-            setHighlighted = {this.props.setHighlighted}
             onLoadNext = {this.props.onLoadNext.bind(this)}
             parents = {this.getParents()}
           />
