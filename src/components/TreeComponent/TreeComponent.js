@@ -21,7 +21,7 @@ class TreeComponent extends React.Component{
       highlighted: false
     }
     treeState["selectedNodes"] = new Set([]);
-    console.log("tree component constructrer")
+    // console.log("tree component constructrer")
     this.state = treeState;
 
     this.onToggle = this.onToggle.bind(this);
@@ -33,7 +33,7 @@ class TreeComponent extends React.Component{
     // this.addNodeInState = this.addNodeInState.bind(this);
   }
 
-  onToggle(nodeId, uri) {
+  onToggle(nodeId, parents) {
 
           let prevState = this.state;
 
@@ -42,7 +42,7 @@ class TreeComponent extends React.Component{
           if (!prevState[nodeId].node.isOpen) {
             // call load children
             console.log(" node is not open")
-            const res = this.loadChildren(nodeId, uri);
+            const res = this.loadChildren(nodeId, parents);
             // set node isOpen true
 
             isOpen = true;
@@ -178,8 +178,7 @@ class TreeComponent extends React.Component{
 
   }
 
-  async loadChildren(nodeId, uri) {
-    console.log("uri = "+ uri)
+  async loadChildren(nodeId, parents) {
     if (this.state[nodeId].children.length === 0 && this.state[nodeId].node.type === "folder") {
 
       this.setState((prevState) => {
@@ -192,7 +191,7 @@ class TreeComponent extends React.Component{
         return treeStateChanges;
       })
 
-      const response = await this.props.onGetNode(uri);
+      const response = await this.props.onGetNode(nodeId, parents);
       const nextLink = response.next ===undefined?"somelink":undefined;
       // console.log("got response = ")
       // console.log(JSON.stringify(response))
@@ -240,7 +239,7 @@ class TreeComponent extends React.Component{
     <TreeNode {...this.props} nodeState = {this.state[this.props.currNode.id]} onToggle={this.onToggle}
     treeState = {this.state} onSelect={this.onSelect} onDeselect={this.onDeselect} selectedNodes = {this.state.selectedNodes}
     setHighlighted = {this.setHighlighted}
-    onSingleSelect= {this.onSingleSelect} show={true} onLoadNext = {this.loadNextChildren}
+    onSingleSelect= {this.onSingleSelect} show={true} onLoadNext = {this.loadNextChildren} parents = {[]}
      /></div>      <span>{JSON.stringify(Array.from(this.state.selectedNodes))}</span>
      </div>;
   }

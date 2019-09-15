@@ -75,15 +75,10 @@ export class TreeNode extends React.Component{
     this.props.onSingleSelect( this.props.currNode.name,this.props.currNode.id);
   }
 
-  getUri(childNode) {
-    switch (this.props.level) {
-      case 0:
-        return this.props.uri + "/" + childNode.id + "/termSets";
-      case 1:
-        return this.props.uri + "/" + childNode.id + "/terms";
-      default:
-        return "terms/" + childNode.id + "/terms";
-    }
+
+
+  getParents(){
+    return [...this.props.parents, this.props.currNode.id];
   }
 
   getChevron() {
@@ -171,7 +166,7 @@ export class TreeNode extends React.Component{
 
         >
 
-          <span role="button" onClick={(e) => {this.props.onToggle(this.props.currNode.id, this.props.uri)}}>
+          <span role="button" onClick={(e) => {this.props.onToggle(this.props.currNode.id, this.props.parents)}}>
             <Icon
               style={{ marginLeft: 5, marginRight: 5 }}
               iconName={this.getChevron()}
@@ -196,7 +191,6 @@ export class TreeNode extends React.Component{
             show={this.props.show && this.props.nodeState.node.isOpen}
             currNode={childNode}
             level={this.props.level + 1}
-            uri={this.getUri(childNode)}
             onGetNode = {this.props.onGetNode.bind(this)}
             selectionMode = {this.props.selectionMode}
             nodeState = {this.props.treeState[childNode.id]}
@@ -208,6 +202,7 @@ export class TreeNode extends React.Component{
             onSingleSelect= {this.props.onSingleSelect}
             setHighlighted = {this.props.setHighlighted}
             onLoadNext = {this.props.onLoadNext.bind(this)}
+            parents = {this.getParents()}
           />
         ))}
 

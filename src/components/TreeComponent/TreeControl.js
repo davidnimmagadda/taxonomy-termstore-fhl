@@ -23,6 +23,28 @@ let onLoadMore = function() {
 
 }
 
+let getURI = function(nodeId, parents) {
+  const baseURI = "termGroups"
+  switch (parents.length) {
+    case 0:
+      return baseURI;
+    case 1:
+      return baseURI + "/" + nodeId + "/termSets";
+    case 2:
+      return baseURI + "/" + parents[1] + "/termSets/" + nodeId + "/terms";
+    default:
+      return "terms/" + nodeId + "/terms";
+  }
+}
+
+let onLoadNode = function(nodeId, parents) {
+  let uri = getURI(nodeId, parents);
+  console.log("uri = " + uri)
+  return getNode(uri)
+}
+
+
+
 function TreeControl({ currentItem }) {
 
 
@@ -46,7 +68,7 @@ function TreeControl({ currentItem }) {
         <div id="selectedTermsInTree">
         </div>
         <TreeComponent
-          onGetNode = {getNode.bind(this)}
+          onGetNode = {onLoadNode.bind(this)}
           selectionMode = {1}
           currNode = {{
             name: "term store",
@@ -54,7 +76,6 @@ function TreeControl({ currentItem }) {
             id: "1"
           }}
 
-          uri = {"termGroups"}
 
           onSelect = {handleOnSelect.bind(this)}
           height={300}
