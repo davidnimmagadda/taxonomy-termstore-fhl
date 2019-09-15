@@ -159,12 +159,14 @@ export class TreeNode extends React.Component{
           type={this.props.currNode.type}
         >
 
-          <span role="button" onClick={(e) => {this.props.onToggle(this.props.currNode.id, this.props.parents)}}>
+          {this.props.nodeState.node.isOpen && this.props.nodeState.children.length ==0?(<span style={{marginLeft: 17, marginRight: 5}}>&nbsp;</span>):(<span role="button" onClick={(e) => {this.props.onToggle(this.props.currNode.id, this.props.parents)}}>
             <Icon
               style={{ marginLeft: 5, marginRight: 5 }}
               iconName={this.getChevron()}
             />
-          </span>
+          </span>)}
+
+
           {nodeLabel}
 
 
