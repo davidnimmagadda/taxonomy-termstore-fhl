@@ -127,7 +127,7 @@ class TreeComponent extends React.Component{
       })
 
       const response = await this.props.onLoadMore();
-      const nextLink = response.next ===undefined?"somelink":undefined;
+      const nextLink = response.next;
       // console.log("got response = ")
       // console.log(JSON.stringify(response))
       this.setState((prevState) =>{
