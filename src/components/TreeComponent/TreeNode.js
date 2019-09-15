@@ -207,11 +207,29 @@ export class TreeNode extends React.Component{
             selectedNodes = {this.props.selectedNodes}
             onSingleSelect= {this.props.onSingleSelect}
             setHighlighted = {this.props.setHighlighted}
+            onLoadNext = {this.props.onLoadNext.bind(this)}
           />
         ))}
+
+        <div
+          className="treeNode"
+          style={{
+            paddingLeft: getPaddingLeft(this.props.level+1, this.props.currNode.type) +50,
+            display: this.props.nodeState.nextLink !==undefined && this.props.show && this.props.nodeState.children.length >0 && this.props.nodeState.node.isOpen? "flex" : "none"
+          }}
+          level={this.props.level}
+          // onMouseEnter={() => {
+          //   this.props.setHighlighted(this.props.currNode.id, true)
+          // }}
+          // onMouseLeave={() => {
+          //   this.props.setHighlighted(this.props.currNode.id, false)
+          // }}
+
+        ><a href="#" style={{marginLeft:0}} onClick={()=> {this.props.onLoadNext(this.props.currNode.id)}} >Load More</a></div>
+
       </>
     );
-    // return <div>hi</div>;
+    // return <div>hi</div>;}}
 }
 
 }

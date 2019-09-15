@@ -18,6 +18,11 @@ let handleOnSelect = (terms) => {
 
 }
 
+let onLoadMore = function() {
+  return getNode("termGroups/ai/termSets")
+
+}
+
 function TreeControl({ currentItem }) {
 
 
@@ -54,6 +59,7 @@ function TreeControl({ currentItem }) {
           onSelect = {handleOnSelect.bind(this)}
           height={300}
           width={400}
+          onLoadMore = {onLoadMore.bind(this)}
 
         />
 
