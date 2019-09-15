@@ -5,6 +5,8 @@ import "./TreeControl.css";
 import PropTypes from "prop-types";
 import TreeNode from "./TreeNode";
 import TreeComponent from "./TreeComponent";
+import {  ChoiceGroup } from "office-ui-fabric-react";
+
 
 import { getNode } from "../../api/termApi";
 
@@ -44,10 +46,21 @@ let onLoadNode = function(nodeId, parents) {
 }
 
 
+export class TreeControl extends React.Component {
+constructor(props){
+  super(props);
+  this.state = {
+    selectionMode: 1
+  }
+}
 
-function TreeControl({ currentItem }) {
-
-
+onSelectionModeChange(ev, checkedValue){
+  // console.log(checkedValue)
+  this.setState((prevState) => {
+    return {selectionMode: checkedValue.key};
+  })
+}
+render(){
   return (
     <div
       style={{
@@ -65,11 +78,34 @@ function TreeControl({ currentItem }) {
           borderStyle: "solid"
         }}
       >
+
+        <div>
+        Selection Mode
+        <ChoiceGroup
+        className="defaultChoiceGroup"
+        options={[
+          {
+            key: 0,
+             text: "None"
+          },
+          {
+            key: 1,
+             text: "Single Select"
+          },
+          {
+            key: 2,
+             text: "Multi Select"
+          }
+        ]}
+        selectedKey = {this.state.selectionMode}
+        onChange = {(ev, checkedValue) => this.onSelectionModeChange(ev,checkedValue)}
+      />
+        </div>
         <div id="selectedTermsInTree">
         </div>
         <TreeComponent
           onGetNode = {onLoadNode.bind(this)}
-          selectionMode = {1}
+          selectionMode = {this.state.selectionMode}
           currNode = {{
             name: "term store",
             type: "folder",
@@ -89,10 +125,11 @@ function TreeControl({ currentItem }) {
 
       </div>
       <div className="details-edit">
-        <TermDetail termDetails={currentItem} />
+        <TermDetail termDetails={this.props.currentItem} />
       </div>
     </div>
   );
+}
 }
 
 TreeControl.propTypes = {

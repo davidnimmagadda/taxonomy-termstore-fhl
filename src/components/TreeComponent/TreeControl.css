@@ -19,3 +19,10 @@
 .treeNode:hover .contextMenuIcon{
   display: block;
 }
+
+#selectedTermsInTree{
+  height:100px;
+  padding: 10px;
+  border: thick solid black;
+  margin: 10x 10px;
+}
