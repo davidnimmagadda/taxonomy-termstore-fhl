@@ -11,3 +11,11 @@
 .treeNode:hover {
   background: rgb(237, 237, 237);
 }
+
+.contextMenuIcon{
+  display:none;
+}
+
+.treeNode:hover .contextMenuIcon{
+  display: block;
+}

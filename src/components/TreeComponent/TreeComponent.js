@@ -17,8 +17,7 @@ class TreeComponent extends React.Component{
     treeState[rootNodeID] = {
       node: props.currNode,
       children: [],
-      loading: false,
-      highlighted: false
+      loading: false
     }
     treeState["selectedNodes"] = new Set([]);
     // console.log("tree component constructrer")
@@ -28,7 +27,6 @@ class TreeComponent extends React.Component{
     this.onSelect = this.onSelect.bind(this);
     this.onDeselect = this.onDeselect.bind(this);
     this.onSingleSelect = this.onSingleSelect.bind(this);
-    this.setHighlighted = this.setHighlighted.bind(this);
     this.loadNextChildren = this.loadNextChildren.bind(this);
     // this.addNodeInState = this.addNodeInState.bind(this);
   }
@@ -89,17 +87,7 @@ class TreeComponent extends React.Component{
     )
   }
 
-  setHighlighted(nodeId, isHighlighted){
-    this.setState((prevState) => {
-      let treeStateChanges = {
-      };
 
-      treeStateChanges[nodeId] = {
-        ...prevState[nodeId], highlighted: isHighlighted
-      };
-      return treeStateChanges;
-    })
-  }
 
   onDeselect(nodeLabel, nodeId){
     let selectedNodes = new Set([]);
@@ -160,7 +148,6 @@ class TreeComponent extends React.Component{
             node: currNode,
             children: [],
             loading: false,
-            highlighted: false
           }
         })
 
@@ -215,7 +202,6 @@ class TreeComponent extends React.Component{
             node: currNode,
             children: [],
             loading: false,
-            highlighted: false
           }
         })
 

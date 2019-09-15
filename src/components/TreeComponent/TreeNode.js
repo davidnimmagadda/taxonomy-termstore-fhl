@@ -157,13 +157,6 @@ export class TreeNode extends React.Component{
           }}
           level={this.props.level}
           type={this.props.currNode.type}
-          onMouseEnter={() => {
-            this.props.setHighlighted(this.props.currNode.id, true)
-          }}
-          onMouseLeave={() => {
-            this.props.setHighlighted(this.props.currNode.id, false)
-          }}
-
         >
 
           <span role="button" onClick={(e) => {this.props.onToggle(this.props.currNode.id, this.props.parents)}}>
@@ -174,13 +167,13 @@ export class TreeNode extends React.Component{
           </span>
           {nodeLabel}
 
-          {this.props.nodeState.highlighted && (
-            <span style={{"marginLeft":"auto", "marginRight":"0px"}}>
+
+            <span className= "contextMenuIcon" style={{"marginLeft":"auto", "marginRight":"0px"}}>
             <IconButton
               iconProps={{ iconName: "MoreVertical" }}
               onClick={() => alert("I'm Clicked!")}
             /></span>
-          )}
+
         </div>
 
 
