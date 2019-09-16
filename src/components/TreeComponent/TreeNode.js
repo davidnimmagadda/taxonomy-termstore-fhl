@@ -14,48 +14,12 @@ const getPaddingLeft = level => {
 
 export class TreeNode extends React.Component{
 
-  // const [node, setNode] = useState(currNode);
-  // const [children, setChildren] = useState([]);
-  // const [loading, setLoading] = useState(false);
-  // const [highlighted, setHighLighted] = useState(false);
-
   constructor(props){
-    // let { level, currNode, uri, setCurrentTerm, show, nodeState } = props;
 
     super(props)
-    // this.state = {
-    //   node: props.currNode,
-    //   children: [],
-    //   loading: false,
-    //   highlighted: false
-    // }
-
-    console.log("tree node constructrer")
-    // this.props.onToggle = this.props.onToggle.bind(this);
-    // this.props.addNodeInState = this.props.addNodeInState.bind(this);
-
 
   }
 
-  // onToggle() {
-  //   if (!this.state.node.isOpen) {
-  //     // call load children
-  //     this.loadChildren();
-  //     // set node isOpen true
-  //     this.setState({node: { ...this.state.node, isOpen: true }});
-  //   } else {
-  //     this.setState({node: { ...this.state.node, isOpen: false }});
-  //   }
-  // }
-
-  // async loadChildren() {
-  //   if (this.state.children.length === 0 && this.state.node.type === "folder") {
-  //     this.setState({loading: true});
-  //     const response = await this.props.onGetNode(this.props.uri);
-  //     this.setState({loading:false});
-  //     this.setState({children:response});
-  //   }
-  // }
 
   onNodeDeselect() {
 
@@ -205,18 +169,13 @@ export class TreeNode extends React.Component{
             display: this.props.nodeState.nextLink !==undefined && this.props.show && this.props.nodeState.children.length >0 && this.props.nodeState.isOpen? "flex" : "none"
           }}
           level={this.props.level}
-          // onMouseEnter={() => {
-          //   this.props.setHighlighted(this.props.currNode.id, true)
-          // }}
-          // onMouseLeave={() => {
-          //   this.props.setHighlighted(this.props.currNode.id, false)
-          // }}
+
 
         ><Link href="#" style={{marginLeft:0}} onClick={()=> {this.props.onLoadNext(this.props.currNode.id)}} >Load More</Link></div>
 
       </>
     );
-    // return <div>hi</div>;}}
+
 }
 
 }
