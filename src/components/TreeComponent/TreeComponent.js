@@ -222,7 +222,7 @@ class TreeComponent extends React.Component{
     treeState = {this.state} onSelect={this.props.onSelect} onDeselect={this.props.onDeselect} selectedNodes = {this.props.selectedNodes}
 
     onSingleSelect= {this.props.onSelect} show={true} onLoadNext = {this.loadNextChildren} parents = {[]}
-     /></div>      <div className="selectedNodes">{JSON.stringify(Array.from(this.props.selectedNodes))}</div>
+     /></div>
      </div>;
   }
 }
