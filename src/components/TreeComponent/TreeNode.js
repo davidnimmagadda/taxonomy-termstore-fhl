@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { setCurrentTerm } from "../../redux/actions/termActions";
 import TreeNodeHelper from "./TreeNodeHelper";
-import { Spinner, IconButton, Icon, Checkbox, ChoiceGroup } from "office-ui-fabric-react";
+import { Spinner, IconButton, Icon, Checkbox, ChoiceGroup, Link } from "office-ui-fabric-react";
 import { tsConstructorType } from "@babel/types";
 
 const getPaddingLeft = level => {
@@ -215,7 +215,7 @@ export class TreeNode extends React.Component{
           //   this.props.setHighlighted(this.props.currNode.id, false)
           // }}
 
-        ><a href="#" style={{marginLeft:0}} onClick={()=> {this.props.onLoadNext(this.props.currNode.id)}} >Load More</a></div>
+        ><Link href="#" style={{marginLeft:0}} onClick={()=> {this.props.onLoadNext(this.props.currNode.id)}} >Load More</Link></div>
 
       </>
     );
