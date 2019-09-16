@@ -80,7 +80,8 @@ constructor(props){
     selectionMode: 1,
     selectedNodes: new Set([]),
     searchPath: {},
-    highlightedNodesMap : {}
+    highlightedNodesMap : {},
+    orphanHighlightedNodes :new Set([])
   }
   this.onSelect = this.onSelect.bind(this);
   this.onDeselect = this.onDeselect.bind(this);
@@ -91,6 +92,13 @@ onSelect(nodeLabel, nodeId, parents=[]){
     this.onSingleSelect(nodeLabel, nodeId)
   }else{
     this.onMultiSelect(nodeLabel, nodeId);
+  }
+  if(parents.length === 0){
+    this.setState((prevState)=>{
+      let orphanHighlightedNodes = prevState.orphanHighlightedNodes;
+      orphanHighlightedNodes.add(nodeId)
+      return {orphanHighlightedNodes: orphanHighlightedNodes}
+    })
   }
   this.updateHighlightedNodes([...parents,nodeId], "Highlight");
 
@@ -148,8 +156,11 @@ onDeselect(nodeLabel, nodeId, parents = []){
     return {selectedNodes : selectedNodes};
   }
   )
-
-  this.updateHighlightedNodes([...parents,nodeId], "unHighlight");
+  let parentsToUnHighLight = parents;
+  if(this.state.orphanHighlightedNodes.has(nodeId)){
+    parentsToUnHighLight = []
+  }
+  this.updateHighlightedNodes([...parentsToUnHighLight,nodeId], "unHighlight");
   //this.props.onSelect(selectedNodes);
 }
 
