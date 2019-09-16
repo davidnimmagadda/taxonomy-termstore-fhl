@@ -15,7 +15,6 @@ class TreeComponent extends React.Component{
     console.log('rootNodeID is' + rootNodeID);
     let treeState = {};
     treeState[rootNodeID] = {
-      node: props.currNode,
       children: [],
       loading: false
     }
@@ -145,7 +144,6 @@ class TreeComponent extends React.Component{
         newChildren.forEach((currNode) => {
 
           treeStateChanges[currNode.id] = {
-            node: currNode,
             children: [],
             loading: false,
           }
@@ -166,7 +164,7 @@ class TreeComponent extends React.Component{
   }
 
   async loadChildren(nodeId, parents) {
-    if (this.state[nodeId].children.length === 0 && this.state[nodeId].node.type === "folder") {
+    if (this.state[nodeId].children.length === 0) {
 
       this.setState((prevState) => {
         let treeStateChanges = {
@@ -199,7 +197,6 @@ class TreeComponent extends React.Component{
         response.forEach((currNode) => {
 
           treeStateChanges[currNode.id] = {
-            node: currNode,
             children: [],
             loading: false,
           }
