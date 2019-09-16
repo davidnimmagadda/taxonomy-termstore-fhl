@@ -79,19 +79,40 @@ constructor(props){
   this.state = {
     selectionMode: 1,
     selectedNodes: new Set([]),
-    searchPath: {}
+    searchPath: {},
+    highlightedNodesMap : {}
   }
   this.onSelect = this.onSelect.bind(this);
   this.onDeselect = this.onDeselect.bind(this);
 }
 
-onSelect(nodeLabel, nodeId){
+onSelect(nodeLabel, nodeId, parents=[]){
   if(this.state.selectionMode <=1){
     this.onSingleSelect(nodeLabel, nodeId)
   }else{
     this.onMultiSelect(nodeLabel, nodeId);
   }
+  this.updateHighlightedNodes([...parents,nodeId], "Highlight");
+
 }
+
+updateHighlightedNodes(nodeIds, operation){
+  let highLightAddition = operation === "Highlight"?1:-1;
+  this.setState((prevState) => {
+
+    let highlightedNodesMap =prevState.selectionMode===2? prevState.highlightedNodesMap:{};
+    nodeIds.forEach(function(nodeId){
+      let oldCount = highlightedNodesMap[nodeId] !== undefined?highlightedNodesMap[nodeId]:0;
+      highlightedNodesMap[nodeId] = oldCount + highLightAddition
+      if(highlightedNodesMap[nodeId] <= 0){
+        delete highlightedNodesMap[nodeId]
+      }
+    })
+    return {highlightedNodesMap: highlightedNodesMap}
+  })
+}
+
+
 
 
 onMultiSelect(nodeLabel, nodeId){
@@ -118,7 +139,7 @@ onSingleSelect(nodeLabel, nodeId){
 
 
 
-onDeselect(nodeLabel, nodeId){
+onDeselect(nodeLabel, nodeId, parents = []){
   let selectedNodes = new Set([]);
   this.setState((prevState) =>{
 
@@ -127,6 +148,8 @@ onDeselect(nodeLabel, nodeId){
     return {selectedNodes : selectedNodes};
   }
   )
+
+  this.updateHighlightedNodes([...parents,nodeId], "unHighlight");
   //this.props.onSelect(selectedNodes);
 }
 
@@ -152,7 +175,7 @@ showSearchView(searchPath){
 }
 
 render(){
-
+  console.log(this.state.highlightedNodesMap)
     let termString = ""
     Array.from(this.state.selectedNodes).forEach((term) => {
       let parsedTerm = JSON.parse(term)
@@ -235,6 +258,7 @@ render(){
               }
             }
           }
+          highlightedNodesMap={this.state.highlightedNodesMap}
 
         />
 

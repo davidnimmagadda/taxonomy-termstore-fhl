@@ -24,19 +24,19 @@ export class TreeNode extends React.Component{
   onNodeDeselect() {
 
     //this.props.setCurrentTerm(this.props.currNode);
-    this.props.onDeselect( this.props.currNode.name,this.props.currNode.id);
+    this.props.onDeselect( this.props.currNode.name,this.props.currNode.id, this.props.parents);
   }
 
   onNodeSelect() {
 
     this.props.setCurrentTerm(this.props.currNode);
-    this.props.onSelect( this.props.currNode.name,this.props.currNode.id);
+    this.props.onSelect( this.props.currNode.name,this.props.currNode.id, this.props.parents);
   }
 
   onNodeSingleSelect() {
 
     this.props.setCurrentTerm(this.props.currNode);
-    this.props.onSingleSelect( this.props.currNode.name,this.props.currNode.id);
+    this.props.onSingleSelect( this.props.currNode.name,this.props.currNode.id, this.props.parents);
   }
 
 
@@ -59,6 +59,7 @@ export class TreeNode extends React.Component{
   }
   render(){
 
+    let isHighLighted = this.props.highlightedNodesMap[this.props.currNode.id]!==undefined;
 
     let nodeLabel = <span style={{ whiteSpace: "nowrap", width: "100%" }}><Icon style={{ marginRight: 10 }} iconName={this.getFolderIcon()} />
     <span
@@ -72,12 +73,21 @@ export class TreeNode extends React.Component{
     switch(this.props.selectionMode){
 
       case 1:{
+        const highlightStyle =  {
+          root: {
+            fontWeight:"bold",
+          }
+        }
+        let styleForOption = () => {
+          return isHighLighted?highlightStyle:{}
+        }
         nodeLabel =  <ChoiceGroup
         className="defaultChoiceGroup"
         options={[
           {
             key: JSON.stringify({label: this.props.currNode.name,id:  this.props.currNode.id}),
-             text: this.props.currNode.name
+             text: this.props.currNode.name + "(" + this.props.currNode.id + ")",
+             styles:styleForOption()
           }
         ]}
         selectedKey = {String(Array.from(this.props.selectedNodes)[0])}
@@ -95,7 +105,8 @@ export class TreeNode extends React.Component{
             },
             label: {
               whiteSpace: "nowrap",
-              width: "100%"
+              width: "100%",
+              fontWeight: isHighLighted?"bold":"inherit"
             }
           };
         };
@@ -159,6 +170,7 @@ export class TreeNode extends React.Component{
             onLoadNext = {this.props.onLoadNext.bind(this)}
             parents = {this.getParents()}
             nodeTypeData = {this.props.nodeTypeData}
+            highlightedNodesMap = {this.props.highlightedNodesMap}
           />
         ))}
 

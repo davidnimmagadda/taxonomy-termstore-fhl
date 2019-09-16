@@ -12,7 +12,7 @@ class TreeComponent extends React.Component{
   constructor(props){
     super(props);
     let rootNodeID = props.currNode.id;
-    console.log('rootNodeID is' + rootNodeID);
+    // console.log('rootNodeID is' + rootNodeID);
     let treeState = {};
     treeState[rootNodeID] = {
       children: [],
@@ -38,7 +38,7 @@ class TreeComponent extends React.Component{
 
           if (!prevState[nodeId].isOpen) {
             // call load children
-            console.log(" node is not open")
+            // console.log(" node is not open")
             const res = this.loadChildren(nodeId, parents);
             // set node isOpen true
 
@@ -203,7 +203,7 @@ class TreeComponent extends React.Component{
 
         return treeStateChanges;
       })
-      console.log("state is " + JSON.stringify(this.state))
+      // console.log("state is " + JSON.stringify(this.state))
 
 
 
@@ -224,6 +224,7 @@ class TreeComponent extends React.Component{
     treeState = {this.state} onSelect={this.props.onSelect} onDeselect={this.props.onDeselect} selectedNodes = {this.props.selectedNodes}
 
     onSingleSelect= {this.props.onSelect} show={true} onLoadNext = {this.loadNextChildren} parents = {[]}
+    highlightedNodesMap = {this.props.highlightedNodesMap}
      />:(
        <Link href="#" onClick={this.props.hideSearchView}>X</Link>
 
