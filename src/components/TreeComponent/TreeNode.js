@@ -165,12 +165,13 @@ export class TreeNode extends React.Component{
 
           {nodeLabel}
 
-
+          {(this.props.nodeTypeData[this.props.currNode.type]["contextMenu"] !== undefined) && (
             <span className= "contextMenuIcon" style={{"marginLeft":"auto", "marginRight":"0px"}}>
             <IconButton
               iconProps={{ iconName: "MoreVertical" }}
               onClick={() => alert("I'm Clicked!")}
-            /></span>
+            /></span>)
+          }
 
         </div>
 
