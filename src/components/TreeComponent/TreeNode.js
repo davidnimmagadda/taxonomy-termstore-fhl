@@ -89,14 +89,9 @@ export class TreeNode extends React.Component{
 
   getFolderIcon() {
     // return "FabricFolderFill"
-
-    return this.props.currNode.type === "file"
-      ? "Script"
-      : this.props.currNode.type === "folder" && this.props.nodeState.node.isOpen
-      ? "FabricOpenFolderHorizontal"
-      : this.props.currNode.type === "folder" && !this.props.nodeState.node.isOpen
-      ? "FabricFolderFill"
-      : "";
+    let iconTypeKey = this.props.nodeState.node.isOpen?"iconExpanded":"iconCollapsed"
+    let icon = this.props.nodeTypeData[this.props.currNode.type][iconTypeKey]
+    return icon!==undefined?icon:"";
   }
   render(){
 
@@ -198,6 +193,7 @@ export class TreeNode extends React.Component{
             onSingleSelect= {this.props.onSingleSelect}
             onLoadNext = {this.props.onLoadNext.bind(this)}
             parents = {this.getParents()}
+            nodeTypeData = {this.props.nodeTypeData}
           />
         ))}
 

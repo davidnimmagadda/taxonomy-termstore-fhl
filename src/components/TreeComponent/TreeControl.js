@@ -182,6 +182,19 @@ render(){
           onLoadMore = {onLoadMore.bind(this)}
           selectedNodes = {this.state.selectedNodes}
 
+          nodeTypeData = {
+            {
+              "folder" : {
+                "iconCollapsed": "FabricFolderFill",
+                "iconExpanded": "FabricOpenFolderHorizontal"
+              },
+              "file" : {
+                "iconCollapsed": "Script",
+                "iconExpanded": "Script"
+              }
+            }
+          }
+
         />
 
 
