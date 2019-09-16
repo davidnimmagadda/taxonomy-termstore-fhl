@@ -88,14 +88,15 @@ export class TreeNode extends React.Component{
   }
 
   getFolderIcon() {
-    return "FabricFolderFill"
-    // return this.props.currNode.type === "file"
-    //   ? "Script"
-    //   : this.props.currNode.type === "folder" && this.state[this.props.currNode.id].node.isOpen
-    //   ? "FabricOpenFolderHorizontal"
-    //   : this.props.currNode.type === "folder" && !this.state[this.props.currNode.id].node.isOpen
-    //   ? "FabricFolderFill"
-    //   : "";
+    // return "FabricFolderFill"
+
+    return this.props.currNode.type === "file"
+      ? "Script"
+      : this.props.currNode.type === "folder" && this.props.nodeState.node.isOpen
+      ? "FabricOpenFolderHorizontal"
+      : this.props.currNode.type === "folder" && !this.props.nodeState.node.isOpen
+      ? "FabricFolderFill"
+      : "";
   }
   render(){
 
