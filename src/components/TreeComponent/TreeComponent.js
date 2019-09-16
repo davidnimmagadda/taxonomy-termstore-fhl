@@ -37,7 +37,7 @@ class TreeComponent extends React.Component{
 
           let isOpen = false;
 
-          if (!prevState[nodeId].node.isOpen) {
+          if (!prevState[nodeId].isOpen) {
             // call load children
             console.log(" node is not open")
             const res = this.loadChildren(nodeId, parents);
@@ -52,7 +52,7 @@ class TreeComponent extends React.Component{
             };
 
             treeStateChanges[nodeId] = {
-              ...prevState[nodeId], node: { ...prevState[nodeId].node, isOpen: isOpen }
+              ...prevState[nodeId],  isOpen: isOpen
             };
 
 

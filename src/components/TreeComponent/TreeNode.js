@@ -82,14 +82,14 @@ export class TreeNode extends React.Component{
   }
 
   getChevron() {
-    return this.props.currNode.type === "folder" && this.props.nodeState.node.isOpen
+    return this.props.nodeState.isOpen
       ? "ChevronDownMed"
       : "ChevronRightMed";
   }
 
   getFolderIcon() {
     // return "FabricFolderFill"
-    let iconTypeKey = this.props.nodeState.node.isOpen?"iconExpanded":"iconCollapsed"
+    let iconTypeKey = this.props.nodeState.isOpen?"iconExpanded":"iconCollapsed"
     let icon = this.props.nodeTypeData[this.props.currNode.type][iconTypeKey]
     return icon!==undefined?icon:"";
   }
@@ -155,7 +155,7 @@ export class TreeNode extends React.Component{
           type={this.props.currNode.type}
         >
 
-          {this.props.nodeState.node.isOpen && this.props.nodeState.children.length ==0?(<span style={{marginLeft: 17, marginRight: 5}}>&nbsp;</span>):(<span role="button" onClick={(e) => {this.props.onToggle(this.props.currNode.id, this.props.parents)}}>
+          {this.props.nodeState.isOpen && this.props.nodeState.children.length ==0?(<span style={{marginLeft: 17, marginRight: 5}}>&nbsp;</span>):(<span role="button" onClick={(e) => {this.props.onToggle(this.props.currNode.id, this.props.parents)}}>
             <Icon
               style={{ marginLeft: 5, marginRight: 5 }}
               iconName={this.getChevron()}
@@ -180,7 +180,7 @@ export class TreeNode extends React.Component{
 
           <TreeNodeHelper
             key={childNode.id}
-            show={this.props.show && this.props.nodeState.node.isOpen}
+            show={this.props.show && this.props.nodeState.isOpen}
             currNode={childNode}
             level={this.props.level + 1}
             onGetNode = {this.props.onGetNode.bind(this)}
@@ -202,7 +202,7 @@ export class TreeNode extends React.Component{
           className="treeNode"
           style={{
             paddingLeft: getPaddingLeft(this.props.level+1, this.props.currNode.type) +50,
-            display: this.props.nodeState.nextLink !==undefined && this.props.show && this.props.nodeState.children.length >0 && this.props.nodeState.node.isOpen? "flex" : "none"
+            display: this.props.nodeState.nextLink !==undefined && this.props.show && this.props.nodeState.children.length >0 && this.props.nodeState.isOpen? "flex" : "none"
           }}
           level={this.props.level}
           // onMouseEnter={() => {
