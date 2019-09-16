@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { setCurrentTerm } from "../../redux/actions/termActions";
 import TreeNodeHelper from "./TreeNodeHelper";
-import { Spinner, IconButton, Icon, Checkbox } from "office-ui-fabric-react";
+import { Spinner, IconButton, Icon, Checkbox, Link } from "office-ui-fabric-react";
 import { tsConstructorType, numericLiteral } from "@babel/types";
 import TreeNode from "./TreeNode";
 
@@ -218,11 +218,18 @@ class TreeComponent extends React.Component{
       maxWidth: this.props.width + "px",
       overflow: "auto"
     }}>
+
+      {(this.props.searchPath["id"] === undefined)?
     <TreeNode {...this.props} nodeState = {this.state[this.props.currNode.id]} onToggle={this.onToggle}
     treeState = {this.state} onSelect={this.props.onSelect} onDeselect={this.props.onDeselect} selectedNodes = {this.props.selectedNodes}
 
     onSingleSelect= {this.props.onSelect} show={true} onLoadNext = {this.loadNextChildren} parents = {[]}
-     /></div>
+     />:(
+       <Link href="#" onClick={this.props.hideSearchView}>X</Link>
+
+
+     )}
+     </div>
      </div>;
   }
 }

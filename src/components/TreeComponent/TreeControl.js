@@ -45,6 +45,32 @@ let onLoadNode = function(nodeId, parents) {
   console.log("uri = " + uri)
   return getNode(uri)
 }
+let sampleSearchPath = {
+  name: "term store",
+  type: "folder",
+  id: "1",
+  children: [{
+    name: "People",
+    type: "folder",
+    id: "ai",
+    children:[
+      {
+        name: "Location",
+        type: "folder",
+        id: "ad",
+        children:[
+          {
+            name: "Bangalore",
+            type: "term",
+            id: "w",
+
+          }
+        ]
+      }
+    ]
+  }
+]
+}
 
 
 export class TreeControl extends React.Component {
@@ -52,7 +78,8 @@ constructor(props){
   super(props);
   this.state = {
     selectionMode: 1,
-    selectedNodes: new Set([])
+    selectedNodes: new Set([]),
+    searchPath: {}
   }
   this.onSelect = this.onSelect.bind(this);
   this.onDeselect = this.onDeselect.bind(this);
@@ -113,6 +140,17 @@ onSelectionModeChange(ev, checkedValue){
     return {selectionMode: checkedValue.key};
   })
 }
+
+hideSearchView(){
+  this.setState((prevState) => {
+    return {searchPath : {}}
+  })
+}
+
+showSearchView(searchPath){
+  this.setState({searchPath: searchPath})
+}
+
 render(){
 
     let termString = ""
@@ -165,6 +203,8 @@ render(){
           {termString}
         </div>
         <div><input type="button" value="push term bangalore in selection" onClick={() => {this.selectNodesInTree({label: "Bangalore", id: "w"})}}/></div>
+        <div><input type="button" value="show search view" onClick={() => {this.showSearchView(sampleSearchPath)}}/></div>
+
         <TreeComponent
           onGetNode = {onLoadNode.bind(this)}
           selectionMode = {this.state.selectionMode}
@@ -174,7 +214,8 @@ render(){
             id: "1"
           }}
 
-
+          searchPath = {this.state.searchPath}
+          hideSearchView = {this.hideSearchView.bind(this)}
           onSelect = {this.onSelect.bind(this)}
           onDeselect = {this.onDeselect.bind(this)}
           height={300}
