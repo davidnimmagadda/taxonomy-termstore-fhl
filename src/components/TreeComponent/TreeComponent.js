@@ -24,9 +24,9 @@ class TreeComponent extends React.Component{
     this.state = treeState;
 
     this.onToggle = this.onToggle.bind(this);
-    this.onSelect = this.onSelect.bind(this);
-    this.onDeselect = this.onDeselect.bind(this);
-    this.onSingleSelect = this.onSingleSelect.bind(this);
+    // this.onSelect = this.onSelect.bind(this);
+    // this.onDeselect = this.onDeselect.bind(this);
+    // this.onSingleSelect = this.onSingleSelect.bind(this);
     this.loadNextChildren = this.loadNextChildren.bind(this);
     // this.addNodeInState = this.addNodeInState.bind(this);
   }
@@ -63,44 +63,44 @@ class TreeComponent extends React.Component{
 
   }
 
-  onSelect(nodeLabel, nodeId){
-    let selectedNodes = new Set([]);
-    this.setState((prevState) =>{
+  // onSelect(nodeLabel, nodeId){
+  //   let selectedNodes = new Set([]);
+  //   this.setState((prevState) =>{
 
-      selectedNodes = prevState.selectedNodes;
-      selectedNodes.add(JSON.stringify({label: nodeLabel, id: nodeId}));
-      this.props.onSelect(selectedNodes);
-      return {selectedNodes : selectedNodes};
-    }
-    )
-    //this.props.onSelect(selectedNodes);
-  }
+  //     selectedNodes = prevState.selectedNodes;
+  //     selectedNodes.add(JSON.stringify({label: nodeLabel, id: nodeId}));
+  //     this.props.onSelect(selectedNodes);
+  //     return {selectedNodes : selectedNodes};
+  //   }
+  //   )
+  //   //this.props.onSelect(selectedNodes);
+  // }
 
-  onSingleSelect(nodeLabel, nodeId){
-    this.setState((prevState) =>{
+  // onSingleSelect(nodeLabel, nodeId){
+  //   this.setState((prevState) =>{
 
-      let selectedNodes = new Set([]);
-      selectedNodes.add(JSON.stringify({label: nodeLabel, id: nodeId}));
-      this.props.onSelect(selectedNodes);
-      return {selectedNodes : selectedNodes};
-    }
-    )
-  }
+  //     let selectedNodes = new Set([]);
+  //     selectedNodes.add(JSON.stringify({label: nodeLabel, id: nodeId}));
+  //     this.props.onSelect(selectedNodes);
+  //     return {selectedNodes : selectedNodes};
+  //   }
+  //   )
+  // }
 
 
 
-  onDeselect(nodeLabel, nodeId){
-    let selectedNodes = new Set([]);
-    this.setState((prevState) =>{
+  // onDeselect(nodeLabel, nodeId){
+  //   let selectedNodes = new Set([]);
+  //   this.setState((prevState) =>{
 
-      selectedNodes = prevState.selectedNodes;
-      selectedNodes.delete(JSON.stringify({label: nodeLabel, id: nodeId}));
-      this.props.onSelect(selectedNodes);
-      return {selectedNodes : selectedNodes};
-    }
-    )
-    //this.props.onSelect(selectedNodes);
-  }
+  //     selectedNodes = prevState.selectedNodes;
+  //     selectedNodes.delete(JSON.stringify({label: nodeLabel, id: nodeId}));
+  //     this.props.onSelect(selectedNodes);
+  //     return {selectedNodes : selectedNodes};
+  //   }
+  //   )
+  //   //this.props.onSelect(selectedNodes);
+  // }
   // addNodeInState(currNode){
   //   let nodeState = {};
   //   nodeState[currNode.id] = {
@@ -223,10 +223,10 @@ class TreeComponent extends React.Component{
       overflow: "auto"
     }}>
     <TreeNode {...this.props} nodeState = {this.state[this.props.currNode.id]} onToggle={this.onToggle}
-    treeState = {this.state} onSelect={this.onSelect} onDeselect={this.onDeselect} selectedNodes = {this.state.selectedNodes}
+    treeState = {this.state} onSelect={this.props.onSelect} onDeselect={this.props.onDeselect} selectedNodes = {this.props.selectedNodes}
 
-    onSingleSelect= {this.onSingleSelect} show={true} onLoadNext = {this.loadNextChildren} parents = {[]}
-     /></div>      <div className="selectedNodes">{JSON.stringify(Array.from(this.state.selectedNodes))}</div>
+    onSingleSelect= {this.props.onSelect} show={true} onLoadNext = {this.loadNextChildren} parents = {[]}
+     /></div>      <div className="selectedNodes">{JSON.stringify(Array.from(this.props.selectedNodes))}</div>
      </div>;
   }
 }

@@ -107,7 +107,7 @@ export class TreeNode extends React.Component{
       style={{ whiteSpace: "nowrap", width: "100%" }}
       onClick={() => this.onNodeSingleSelect()}
     >
-      {this.props.currNode.name}
+      {this.props.currNode.name}({this.props.currNode.id})
     </span></span>
 
     switch(this.props.selectionMode){
@@ -140,7 +140,7 @@ export class TreeNode extends React.Component{
             }
           };
         };
-        nodeLabel = <Checkbox checked={this.props.selectedNodes.has(JSON.stringify({label: this.props.currNode.name,id:  this.props.currNode.id}))}label={this.props.currNode.name} onChange={(_ev, checked) =>{if(checked){ this.onNodeSelect();}else{this.onNodeDeselect()}}} styles={checkboxStyles}/>
+        nodeLabel = <Checkbox checked={this.props.selectedNodes.has(JSON.stringify({label: this.props.currNode.name,id:  this.props.currNode.id}))} label={this.props.currNode.name} onChange={(_ev, checked) =>{if(checked){ this.onNodeSelect();}else{this.onNodeDeselect()}}} styles={checkboxStyles}/>
         break;
       }
     }
