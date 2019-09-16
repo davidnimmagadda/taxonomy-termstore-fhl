@@ -156,7 +156,6 @@ class TreeComponent extends React.Component{
 
         return treeStateChanges;
       })
-      console.log("state is " + JSON.stringify(this.state))
 
 
 
