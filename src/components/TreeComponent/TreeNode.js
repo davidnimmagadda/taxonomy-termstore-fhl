@@ -86,7 +86,7 @@ export class TreeNode extends React.Component{
         options={[
           {
             key: JSON.stringify({label: this.props.currNode.name,id:  this.props.currNode.id}),
-             text: this.props.currNode.name + "(" + this.props.currNode.id + ")",
+             text: this.props.currNode.name,
              styles:styleForOption()
           }
         ]}
