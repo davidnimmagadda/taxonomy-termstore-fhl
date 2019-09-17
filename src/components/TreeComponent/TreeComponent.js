@@ -125,8 +125,31 @@ class TreeComponent extends React.Component{
         return treeStateChanges;
       })
 
-      const response = await this.props.onLoadMore();
+      // const response = await this.props.onLoadMore();
+      const response = [
+        {
+          "id": "l1",
+          "type": "folder",
+          "name": "MoreChild1",
+
+        },
+        {
+          "id": "l2",
+          "type": "folder",
+          "name": "MoreChild2",
+
+        },
+        {
+          "id": "l3",
+          "type": "folder",
+          "name": "MoreChild3",
+
+
+        }
+      ]
       const nextLink = response.next;
+      console.log("load more output")
+      console.log(response)
       // console.log("got response = ")
       // console.log(JSON.stringify(response))
       this.setState((prevState) =>{
