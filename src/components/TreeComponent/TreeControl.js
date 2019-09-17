@@ -5,7 +5,7 @@ import "./TreeControl.css";
 import PropTypes from "prop-types";
 import TreeNode from "./TreeNode";
 import TreeComponent from "./TreeComponent";
-import {  ChoiceGroup } from "office-ui-fabric-react";
+import {  ChoiceGroup, DefaultButton } from "office-ui-fabric-react";
 
 
 import { getNode } from "../../api/termApi";
@@ -236,8 +236,9 @@ render(){
         <div className="selectedNodes" id="selectedTermsInTree">
           {termString}
         </div>
-        <div><input type="button" value="push term bangalore in selection" onClick={() => {this.selectNodesInTree({label: "Bangalore", id: "w"})}}/></div>
-        <div><input type="button" value="show search view" onClick={() => {this.showSearchView(sampleSearchPath)}}/></div>
+        <div><DefaultButton  text="push term bangalore in selection" onClick={() => {this.selectNodesInTree({label: "Bangalore", id: "w"})}}/></div>
+
+        <div><DefaultButton text="show search view" onClick={() => {this.showSearchView(sampleSearchPath)}}/></div>
 
         <TreeComponent
           onGetNode = {onLoadNode.bind(this)}
