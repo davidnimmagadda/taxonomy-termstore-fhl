@@ -22,7 +22,7 @@ let handleOnSelect = (terms) => {
 }
 
 let onLoadMore = function() {
-  return getNode("termGroups/ai/termSets")
+   return getNode("termGroups/ai/termSets")
 
 }
 
