@@ -27,7 +27,7 @@ export function TreeNode(props) {
         level={props.level}
         type={props.currNode.type}
       >
-        {props.nodeState.isOpen && props.nodeState.children.length == 0 ? (
+        {props.nodeState.isExpanded && props.nodeState.children.length == 0 ? (
           <span style={{ marginLeft: 17, marginRight: 5 }}>&nbsp;</span>
         ) : (
           <span
@@ -66,7 +66,7 @@ export function TreeNode(props) {
             props.nodeState.nextLink !== undefined &&
             props.isVisible &&
             props.nodeState.children.length > 0 &&
-            props.nodeState.isOpen
+            props.nodeState.isExpanded
               ? "flex"
               : "none"
         }}
@@ -98,11 +98,11 @@ export function TreeNode(props) {
   }
 
   function getChevron() {
-    return props.nodeState.isOpen ? "ChevronDownMed" : "ChevronRightMed";
+    return props.nodeState.isExpanded ? "ChevronDownMed" : "ChevronRightMed";
   }
 
   function getIcon() {
-    let iconTypeKey = props.nodeState.isOpen ? "iconExpanded" : "iconCollapsed";
+    let iconTypeKey = props.nodeState.isExpanded ? "iconExpanded" : "iconCollapsed";
     let icon = props.nodeTypeData[props.currNode.type][iconTypeKey];
     return icon !== undefined ? icon : "";
   }
@@ -113,7 +113,7 @@ export function TreeNode(props) {
         {nodeChildren.map(childNode => (
           <TreeNodeHelper
             key={childNode.id}
-            isVisible={props.isVisible && props.nodeState.isOpen}
+            isVisible={props.isVisible && props.nodeState.isExpanded}
             currNode={childNode}
             level={props.level + 1}
             onGetNode={props.onGetNode.bind(this)}

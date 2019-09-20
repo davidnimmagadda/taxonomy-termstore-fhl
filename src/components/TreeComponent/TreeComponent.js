@@ -7,245 +7,154 @@ import TreeNode from "./TreeNode";
 class TreeComponent extends React.Component {
   constructor(props) {
     super(props);
-    let rootNodeID = props.currNode.id;
 
+    let rootNodeID = props.currNode.id;
     let treeState = {};
     treeState[rootNodeID] = {
       children: [],
-      loading: false
+      loading: false,
+      isChildrenLoaded: false
     }
     treeState["selectedNodes"] = new Set([]);
-
     this.state = treeState;
 
     this.onToggle = this.onToggle.bind(this);
-
     this.loadNextChildren = this.loadNextChildren.bind(this);
-
   }
 
   onToggle(nodeId, parents) {
-
-    let prevState = this.state;
-
-    let isOpen = false;
-
-    if (!prevState[nodeId].isOpen) {
-
-
-      const res = this.loadChildren(nodeId, parents);
-
-
-      isOpen = true;
-    } else {
-      isOpen = false;
+    if (!this.state[nodeId].isExpanded) {
+      this.loadChildren(nodeId, parents);
     }
     this.setState((prevState) => {
-      let treeStateChanges = {
-      };
-
+      let treeStateChanges = {};
       treeStateChanges[nodeId] = {
-        ...prevState[nodeId], isOpen: isOpen
+        ...prevState[nodeId], isExpanded: !prevState[nodeId].isExpanded
       };
-
-
       return treeStateChanges
     });
-
-
-
-  }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  async loadNextChildren(nodeId) {
-
-    this.setState((prevState) => {
-      let treeStateChanges = {
-      };
-      treeStateChanges[nodeId] = {
-        ...prevState[nodeId], loading: true
-      };
-
-      return treeStateChanges;
-    })
-
-
-    const response = [
-      {
-        "id": "l1",
-        "type": "folder",
-        "name": "MoreChild1",
-
-      },
-      {
-        "id": "l2",
-        "type": "folder",
-        "name": "MoreChild2",
-
-      },
-      {
-        "id": "l3",
-        "type": "folder",
-        "name": "MoreChild3",
-
-
-      }
-    ]
-    const nextLink = response.next;
-    console.log("load more output")
-    console.log(response)
-
-
-    this.setState((prevState) => {
-      let treeStateChanges = {
-      };
-      treeStateChanges[nodeId] = {
-        ...prevState[nodeId], loading: false
-      };
-      return treeStateChanges;
-    })
-    this.setState((prevState) => {
-      let treeStateChanges = {
-      };
-      let newChildren = response
-      newChildren.forEach((currNode) => {
-
-        treeStateChanges[currNode.id] = {
-          children: [],
-          loading: false,
-        }
-      })
-
-      let children = [...prevState[nodeId].children, ...newChildren]
-      treeStateChanges[nodeId] = {
-        ...prevState[nodeId], children: children, nextLink: nextLink
-      };
-
-      return treeStateChanges;
-    })
-
-
-
-
   }
 
   async loadChildren(nodeId, parents) {
-    if (this.state[nodeId].children.length === 0) {
-
+    if (!this.state[nodeId].isChildrenLoaded) {
       this.setState((prevState) => {
         let treeStateChanges = {
         };
         treeStateChanges[nodeId] = {
           ...prevState[nodeId], loading: true
         };
-
         return treeStateChanges;
       })
-
-      const response = await this.props.onGetNode(nodeId, parents);
-      const nextLink = response.next === undefined ? "somelink" : undefined;
-
-
-      this.setState((prevState) => {
-        let treeStateChanges = {
-        };
-        treeStateChanges[nodeId] = {
-          ...prevState[nodeId], loading: false
-        };
-        return treeStateChanges;
-      })
-      this.setState((prevState) => {
-        let treeStateChanges = {
-        };
-        treeStateChanges[nodeId] = {
-          ...prevState[nodeId], children: response, nextLink: nextLink
-        };
-        response.forEach((currNode) => {
-
-          treeStateChanges[currNode.id] = {
-            children: [],
-            loading: false,
-          }
-        })
-
-        return treeStateChanges;
-      })
-
-
-
-
+      try {
+        const response = await this.props.onGetNode(nodeId, parents);
+        const nextLink = response.next === undefined ? "somelink" : undefined;
+        const children = response
+        // Above Lines are for Hardcoded response. Below lines are for actual call
+        // const nextLink = response.next
+        // const children = response.children
+        this._appendChildrenToNode(nodeId, children, nextLink);
+      } catch (exception) {
+        //TODO
+      }
     }
+    this.setState((prevState) => {
+      let treeStateChanges = {};
+      treeStateChanges[nodeId] = {
+        ...prevState[nodeId], loading: false
+      };
+      return treeStateChanges;
+    })
+  }
+
+  async loadNextChildren(nodeId) {
+    this.setState((prevState) => {
+      let treeStateChanges = {};
+      treeStateChanges[nodeId] = {
+        ...prevState[nodeId], loading: true
+      };
+      return treeStateChanges;
+    })
+    try {
+      const response = {
+        children: [
+          {
+            "id": "l1",
+            "type": "folder",
+            "name": "MoreChild1",
+
+          },
+          {
+            "id": "l2",
+            "type": "folder",
+            "name": "MoreChild2",
+
+          },
+          {
+            "id": "l3",
+            "type": "folder",
+            "name": "MoreChild3",
+          }
+        ]
+      }
+      const nextLink = response.next;
+      const newChildren = response.children;
+      // Above Lines are for Hardcoded response. Below lines are for actual call
+      // const nextLink = response.next
+      // const response = await this.props.loadMoreChildren(nodeId, parents, this.state[nodeId].nextLink)
+      this._appendChildrenToNode(nodeId, newChildren, nextLink);
+    } catch (exception) {
+      //TODO
+    }
+    this.setState((prevState) => {
+      let treeStateChanges = {};
+      treeStateChanges[nodeId] = {
+        ...prevState[nodeId], loading: false
+      };
+      return treeStateChanges;
+    })
+  }
+
+  _appendChildrenToNode(nodeId, newChildren, nextLink) {
+    this.setState((prevState) => {
+      let treeStateChanges = {};
+      newChildren.forEach((currNode) => {
+        treeStateChanges[currNode.id] = {
+          children: [],
+          loading: false,
+          isChildrenLoaded: false,
+        }
+      })
+      let children = [...prevState[nodeId].children, ...newChildren]
+      treeStateChanges[nodeId] = {
+        ...prevState[nodeId], children: children, nextLink: nextLink, isChildrenLoaded: true
+      };
+      return treeStateChanges;
+    })
   }
 
   render() {
-
-
     return <div><div style={{
       height: this.props.height + "px",
       maxWidth: this.props.width + "px",
       overflow: "auto"
     }}>
-
       {(this.props.searchPath["id"] === undefined) ?
-        <TreeNode {...this.props} nodeState={this.state[this.props.currNode.id]} onToggle={this.onToggle}
-          treeState={this.state} onSelect={this.props.onSelect} onDeselect={this.props.onDeselect} selectedNodes={this.props.selectedNodes}
-
-          onSingleSelect={this.props.onSelect} isVisible={true} onLoadNext={this.loadNextChildren} parents={[]}
-          highlightedNodesMap={this.props.highlightedNodesMap} level={0}
-        /> : (
+        <TreeNode
+          {...this.props}
+          nodeState={this.state[this.props.currNode.id]}
+          onToggle={this.onToggle}
+          treeState={this.state}
+          onSelect={this.props.onSelect}
+          onDeselect={this.props.onDeselect}
+          selectedNodes={this.props.selectedNodes}
+          isVisible={true}
+          onLoadNext={this.loadNextChildren}
+          parents={[]}
+          highlightedNodesMap={this.props.highlightedNodesMap}
+          level={0}
+        /> :
+        (
           <Link href="#" onClick={this.props.hideSearchView}>X</Link>
-
-
         )}
     </div>
     </div>;
