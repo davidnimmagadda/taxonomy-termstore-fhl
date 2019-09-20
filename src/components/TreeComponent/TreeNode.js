@@ -13,7 +13,7 @@ function getPaddingLeft(level) {
   return level * 20;
 }
 export function TreeNode(props) {
-  let nodeLabel = getNodeLabel();
+  let nodeContent = getNodeContent();
   return props.nodeState.loading ? (
     <Spinner />
   ) : (
@@ -42,7 +42,7 @@ export function TreeNode(props) {
             />
           </span>
         )}
-        {nodeLabel}
+        {nodeContent}
         {props.nodeTypeData[props.node.type]["contextMenu"] !==
           undefined && (
           <span
@@ -134,7 +134,7 @@ export function TreeNode(props) {
     );
   }
 
-  function getNodeLabel() {
+  function getNodeContent() {
     let isHighLighted =
       props.highlightedNodesMap[props.node.id] !== undefined;
     let nodeLabel = (
