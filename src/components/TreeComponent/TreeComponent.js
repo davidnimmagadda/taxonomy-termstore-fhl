@@ -8,9 +8,8 @@ class TreeComponent extends React.Component {
   constructor(props) {
     super(props);
 
-    let rootNodeID = props.rootNode.id;
     let treeState = {};
-    treeState[rootNodeID] = {
+    treeState[this._getNodeKey(props.rootNode)] = {
       children: [],
       loading: false,
       isChildrenLoaded: false
@@ -20,57 +19,64 @@ class TreeComponent extends React.Component {
 
     this.onToggle = this.onToggle.bind(this);
     this.loadNextChildren = this.loadNextChildren.bind(this);
+    this._getNodeKey = this._getNodeKey.bind(this)
   }
 
-  onToggle(nodeId, parents) {
-    if (!this.state[nodeId].isExpanded) {
-      this.loadChildren(nodeId, parents);
+  _getNodeKey(node){
+      return JSON.stringify({id: node.id, type: node.type});
+  }
+
+  onToggle(node, parents) {
+    let nodeKey = this._getNodeKey(node);
+    if (!this.state[nodeKey].isExpanded) {
+      this.loadChildren(nodeKey,node, parents);
     }
     this.setState((prevState) => {
       let treeStateChanges = {};
-      treeStateChanges[nodeId] = {
-        ...prevState[nodeId], isExpanded: !prevState[nodeId].isExpanded
+      treeStateChanges[nodeKey] = {
+        ...prevState[nodeKey], isExpanded: !prevState[nodeKey].isExpanded
       };
       return treeStateChanges
     });
   }
 
-  async loadChildren(nodeId, parents) {
-    if (!this.state[nodeId].isChildrenLoaded) {
+  async loadChildren(nodeKey, node, parents) {
+    if (!this.state[nodeKey].isChildrenLoaded) {
       this.setState((prevState) => {
         let treeStateChanges = {
         };
-        treeStateChanges[nodeId] = {
-          ...prevState[nodeId], loading: true
+        treeStateChanges[nodeKey] = {
+          ...prevState[nodeKey], loading: true
         };
         return treeStateChanges;
       })
       try {
-        const response = await this.props.loadChildren(nodeId, parents);
+        const response = await this.props.loadChildren(node, parents);
         const nextLink = response.next === undefined ? "somelink" : undefined;
         const children = response
         // Above Lines are for Hardcoded response. Below lines are for actual call
         // const nextLink = response.next
         // const children = response.children
-        this._appendChildrenToNode(nodeId, children, nextLink);
+        this._appendChildrenToNode(nodeKey, children, nextLink);
       } catch (exception) {
         //TODO
       }
     }
     this.setState((prevState) => {
       let treeStateChanges = {};
-      treeStateChanges[nodeId] = {
-        ...prevState[nodeId], loading: false
+      treeStateChanges[nodeKey] = {
+        ...prevState[nodeKey], loading: false
       };
       return treeStateChanges;
     })
   }
 
-  async loadNextChildren(nodeId) {
+  async loadNextChildren(node, parents) {
+    let nodeKey = this._getNodeKey(node)
     this.setState((prevState) => {
       let treeStateChanges = {};
-      treeStateChanges[nodeId] = {
-        ...prevState[nodeId], loading: true
+      treeStateChanges[nodeKey] = {
+        ...prevState[nodeKey], loading: true
       };
       return treeStateChanges;
     })
@@ -100,33 +106,33 @@ class TreeComponent extends React.Component {
       const newChildren = response.children;
       // Above Lines are for Hardcoded response. Below lines are for actual call
       // const nextLink = response.next
-      // const response = await this.props.loadNextChildren(nodeId, parents, this.state[nodeId].nextLink)
-      this._appendChildrenToNode(nodeId, newChildren, nextLink);
+      // const response = await this.props.loadNextChildren(nodeId, parents, this.state[nodeKey].nextLink)
+      this._appendChildrenToNode(nodeKey, newChildren, nextLink);
     } catch (exception) {
       //TODO
     }
     this.setState((prevState) => {
       let treeStateChanges = {};
-      treeStateChanges[nodeId] = {
-        ...prevState[nodeId], loading: false
+      treeStateChanges[nodeKey] = {
+        ...prevState[nodeKey], loading: false
       };
       return treeStateChanges;
     })
   }
 
-  _appendChildrenToNode(nodeId, newChildren, nextLink) {
+  _appendChildrenToNode(nodeKey, newChildren, nextLink) {
     this.setState((prevState) => {
       let treeStateChanges = {};
       newChildren.forEach((child) => {
-        treeStateChanges[child.id] = {
+        treeStateChanges[this._getNodeKey(child)] = {
           children: [],
           loading: false,
           isChildrenLoaded: false,
         }
       })
-      let children = [...prevState[nodeId].children, ...newChildren]
-      treeStateChanges[nodeId] = {
-        ...prevState[nodeId], children: children, nextLink: nextLink, isChildrenLoaded: true
+      let children = [...prevState[nodeKey].children, ...newChildren]
+      treeStateChanges[nodeKey] = {
+        ...prevState[nodeKey], children: children, nextLink: nextLink, isChildrenLoaded: true
       };
       return treeStateChanges;
     })
@@ -140,9 +146,10 @@ class TreeComponent extends React.Component {
     }}>
       {(this.props.searchPath["id"] === undefined) ?
         <TreeNode
+          key = {this._getNodeKey(this.props.rootNode)}
           selectionMode = {this.props.selectionMode}
           node = {this.props.rootNode}
-          nodeState={this.state[this.props.rootNode.id]}
+          nodeState={this.state[this._getNodeKey(this.props.rootNode)]}
           onSelect={this.props.onSelect}
           onDeselect={this.props.onDeselect}
           selectedNodes={this.props.selectedNodes}
@@ -154,6 +161,7 @@ class TreeComponent extends React.Component {
           onLoadNext={this.loadNextChildren}
           parents={[]}
           level={0}
+          getNodeKey = {this._getNodeKey}
         /> :
         (
           <Link href="#" onClick={this.props.hideSearchView}>X</Link>

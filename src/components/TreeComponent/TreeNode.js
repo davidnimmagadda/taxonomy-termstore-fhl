@@ -33,7 +33,7 @@ export function TreeNode(props) {
           <span
             role="button"
             onClick={e => {
-              props.onToggle(props.node.id, props.parents);
+              props.onToggle(props.node, props.parents);
             }}
           >
             <Icon
@@ -76,7 +76,7 @@ export function TreeNode(props) {
           href="#"
           style={{ marginLeft: 0 }}
           onClick={() => {
-            props.onLoadNext(props.node.id);
+            props.onLoadNext(props.node, props.parents);
           }}
         >
           Load More
@@ -112,12 +112,12 @@ export function TreeNode(props) {
       <>
         {nodeChildren.map(childNode => (
           <TreeNodeHelper
-            key = {childNode.id}
+            key = {props.getNodeKey(childNode)}
             isVisible={props.isVisible && props.nodeState.isExpanded}
             node={childNode}
             level={props.level + 1}
             selectionMode={props.selectionMode}
-            nodeState={props.treeState[childNode.id]}
+            nodeState={props.treeState[props.getNodeKey(childNode)]}
             onToggle={props.onToggle}
             treeState={props.treeState}
             onSelect={props.onSelect}
@@ -127,6 +127,7 @@ export function TreeNode(props) {
             parents={getParents()}
             nodeTypeData={props.nodeTypeData}
             highlightedNodesMap={props.highlightedNodesMap}
+            getNodeKey = {props.getNodeKey}
           />
         ))}
       </>

@@ -40,8 +40,8 @@ let getURI = function(nodeId, parents) {
   }
 }
 
-let onLoadNode = function(nodeId, parents) {
-  let uri = getURI(nodeId, parents);
+let onLoadNode = function(node, parents) {
+  let uri = getURI(node.id, parents);
   console.log("uri = " + uri)
   return getNode(uri)
 }
