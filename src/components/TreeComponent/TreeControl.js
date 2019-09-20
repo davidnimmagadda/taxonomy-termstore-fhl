@@ -243,7 +243,7 @@ render(){
         <TreeComponent
           onGetNode = {onLoadNode.bind(this)}
           selectionMode = {this.state.selectionMode}
-          currNode = {{
+          rootNode = {{
             name: "term store",
             type: "folder",
             id: "1"

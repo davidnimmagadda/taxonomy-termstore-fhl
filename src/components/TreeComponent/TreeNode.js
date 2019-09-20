@@ -21,11 +21,11 @@ export function TreeNode(props) {
       <div
         className="treeNode"
         style={{
-          paddingLeft: getPaddingLeft(props.level, props.currNode.type),
+          paddingLeft: getPaddingLeft(props.level, props.node.type),
           display: props.isVisible ? "flex" : "none"
         }}
         level={props.level}
-        type={props.currNode.type}
+        type={props.node.type}
       >
         {props.nodeState.isExpanded && props.nodeState.children.length == 0 ? (
           <span style={{ marginLeft: 17, marginRight: 5 }}>&nbsp;</span>
@@ -33,7 +33,7 @@ export function TreeNode(props) {
           <span
             role="button"
             onClick={e => {
-              props.onToggle(props.currNode.id, props.parents);
+              props.onToggle(props.node.id, props.parents);
             }}
           >
             <Icon
@@ -43,7 +43,7 @@ export function TreeNode(props) {
           </span>
         )}
         {nodeLabel}
-        {props.nodeTypeData[props.currNode.type]["contextMenu"] !==
+        {props.nodeTypeData[props.node.type]["contextMenu"] !==
           undefined && (
           <span
             className="contextMenuIcon"
@@ -61,7 +61,7 @@ export function TreeNode(props) {
         className="treeNode"
         style={{
           paddingLeft:
-            getPaddingLeft(props.level + 1, props.currNode.type) + 50,
+            getPaddingLeft(props.level + 1, props.node.type) + 50,
           display:
             props.nodeState.nextLink !== undefined &&
             props.isVisible &&
@@ -76,7 +76,7 @@ export function TreeNode(props) {
           href="#"
           style={{ marginLeft: 0 }}
           onClick={() => {
-            props.onLoadNext(props.currNode.id);
+            props.onLoadNext(props.node.id);
           }}
         >
           Load More
@@ -86,15 +86,15 @@ export function TreeNode(props) {
   );
 
   function onDeselect() {
-    props.onDeselect(props.currNode.name, props.currNode.id, props.parents);
+    props.onDeselect(props.node.name, props.node.id, props.parents);
   }
 
   function onSelect() {
-    props.onSelect(props.currNode.name, props.currNode.id, props.parents);
+    props.onSelect(props.node.name, props.node.id, props.parents);
   }
 
   function getParents() {
-    return [...props.parents, props.currNode.id];
+    return [...props.parents, props.node.id];
   }
 
   function getChevron() {
@@ -103,7 +103,7 @@ export function TreeNode(props) {
 
   function getIcon() {
     let iconTypeKey = props.nodeState.isExpanded ? "iconExpanded" : "iconCollapsed";
-    let icon = props.nodeTypeData[props.currNode.type][iconTypeKey];
+    let icon = props.nodeTypeData[props.node.type][iconTypeKey];
     return icon !== undefined ? icon : "";
   }
 
@@ -114,7 +114,7 @@ export function TreeNode(props) {
           <TreeNodeHelper
             key={childNode.id}
             isVisible={props.isVisible && props.nodeState.isExpanded}
-            currNode={childNode}
+            node={childNode}
             level={props.level + 1}
             onGetNode={props.onGetNode.bind(this)}
             selectionMode={props.selectionMode}
@@ -137,7 +137,7 @@ export function TreeNode(props) {
 
   function getNodeLabel() {
     let isHighLighted =
-      props.highlightedNodesMap[props.currNode.id] !== undefined;
+      props.highlightedNodesMap[props.node.id] !== undefined;
     let nodeLabel = (
       <span style={{ whiteSpace: "nowrap", width: "100%" }}>
         <Icon style={{ marginRight: 10 }} iconName={getIcon()} />
@@ -146,7 +146,7 @@ export function TreeNode(props) {
           style={{ whiteSpace: "nowrap", width: "100%" }}
           onClick={() => onSelect()}
         >
-          {props.currNode.name}({props.currNode.id})
+          {props.node.name}({props.node.id})
         </span>
       </span>
     );
@@ -166,10 +166,10 @@ export function TreeNode(props) {
             options={[
               {
                 key: JSON.stringify({
-                  label: props.currNode.name,
-                  id: props.currNode.id
+                  label: props.node.name,
+                  id: props.node.id
                 }),
-                text: props.currNode.name,
+                text: props.node.name,
                 styles: styleForOption()
               }
             ]}
@@ -197,11 +197,11 @@ export function TreeNode(props) {
           <Checkbox
             checked={props.selectedNodes.has(
               JSON.stringify({
-                label: props.currNode.name,
-                id: props.currNode.id
+                label: props.node.name,
+                id: props.node.id
               })
             )}
-            label={props.currNode.name}
+            label={props.node.name}
             onChange={(_ev, checked) => {
               if (checked) {
                 onSelect();

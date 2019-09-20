@@ -8,7 +8,7 @@ class TreeComponent extends React.Component {
   constructor(props) {
     super(props);
 
-    let rootNodeID = props.currNode.id;
+    let rootNodeID = props.rootNode.id;
     let treeState = {};
     treeState[rootNodeID] = {
       children: [],
@@ -117,8 +117,8 @@ class TreeComponent extends React.Component {
   _appendChildrenToNode(nodeId, newChildren, nextLink) {
     this.setState((prevState) => {
       let treeStateChanges = {};
-      newChildren.forEach((currNode) => {
-        treeStateChanges[currNode.id] = {
+      newChildren.forEach((child) => {
+        treeStateChanges[child.id] = {
           children: [],
           loading: false,
           isChildrenLoaded: false,
@@ -141,7 +141,8 @@ class TreeComponent extends React.Component {
       {(this.props.searchPath["id"] === undefined) ?
         <TreeNode
           {...this.props}
-          nodeState={this.state[this.props.currNode.id]}
+          node = {this.props.rootNode}
+          nodeState={this.state[this.props.rootNode.id]}
           onToggle={this.onToggle}
           treeState={this.state}
           onSelect={this.props.onSelect}
