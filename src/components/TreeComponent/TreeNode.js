@@ -112,7 +112,7 @@ export function TreeNode(props) {
       <>
         {nodeChildren.map(childNode => (
           <TreeNodeHelper
-            key={childNode.id}
+            key = {childNode.id}
             isVisible={props.isVisible && props.nodeState.isExpanded}
             node={childNode}
             level={props.level + 1}

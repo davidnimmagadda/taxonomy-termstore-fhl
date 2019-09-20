@@ -100,7 +100,7 @@ class TreeComponent extends React.Component {
       const newChildren = response.children;
       // Above Lines are for Hardcoded response. Below lines are for actual call
       // const nextLink = response.next
-      // const response = await this.props.loadMoreChildren(nodeId, parents, this.state[nodeId].nextLink)
+      // const response = await this.props.loadNextChildren(nodeId, parents, this.state[nodeId].nextLink)
       this._appendChildrenToNode(nodeId, newChildren, nextLink);
     } catch (exception) {
       //TODO
@@ -140,18 +140,19 @@ class TreeComponent extends React.Component {
     }}>
       {(this.props.searchPath["id"] === undefined) ?
         <TreeNode
-          {...this.props}
+          selectionMode = {this.props.selectionMode}
           node = {this.props.rootNode}
           nodeState={this.state[this.props.rootNode.id]}
-          onToggle={this.onToggle}
-          treeState={this.state}
           onSelect={this.props.onSelect}
           onDeselect={this.props.onDeselect}
           selectedNodes={this.props.selectedNodes}
+          nodeTypeData = {this.props.nodeTypeData}
+          highlightedNodesMap={this.props.highlightedNodesMap}
+          onToggle={this.onToggle}
+          treeState={this.state}
           isVisible={true}
           onLoadNext={this.loadNextChildren}
           parents={[]}
-          highlightedNodesMap={this.props.highlightedNodesMap}
           level={0}
         /> :
         (

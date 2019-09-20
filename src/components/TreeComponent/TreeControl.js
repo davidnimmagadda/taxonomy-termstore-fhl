@@ -255,7 +255,7 @@ render(){
           onDeselect = {this.onDeselect.bind(this)}
           height={300}
           width={400}
-          onLoadMore = {onLoadMore.bind(this)}
+          loadNextChildren = {onLoadMore.bind(this)}
           selectedNodes = {this.state.selectedNodes}
 
           nodeTypeData = {
