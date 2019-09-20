@@ -246,8 +246,8 @@ class TreeComponent extends React.Component{
     <TreeNode {...this.props} nodeState = {this.state[this.props.currNode.id]} onToggle={this.onToggle}
     treeState = {this.state} onSelect={this.props.onSelect} onDeselect={this.props.onDeselect} selectedNodes = {this.props.selectedNodes}
 
-    onSingleSelect= {this.props.onSelect} show={true} onLoadNext = {this.loadNextChildren} parents = {[]}
-    highlightedNodesMap = {this.props.highlightedNodesMap}
+    onSingleSelect= {this.props.onSelect} isVisible={true} onLoadNext = {this.loadNextChildren} parents = {[]}
+    highlightedNodesMap = {this.props.highlightedNodesMap} level={0}
      />:(
        <Link href="#" onClick={this.props.hideSearchView}>X</Link>
 
