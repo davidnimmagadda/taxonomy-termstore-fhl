@@ -553,13 +553,30 @@ const terms = [
     isAvailableForTagging: false,
     isGloballyVisible: false,
     isCurrentlyVisible: false,
-    navNodeTitle: "",
+    navNodeTitle: "hyd",
     navHoverText: "",
     simpleLink: true,
-    friendlyUrl: "",
-    localCustomProps: [],
+    friendlyUrl: "hyderabad",
+    localCustomProps: [
+      {
+        nfjngkjr: "dwmndje"
+      },
+      {
+        dsdw: "sdfde"
+      }
+    ],
     sharedCustomProps: [],
-    defaultLabels: [],
+    defaultLabels: [
+      {
+        dqw: "English"
+      },
+      {
+        sfwded: "German"
+      },
+      {
+        dsdw: "French"
+      }
+    ],
     otherLabels: [],
     uniqueIdentifier: "jhweljrelwkenflm12143344xyzdsf",
     details:
