@@ -241,7 +241,7 @@ render(){
         <div><DefaultButton text="show search view" onClick={() => {this.showSearchView(sampleSearchPath)}}/></div>
 
         <TreeComponent
-          onGetNode = {onLoadNode.bind(this)}
+          loadChildren = {onLoadNode.bind(this)}
           selectionMode = {this.state.selectionMode}
           rootNode = {{
             name: "term store",

@@ -46,7 +46,7 @@ class TreeComponent extends React.Component {
         return treeStateChanges;
       })
       try {
-        const response = await this.props.onGetNode(nodeId, parents);
+        const response = await this.props.loadChildren(nodeId, parents);
         const nextLink = response.next === undefined ? "somelink" : undefined;
         const children = response
         // Above Lines are for Hardcoded response. Below lines are for actual call

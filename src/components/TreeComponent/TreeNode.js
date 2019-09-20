@@ -116,7 +116,6 @@ export function TreeNode(props) {
             isVisible={props.isVisible && props.nodeState.isExpanded}
             node={childNode}
             level={props.level + 1}
-            onGetNode={props.onGetNode.bind(this)}
             selectionMode={props.selectionMode}
             nodeState={props.treeState[childNode.id]}
             onToggle={props.onToggle}
@@ -124,7 +123,6 @@ export function TreeNode(props) {
             onSelect={props.onSelect}
             onDeselect={props.onDeselect}
             selectedNodes={props.selectedNodes}
-            onSingleSelect={props.onSingleSelect}
             onLoadNext={props.onLoadNext.bind(this)}
             parents={getParents()}
             nodeTypeData={props.nodeTypeData}
