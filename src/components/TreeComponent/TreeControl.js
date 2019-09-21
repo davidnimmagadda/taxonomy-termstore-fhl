@@ -90,20 +90,21 @@ onSelect(node, parents=[]){
       return {orphanHighlightedNodes: orphanHighlightedNodes}
     })
   }
-  this.updateHighlightedNodes([...parents,node.id], "Highlight");
+  this.updateHighlightedNodes([...parents, node], "Highlight");
 
 }
 
-updateHighlightedNodes(nodeIds, operation){
+updateHighlightedNodes(nodes, operation){
   let highLightAddition = operation === "Highlight"?1:-1;
   this.setState((prevState) => {
 
     let highlightedNodesMap =prevState.selectionMode===2? prevState.highlightedNodesMap:{};
-    nodeIds.forEach(function(nodeId){
-      let oldCount = highlightedNodesMap[nodeId] !== undefined?highlightedNodesMap[nodeId]:0;
-      highlightedNodesMap[nodeId] = oldCount + highLightAddition
-      if(highlightedNodesMap[nodeId] <= 0){
-        delete highlightedNodesMap[nodeId]
+    nodes.forEach(function(node){
+      let nodeHash = JSON.stringify({id: node.id})
+      let oldCount = highlightedNodesMap[nodeHash] !== undefined?highlightedNodesMap[nodeHash]:0;
+      highlightedNodesMap[nodeHash] = oldCount + highLightAddition
+      if(highlightedNodesMap[nodeHash] <= 0){
+        delete highlightedNodesMap[nodeHash]
       }
     })
     return {highlightedNodesMap: highlightedNodesMap}
@@ -150,7 +151,7 @@ onDeselect(node, parents = []){
   if(this.state.orphanHighlightedNodes.has(node.id)){
     parentsToUnHighLight = []
   }
-  this.updateHighlightedNodes([...parentsToUnHighLight,node.id], "unHighlight");
+  this.updateHighlightedNodes([...parentsToUnHighLight, node], "unHighlight");
   //this.props.onSelect(selectedNodes);
 }
 

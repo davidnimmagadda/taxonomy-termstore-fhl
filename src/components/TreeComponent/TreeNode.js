@@ -136,7 +136,7 @@ export function TreeNode(props) {
 
   function getNodeContent() {
     let isHighLighted =
-      props.highlightedNodesMap[props.node.id] !== undefined;
+      props.highlightedNodesMap[JSON.stringify({id: props.node.id})] !== undefined;
     let nodeLabel = (
       <span style={{ whiteSpace: "nowrap", width: "100%" }}>
         <Icon style={{ marginRight: 10 }} iconName={getIcon()} />
