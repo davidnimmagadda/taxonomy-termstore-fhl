@@ -86,11 +86,11 @@ export function TreeNode(props) {
   );
 
   function onDeselect() {
-    props.onDeselect(props.node.name, props.node.id, props.parents);
+    props.onDeselect(props.node, props.parents);
   }
 
   function onSelect() {
-    props.onSelect(props.node.name, props.node.id, props.parents);
+    props.onSelect(props.node, props.parents);
   }
 
   function getParents() {

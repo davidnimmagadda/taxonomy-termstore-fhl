@@ -11,15 +11,6 @@ import {  ChoiceGroup, DefaultButton } from "office-ui-fabric-react";
 import { getNode } from "../../api/termApi";
 import { thisExpression } from "@babel/types";
 
-let handleOnSelect = (terms) => {
-  let termString = ""
-  Array.from(terms).forEach((term) => {
-    let parsedTerm = JSON.parse(term)
-    termString += parsedTerm.label + "(" + parsedTerm.id + ")";
-  });
-  document.getElementById("selectedTermsInTree").innerText = termString;
-
-}
 
 let onLoadMore = function() {
    return getNode("termGroups/ai/termSets")
@@ -87,20 +78,20 @@ constructor(props){
   this.onDeselect = this.onDeselect.bind(this);
 }
 
-onSelect(nodeLabel, nodeId, parents=[]){
+onSelect(node, parents=[]){
   if(this.state.selectionMode <=1){
-    this.onSingleSelect(nodeLabel, nodeId)
+    this.onSingleSelect(node)
   }else{
-    this.onMultiSelect(nodeLabel, nodeId);
+    this.onMultiSelect(node);
   }
   if(parents.length === 0){
     this.setState((prevState)=>{
       let orphanHighlightedNodes = prevState.orphanHighlightedNodes;
-      orphanHighlightedNodes.add(nodeId)
+      orphanHighlightedNodes.add(node.id)
       return {orphanHighlightedNodes: orphanHighlightedNodes}
     })
   }
-  this.updateHighlightedNodes([...parents,nodeId], "Highlight");
+  this.updateHighlightedNodes([...parents,node.id], "Highlight");
 
 }
 
@@ -123,23 +114,23 @@ updateHighlightedNodes(nodeIds, operation){
 
 
 
-onMultiSelect(nodeLabel, nodeId){
+onMultiSelect(node){
   let selectedNodes = new Set([]);
   this.setState((prevState) =>{
 
     selectedNodes = prevState.selectedNodes;
-    selectedNodes.add(JSON.stringify({label: nodeLabel, id: nodeId}));
+    selectedNodes.add(JSON.stringify({label: node.name, id: node.id}));
     return {selectedNodes : selectedNodes};
   }
   )
   //this.props.onSelect(selectedNodes);
 }
 
-onSingleSelect(nodeLabel, nodeId){
+onSingleSelect(node){
   this.setState((prevState) =>{
 
     let selectedNodes = new Set([]);
-    selectedNodes.add(JSON.stringify({label: nodeLabel, id: nodeId}));
+    selectedNodes.add(JSON.stringify({label: node.name, id: node.id}));
     return {selectedNodes : selectedNodes};
   }
   )
@@ -147,25 +138,25 @@ onSingleSelect(nodeLabel, nodeId){
 
 
 
-onDeselect(nodeLabel, nodeId, parents = []){
+onDeselect(node, parents = []){
   let selectedNodes = new Set([]);
   this.setState((prevState) =>{
 
     selectedNodes = prevState.selectedNodes;
-    selectedNodes.delete(JSON.stringify({label: nodeLabel, id: nodeId}));
+    selectedNodes.delete(JSON.stringify({label: node.name, id: node.id}));
     return {selectedNodes : selectedNodes};
   }
   )
   let parentsToUnHighLight = parents;
-  if(this.state.orphanHighlightedNodes.has(nodeId)){
+  if(this.state.orphanHighlightedNodes.has(node.id)){
     parentsToUnHighLight = []
   }
-  this.updateHighlightedNodes([...parentsToUnHighLight,nodeId], "unHighlight");
+  this.updateHighlightedNodes([...parentsToUnHighLight,node.id], "unHighlight");
   //this.props.onSelect(selectedNodes);
 }
 
 selectNodesInTree(node){
-  this.onSelect(node.label, node.id)
+  this.onSelect(node)
 }
 
 onSelectionModeChange(ev, checkedValue){

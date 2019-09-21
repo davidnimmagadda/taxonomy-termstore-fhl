@@ -43,8 +43,7 @@ class TreeComponent extends React.Component {
   async loadChildren(nodeKey, node, parents) {
     if (!this.state[nodeKey].isChildrenLoaded) {
       this.setState((prevState) => {
-        let treeStateChanges = {
-        };
+        let treeStateChanges = {};
         treeStateChanges[nodeKey] = {
           ...prevState[nodeKey], loading: true
         };
@@ -149,7 +148,6 @@ class TreeComponent extends React.Component {
           key = {this._getNodeKey(this.props.rootNode)}
           selectionMode = {this.props.selectionMode}
           node = {this.props.rootNode}
-          nodeState={this.state[this._getNodeKey(this.props.rootNode)]}
           onSelect={this.props.onSelect}
           onDeselect={this.props.onDeselect}
           selectedNodes={this.props.selectedNodes}
@@ -162,6 +160,7 @@ class TreeComponent extends React.Component {
           parents={[]}
           level={0}
           getNodeKey = {this._getNodeKey}
+          nodeState={this.state[this._getNodeKey(this.props.rootNode)]}
         /> :
         (
           <Link href="#" onClick={this.props.hideSearchView}>X</Link>
