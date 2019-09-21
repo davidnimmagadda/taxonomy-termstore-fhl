@@ -94,7 +94,7 @@ export function TreeNode(props) {
   }
 
   function getParents() {
-    return [...props.parents, props.node.id];
+    return [...props.parents, props.node];
   }
 
   function getChevron() {

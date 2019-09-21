@@ -11,7 +11,6 @@ import {  ChoiceGroup, DefaultButton } from "office-ui-fabric-react";
 import { getNode } from "../../api/termApi";
 import { thisExpression } from "@babel/types";
 
-
 let onLoadMore = function() {
    return getNode("termGroups/ai/termSets")
 
@@ -25,7 +24,7 @@ let getURI = function(nodeId, parents) {
     case 1:
       return baseURI + "/" + nodeId + "/termSets";
     case 2:
-      return baseURI + "/" + parents[1] + "/termSets/" + nodeId + "/terms";
+      return baseURI + "/" + parents[1].id + "/termSets/" + nodeId + "/terms";
     default:
       return "terms/" + nodeId + "/terms";
   }
