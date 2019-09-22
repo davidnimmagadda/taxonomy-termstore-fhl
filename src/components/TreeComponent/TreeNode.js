@@ -178,8 +178,9 @@ export function TreeNode(props) {
                   label: props.nodeState.label,
                   id: props.node.id
                 }),
-                text: props.nodeState.label,
-                styles: styleForOption()
+                text: props.nodeState.label + props.node.isDisabled,
+                styles: styleForOption(),
+                disabled:props.node.isDisabled
               }
             ]}
             selectedKey={Object.keys(props.selectedNodes)[0]}
@@ -210,6 +211,7 @@ export function TreeNode(props) {
                 id: props.node.id
               })]===true
             }
+            disabled={props.node.isDisabled}
             label={props.nodeState.label}
             onChange={(_ev, checked) => {
               if (checked) {
