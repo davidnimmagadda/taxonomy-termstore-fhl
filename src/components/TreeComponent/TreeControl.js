@@ -71,7 +71,7 @@ constructor(props){
     selectedNodes: {},
     searchPath: {},
     highlightedNodesMap : {},
-    orphanHighlightedNodes :new Set([])
+    orphanHighlightedNodes :{}
   }
   this.onSelect = this.onSelect.bind(this);
   this.onDeselect = this.onDeselect.bind(this);
@@ -86,7 +86,7 @@ onSelect(node, parents=[]){
   if(parents.length === 0){
     this.setState((prevState)=>{
       let orphanHighlightedNodes = prevState.orphanHighlightedNodes;
-      orphanHighlightedNodes.add(node.id)
+      orphanHighlightedNodes[node.id] = true
       return {orphanHighlightedNodes: orphanHighlightedNodes}
     })
   }
@@ -147,10 +147,15 @@ onDeselect(node, parents = []){
   }
   )
   let parentsToUnHighLight = parents;
-  if(this.state.orphanHighlightedNodes.has(node.id)){
+  if(this.state.orphanHighlightedNodes[node.id]===true){
     parentsToUnHighLight = []
   }
   this.updateHighlightedNodes([...parentsToUnHighLight, node], "unHighlight");
+  this.setState((prevState) =>{
+    let orphanHighlightedNodes = prevState.orphanHighlightedNodes;
+    delete orphanHighlightedNodes[node.id];
+    return {orphanHighlightedNodes: orphanHighlightedNodes}
+  })
 }
 
 selectNodesInTree(node){
@@ -226,7 +231,7 @@ render(){
         <div className="selectedNodes" id="selectedTermsInTree">
           {termString}
         </div>
-        <div><DefaultButton  text="push term bangalore in selection" onClick={() => {this.selectNodesInTree({label: "Bangalore", id: "w"})}}/></div>
+        <div><DefaultButton  text="push term bangalore in selection" onClick={() => {this.selectNodesInTree({name: "Bangalore", id: "w"})}}/></div>
 
         <div><DefaultButton text="show search view" onClick={() => {this.showSearchView(sampleSearchPath)}}/></div>
 
