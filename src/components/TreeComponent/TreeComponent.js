@@ -12,9 +12,9 @@ class TreeComponent extends React.Component {
     treeState[this._getNodeKey(props.rootNode)] = {
       children: [],
       loading: false,
-      isChildrenLoaded: false
+      isChildrenLoaded: false,
+      label: props.rootNode.name
     }
-    treeState["selectedNodes"] = {};
     this.state = treeState;
 
     this.onToggle = this.onToggle.bind(this);
@@ -58,6 +58,16 @@ class TreeComponent extends React.Component {
         const response = await this.props.loadChildren(node, parents);
         const nextLink = response.next === undefined ? "somelink" : undefined;
         const children = response
+        const label = response.label
+        if(label!==undefined && label !== node.name){
+          this.setState((prevState) =>{
+            let treeStateChanges = {};
+            treeStateChanges[nodeKey] = {
+              ...prevState[nodeKey], label: label
+            };
+            return treeStateChanges;
+          })
+        }
         console.log(response);
         // Above Lines are for Hardcoded response. Below lines are for actual call
         // const nextLink = response.next
@@ -133,6 +143,7 @@ class TreeComponent extends React.Component {
           children: [],
           loading: false,
           isChildrenLoaded: false,
+          label: child.name
         }
       })
       let children = [...prevState[nodeKey].children, ...newChildren]

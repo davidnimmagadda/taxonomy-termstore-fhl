@@ -143,10 +143,11 @@ export function TreeNode(props) {
     const highlightStyle = {
       fontWeight: "bold"
     };
+    const nodeDisplayText = props.nodeState.label;
     let isHighLighted =
       props.highlightedNodesMap[JSON.stringify({id: props.node.id})] !== undefined;
     if(!props.isNodeSelectable){
-      return <span className="unSelectableNode" style={isHighLighted?highlightStyle:{}}>{props.node.name}</span>
+      return <span className="unSelectableNode" style={isHighLighted?highlightStyle:{}}>{nodeDisplayText}</span>
     }
     let nodeLabel = (
       <span style={{ whiteSpace: "nowrap", width: "100%" }}>
@@ -156,7 +157,7 @@ export function TreeNode(props) {
           style={{ whiteSpace: "nowrap", width: "100%" }}
           onClick={() => onSelect()}
         >
-          {props.node.name}
+          {nodeDisplayText}
         </span>
       </span>
     );
@@ -174,10 +175,10 @@ export function TreeNode(props) {
             options={[
               {
                 key: JSON.stringify({
-                  label: props.node.name,
+                  label: props.nodeState.label,
                   id: props.node.id
                 }),
-                text: props.node.name,
+                text: props.nodeState.label,
                 styles: styleForOption()
               }
             ]}
@@ -205,11 +206,11 @@ export function TreeNode(props) {
           <Checkbox
             checked={props.selectedNodes[
               JSON.stringify({
-                label: props.node.name,
+                label: props.nodeState.label,
                 id: props.node.id
               })]===true
             }
-            label={props.node.name}
+            label={props.nodeState.label}
             onChange={(_ev, checked) => {
               if (checked) {
                 onSelect();
