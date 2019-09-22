@@ -68,7 +68,7 @@ constructor(props){
   super(props);
   this.state = {
     selectionMode: 1,
-    selectedNodes: new Set([]),
+    selectedNodes: {},
     searchPath: {},
     highlightedNodesMap : {},
     orphanHighlightedNodes :new Set([])
@@ -115,22 +115,21 @@ updateHighlightedNodes(nodes, operation){
 
 
 onMultiSelect(node){
-  let selectedNodes = new Set([]);
+  let selectedNodes = {};
   this.setState((prevState) =>{
 
     selectedNodes = prevState.selectedNodes;
-    selectedNodes.add(JSON.stringify({label: node.name, id: node.id}));
+    selectedNodes[JSON.stringify({label: node.name, id: node.id})] = true;
     return {selectedNodes : selectedNodes};
   }
   )
-  //this.props.onSelect(selectedNodes);
 }
 
 onSingleSelect(node){
-  this.setState((prevState) =>{
+  this.setState(() =>{
 
-    let selectedNodes = new Set([]);
-    selectedNodes.add(JSON.stringify({label: node.name, id: node.id}));
+    let selectedNodes = {};
+    selectedNodes[JSON.stringify({label: node.name, id: node.id})] = true;
     return {selectedNodes : selectedNodes};
   }
   )
@@ -139,11 +138,11 @@ onSingleSelect(node){
 
 
 onDeselect(node, parents = []){
-  let selectedNodes = new Set([]);
+  let selectedNodes = {};
   this.setState((prevState) =>{
 
     selectedNodes = prevState.selectedNodes;
-    selectedNodes.delete(JSON.stringify({label: node.name, id: node.id}));
+    delete selectedNodes[JSON.stringify({label: node.name, id: node.id})];
     return {selectedNodes : selectedNodes};
   }
   )
@@ -152,7 +151,6 @@ onDeselect(node, parents = []){
     parentsToUnHighLight = []
   }
   this.updateHighlightedNodes([...parentsToUnHighLight, node], "unHighlight");
-  //this.props.onSelect(selectedNodes);
 }
 
 selectNodesInTree(node){
@@ -177,12 +175,13 @@ showSearchView(searchPath){
 }
 
 render(){
-  console.log(this.state.highlightedNodesMap)
+  //console.log(this.state.highlightedNodesMap)
     let termString = ""
-    Array.from(this.state.selectedNodes).forEach((term) => {
+    Object.keys(this.state.selectedNodes).forEach((term) => {
       let parsedTerm = JSON.parse(term)
       termString += parsedTerm.label + "(" + parsedTerm.id + "), ";
     });
+
 
   return (
     <div

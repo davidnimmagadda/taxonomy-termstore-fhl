@@ -172,7 +172,7 @@ export function TreeNode(props) {
                 styles: styleForOption()
               }
             ]}
-            selectedKey={String(Array.from(props.selectedNodes)[0])}
+            selectedKey={Object.keys(props.selectedNodes)[0]}
             onChange={() => onSelect()}
           />
         );
@@ -194,12 +194,12 @@ export function TreeNode(props) {
         };
         nodeLabel = (
           <Checkbox
-            checked={props.selectedNodes.has(
+            checked={props.selectedNodes[
               JSON.stringify({
                 label: props.node.name,
                 id: props.node.id
-              })
-            )}
+              })]===true
+            }
             label={props.node.name}
             onChange={(_ev, checked) => {
               if (checked) {

@@ -14,12 +14,17 @@ class TreeComponent extends React.Component {
       loading: false,
       isChildrenLoaded: false
     }
-    treeState["selectedNodes"] = new Set([]);
+    treeState["selectedNodes"] = {};
     this.state = treeState;
 
     this.onToggle = this.onToggle.bind(this);
     this.loadNextChildren = this.loadNextChildren.bind(this);
     this._getNodeKey = this._getNodeKey.bind(this)
+
+  }
+
+  componentDidMount(){
+    this.onToggle(this.props.rootNode, [])
   }
 
   _getNodeKey(node){
@@ -53,6 +58,7 @@ class TreeComponent extends React.Component {
         const response = await this.props.loadChildren(node, parents);
         const nextLink = response.next === undefined ? "somelink" : undefined;
         const children = response
+        console.log(response);
         // Above Lines are for Hardcoded response. Below lines are for actual call
         // const nextLink = response.next
         // const children = response.children
