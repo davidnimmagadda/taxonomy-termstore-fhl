@@ -27,3 +27,8 @@
   margin: 10x 10px;
   overflow: auto;
 }
+
+.unSelectableNode{
+  font-family: "Segoe UI", "Segoe UI Web (West European)", "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
+  font-size: 14px
+}

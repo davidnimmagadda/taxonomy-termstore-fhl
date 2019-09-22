@@ -9,9 +9,7 @@ import {
   Link
 } from "office-ui-fabric-react";
 
-function getPaddingLeft(level) {
-  return level * 20;
-}
+
 export function TreeNode(props) {
   let nodeContent = getNodeContent();
   return props.nodeState.loading ? (
@@ -21,7 +19,7 @@ export function TreeNode(props) {
       <div
         className="treeNode"
         style={{
-          paddingLeft: getPaddingLeft(props.level, props.node.type),
+          paddingLeft: getPaddingLeft(),
           display: props.isVisible ? "flex" : "none"
         }}
         level={props.level}
@@ -61,7 +59,7 @@ export function TreeNode(props) {
         className="treeNode"
         style={{
           paddingLeft:
-            getPaddingLeft(props.level + 1, props.node.type) + 50,
+            getPaddingLeft() + 70,
           display:
             props.nodeState.nextLink !== undefined &&
             props.isVisible &&
@@ -85,6 +83,11 @@ export function TreeNode(props) {
     </>
   );
 
+  function getPaddingLeft() {
+    let paddingLeft = props.level * 20;
+
+    return paddingLeft;
+  }
   function onDeselect() {
     props.onDeselect(props.node, props.parents);
   }
@@ -128,15 +131,23 @@ export function TreeNode(props) {
             nodeTypeData={props.nodeTypeData}
             highlightedNodesMap={props.highlightedNodesMap}
             getNodeKey = {props.getNodeKey}
+            isNodeSelectable = {true}
           />
         ))}
       </>
     );
   }
 
+
   function getNodeContent() {
+    const highlightStyle = {
+      fontWeight: "bold"
+    };
     let isHighLighted =
       props.highlightedNodesMap[JSON.stringify({id: props.node.id})] !== undefined;
+    if(!props.isNodeSelectable){
+      return <span className="unSelectableNode" style={isHighLighted?highlightStyle:{}}>{props.node.name}</span>
+    }
     let nodeLabel = (
       <span style={{ whiteSpace: "nowrap", width: "100%" }}>
         <Icon style={{ marginRight: 10 }} iconName={getIcon()} />
@@ -145,19 +156,17 @@ export function TreeNode(props) {
           style={{ whiteSpace: "nowrap", width: "100%" }}
           onClick={() => onSelect()}
         >
-          {props.node.name}({props.node.id})
+          {props.node.name}
         </span>
       </span>
     );
     switch (props.selectionMode) {
       case 1: {
-        const highlightStyle = {
-          root: {
-            fontWeight: "bold"
-          }
+        const choiceBoxHighlightedStyle = {
+          root: highlightStyle
         };
         let styleForOption = () => {
-          return isHighLighted ? highlightStyle : {};
+          return isHighLighted ? choiceBoxHighlightedStyle : {};
         };
         nodeLabel = (
           <ChoiceGroup

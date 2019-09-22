@@ -167,6 +167,7 @@ class TreeComponent extends React.Component {
           level={0}
           getNodeKey = {this._getNodeKey}
           nodeState={this.state[this._getNodeKey(this.props.rootNode)]}
+          isNodeSelectable = {this.props.isRootSelectable}
         /> :
         (
           <Link href="#" onClick={this.props.hideSearchView}>X</Link>

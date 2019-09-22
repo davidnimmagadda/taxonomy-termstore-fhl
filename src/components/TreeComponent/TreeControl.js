@@ -243,7 +243,7 @@ render(){
             type: "folder",
             id: "1"
           }}
-
+          isRootSelectable = {false}
           searchPath = {this.state.searchPath}
           hideSearchView = {this.hideSearchView.bind(this)}
           onSelect = {this.onSelect.bind(this)}
