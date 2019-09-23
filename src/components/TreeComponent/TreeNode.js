@@ -11,77 +11,42 @@ import {
 
 
 export function TreeNode(props) {
-  let nodeContent = getNodeContent();
-  return props.nodeState.loading ? (
-    <Spinner />
-  ) : (
-    <>
-      <div
-        className="treeNode"
-        style={{
-          paddingLeft: getPaddingLeft(),
-          display: props.isVisible ? "flex" : "none"
+  let showSpinner = props.nodeState.loading;
+  if(showSpinner){
+    return <Spinner />;
+  }
+  let getDisplayStyle = function(){
+    if(props.isVisible){
+      return "flex";
+    }
+    return "none";
+  }
+  let getDisplayStyleForLoadMoreLink = function(){
+    if( props.nodeState.nextLink !== undefined &&
+      props.isVisible &&
+      props.nodeState.children.length > 0 &&
+      props.nodeState.isExpanded){
+        return "flex";
+      }
+      return "none";
+  }
+  let getToggleButton = function(){
+    if(props.nodeState.isExpanded && props.nodeState.children.length === 0) {
+      return <span style={{ marginLeft: 17, marginRight: 5 }}>&nbsp;</span>
+     }
+     return <span
+        onClick={() => {
+          props.onToggle(props.node, props.parents);
         }}
-        level={props.level}
-        type={props.node.type}
       >
-        {props.nodeState.isExpanded && props.nodeState.children.length == 0 ? (
-          <span style={{ marginLeft: 17, marginRight: 5 }}>&nbsp;</span>
-        ) : (
-          <span
-            role="button"
-            onClick={e => {
-              props.onToggle(props.node, props.parents);
-            }}
-          >
-            <Icon
-              style={{ marginLeft: 5, marginRight: 5 }}
-              iconName={getChevron()}
-            />
-          </span>
-        )}
-        {nodeContent}
-        {props.nodeTypeData[props.node.type]["contextMenu"] !==
-          undefined && (
-          <span
-            className="contextMenuIcon"
-            style={{ marginLeft: "auto", marginRight: "0px" }}
-          >
-            <IconButton
-              iconProps={{ iconName: "MoreVertical" }}
-              onClick={() => alert("I'm Clicked!")}
-            />
-          </span>
-        )}
-      </div>
-      {renderChildren(props.nodeState.children)}
-      <div
-        className="treeNode"
-        style={{
-          paddingLeft:
-            getPaddingLeft() + 70,
-          display:
-            props.nodeState.nextLink !== undefined &&
-            props.isVisible &&
-            props.nodeState.children.length > 0 &&
-            props.nodeState.isExpanded
-              ? "flex"
-              : "none"
-        }}
-        level={props.level}
-      >
-        <Link
-          href="#"
-          style={{ marginLeft: 0 }}
-          onClick={() => {
-            props.onLoadNext(props.node, props.parents);
-          }}
-        >
-          Load More
-        </Link>
-      </div>
-    </>
-  );
+        <Icon
+          style={{ marginLeft: 5, marginRight: 5 }}
+          iconName={getChevron()}
+        />
+      </span>
+  }
+
+
 
   function getPaddingLeft() {
     let paddingLeft = props.level * 20;
@@ -101,13 +66,22 @@ export function TreeNode(props) {
   }
 
   function getChevron() {
-    return props.nodeState.isExpanded ? "ChevronDownMed" : "ChevronRightMed";
+     if(props.nodeState.isExpanded){
+        return  "ChevronDownMed"
+     }
+     return "ChevronRightMed";
   }
 
   function getIcon() {
-    let iconTypeKey = props.nodeState.isExpanded ? "iconExpanded" : "iconCollapsed";
+    let iconTypeKey = "iconCollapsed";
+    if(props.nodeState.isExpanded){
+      return "iconExpanded"
+    }
     let icon = props.nodeTypeData[props.node.type][iconTypeKey];
-    return icon !== undefined ? icon : "";
+    if(icon === undefined ){
+      return ""
+    }
+    return icon;
   }
 
   function renderChildren(nodeChildren) {
@@ -137,17 +111,23 @@ export function TreeNode(props) {
       </>
     );
   }
-
+  const highlightStyle = {
+    fontWeight: "bold"
+  };
+  function getStyleForHeading(isHighlighted){
+    if(isHighlighted){
+      return highlightStyle;
+    }
+    return undefined
+  }
 
   function getNodeContent() {
-    const highlightStyle = {
-      fontWeight: "bold"
-    };
+
     const nodeDisplayText = props.nodeState.label;
     let isHighLighted =
       props.highlightedNodesMap[JSON.stringify({id: props.node.id})] !== undefined;
     if(!props.isNodeSelectable){
-      return <span className="unSelectableNode" style={isHighLighted?highlightStyle:{}}>{nodeDisplayText}</span>
+      return <span className="unSelectableNode" style={getStyleForHeading(isHighLighted)}>{nodeDisplayText}</span>
     }
     let nodeLabel = (
       <span style={{ whiteSpace: "nowrap", width: "100%" }}>
@@ -166,9 +146,13 @@ export function TreeNode(props) {
         const choiceBoxHighlightedStyle = {
           root: highlightStyle
         };
-        let styleForOption = () => {
-          return isHighLighted ? choiceBoxHighlightedStyle : {};
-        };
+        let getStyleForChoiceGroup = function(){
+          if(isHighLighted){
+            return choiceBoxHighlightedStyle;
+          }
+          return undefined;
+        }
+
         nodeLabel = (
           <ChoiceGroup
             className="defaultChoiceGroup"
@@ -179,7 +163,7 @@ export function TreeNode(props) {
                   id: props.node.id
                 }),
                 text: props.nodeState.label,
-                styles: styleForOption(),
+                styles: getStyleForChoiceGroup(),
                 disabled:props.node.isDisabled
               }
             ]}
@@ -190,6 +174,12 @@ export function TreeNode(props) {
         break;
       }
       case 2: {
+        let getStyleForCheckBox = function(){
+          if(isHighLighted){
+            return "bold";
+          }
+          return "inherit";
+        }
         const checkboxStyles = () => {
           return {
             root: {
@@ -199,7 +189,7 @@ export function TreeNode(props) {
             label: {
               whiteSpace: "nowrap",
               width: "100%",
-              fontWeight: isHighLighted ? "bold" : "inherit"
+              fontWeight: getStyleForCheckBox()
             }
           };
         };
@@ -228,5 +218,48 @@ export function TreeNode(props) {
     }
     return nodeLabel;
   }
+  return <>
+      <div
+        className="treeNode"
+        style={{
+          paddingLeft: getPaddingLeft(),
+          display: getDisplayStyle()
+        }}
+      >
+        {getToggleButton()}
+        {getNodeContent()}
+        {props.nodeTypeData[props.node.type]["contextMenu"] !==
+          undefined && (
+          <span
+            className="contextMenuIcon"
+            style={{ marginLeft: "auto", marginRight: "0px" }}
+          >
+            <IconButton
+              iconProps={{ iconName: "MoreVertical" }}
+              onClick={() => alert("I'm Clicked!")}
+            />
+          </span>
+        )}
+      </div>
+      {renderChildren(props.nodeState.children)}
+      <div
+        className="treeNode"
+        style={{
+          paddingLeft:
+            getPaddingLeft() + 70,
+          display: getDisplayStyleForLoadMoreLink()
+        }}
+      >
+        <Link
+          href="#"
+          style={{ marginLeft: 0 }}
+          onClick={() => {
+            props.onLoadNext(props.node, props.parents);
+          }}
+        >
+          Load More
+        </Link>
+      </div>
+    </>
 }
 export default TreeNode;
