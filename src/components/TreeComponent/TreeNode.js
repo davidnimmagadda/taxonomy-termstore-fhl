@@ -178,7 +178,7 @@ export function TreeNode(props) {
                   label: props.nodeState.label,
                   id: props.node.id
                 }),
-                text: props.nodeState.label + props.node.isDisabled,
+                text: props.nodeState.label,
                 styles: styleForOption(),
                 disabled:props.node.isDisabled
               }
