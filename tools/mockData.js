@@ -386,24 +386,9 @@ const termGroups = [
         email: 'brucewayne@tenantadminnewhope.onmicrosoft.com',
         name: 'Bruce Wayne',
         role: "Gotham's Vigilante"
-      },
-      {
-        email: 'tonystark@tenantadminnewhope.onmicrosoft.com',
-        name: 'Tony Stark',
-        role: 'CEO Stark Industries'
       }
     ],
     contributors: [
-      {
-        email: 'admin@tenantadminnewhope.onmicrosoft.com',
-        name: 'Admin',
-        role: 'SDE 2'
-      },
-      {
-        email: 'brucewayne@tenantadminnewhope.onmicrosoft.com',
-        name: 'Bruce Wayne',
-        role: "Gotham's Vigilante"
-      },
       {
         email: 'tonystark@tenantadminnewhope.onmicrosoft.com',
         name: 'Tony Stark',
@@ -423,24 +408,9 @@ const termGroups = [
         email: 'admin@tenantadminnewhope.onmicrosoft.com',
         name: 'Admin',
         role: 'SDE 2'
-      },
-      {
-        email: 'brucewayne@tenantadminnewhope.onmicrosoft.com',
-        name: 'Bruce Wayne',
-        role: "Gotham's Vigilante"
-      },
-      {
-        email: 'tonystark@tenantadminnewhope.onmicrosoft.com',
-        name: 'Tony Stark',
-        role: 'CEO Stark Industries'
       }
     ],
     contributors: [
-      {
-        email: 'admin@tenantadminnewhope.onmicrosoft.com',
-        name: 'Admin',
-        role: 'SDE 2'
-      },
       {
         email: 'brucewayne@tenantadminnewhope.onmicrosoft.com',
         name: 'Bruce Wayne',
