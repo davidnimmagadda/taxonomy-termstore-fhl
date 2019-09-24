@@ -1,326 +1,326 @@
 const newTerm = {
   id: null,
-  title: "",
+  title: '',
   authorId: null,
-  category: ""
+  category: ''
 };
 
 const ts = [
   {
-    id: "Taxonomy",
-    path: "Taxonomy",
-    type: "folder",
+    id: 'Taxonomy',
+    path: 'Taxonomy',
+    type: 'folder',
     isRoot: true,
-    children: ["Taxonomy:People", "Taxonomy:System"],
-    uniqueIdentifier: "xyzdsfjhweljrelwkenflm12143344",
-    name: "Taxonomy",
-    displayName: "TermStore Admins",
+    children: ['Taxonomy:People', 'Taxonomy:System'],
+    uniqueIdentifier: 'xyzdsfjhweljrelwkenflm12143344',
+    name: 'Taxonomy',
+    displayName: 'TermStore Admins',
     details:
-      "This is the centralized term store for the Contoso client.It contains different termgroups , termsets and terms. Please click the nested termgroups to get access to the terms.Some termgroups may be disabled for editing due to improper rights to access.",
+      'This is the centralized term store for the Contoso client.It contains different termgroups , termsets and terms. Please click the nested termgroups to get access to the terms.Some termgroups may be disabled for editing due to improper rights to access.',
     contacts: [
       {
-        id: "1",
-        name: "laa@microsoft.com"
+        id: '1',
+        name: 'laa@microsoft.com'
       },
       {
-        id: "2",
-        name: "danimmag@microsoft.com"
+        id: '2',
+        name: 'danimmag@microsoft.com'
       },
       {
-        id: "3",
-        name: "gasns@microsoft.com"
+        id: '3',
+        name: 'gasns@microsoft.com'
       }
     ]
   },
   {
-    id: "Taxonomy:People",
-    path: "Taxonomy:People",
-    type: "folder",
+    id: 'Taxonomy:People',
+    path: 'Taxonomy:People',
+    type: 'folder',
     children: [
-      "Taxonomy:People:Department",
-      "Taxonomy:People:JobTitle",
-      "Taxonomy:People:Location"
+      'Taxonomy:People:Department',
+      'Taxonomy:People:JobTitle',
+      'Taxonomy:People:Location'
     ],
-    name: "People",
-    displayName: "TermGroup Managers",
-    uniqueIdentifier: "yzdsfjhweljrelwkenflm12143344x",
+    name: 'People',
+    displayName: 'TermGroup Managers',
+    uniqueIdentifier: 'yzdsfjhweljrelwkenflm12143344x',
     details:
-      "The termGroup people is responsible for holding different termsets and terms related to people working location, departments,designations, teams and the organization details.",
+      'The termGroup people is responsible for holding different termsets and terms related to people working location, departments,designations, teams and the organization details.',
     contacts: [
       {
-        id: "1",
-        name: "laa@microsoft.com"
+        id: '1',
+        name: 'laa@microsoft.com'
       },
       {
-        id: "2",
-        name: "danimmag@microsoft.com"
+        id: '2',
+        name: 'danimmag@microsoft.com'
       },
       {
-        id: "3",
-        name: "gasns@microsoft.com"
+        id: '3',
+        name: 'gasns@microsoft.com'
       },
       {
-        id: "4",
-        name: "ravikg@microsoft.com"
+        id: '4',
+        name: 'ravikg@microsoft.com'
       }
     ]
   },
   {
-    id: "Taxonomy:System",
-    path: "Taxonomy:System",
-    type: "folder",
+    id: 'Taxonomy:System',
+    path: 'Taxonomy:System',
+    type: 'folder',
     children: [
-      "Taxonomy:System:Hashtags",
-      "Taxonomy:System:Keywords",
-      "Taxonomy:System:OrphanedTerms"
+      'Taxonomy:System:Hashtags',
+      'Taxonomy:System:Keywords',
+      'Taxonomy:System:OrphanedTerms'
     ],
-    name: "System",
-    displayName: "TermGroup Managers",
-    uniqueIdentifier: "zdsfjhweljrelwkenflm12143344xy",
+    name: 'System',
+    displayName: 'TermGroup Managers',
+    uniqueIdentifier: 'zdsfjhweljrelwkenflm12143344xy',
     details:
-      "The termGroup people is responsible for holding different termsets and terms related to system settings.",
+      'The termGroup people is responsible for holding different termsets and terms related to system settings.',
     contacts: [
       {
-        id: "1",
-        name: "laa@microsoft.com"
+        id: '1',
+        name: 'laa@microsoft.com'
       },
       {
-        id: "2",
-        name: "mimanika@microsoft.com"
+        id: '2',
+        name: 'mimanika@microsoft.com'
       }
     ]
   },
   {
-    id: "Taxonomy:People:Department",
-    path: "Taxonomy:People:Department",
-    type: "folder",
+    id: 'Taxonomy:People:Department',
+    path: 'Taxonomy:People:Department',
+    type: 'folder',
     children: [],
-    name: "Department",
-    uniqueIdentifier: "dsfjhweljrelwkenflm12143344xyz",
-    displayName: "Contacts",
+    name: 'Department',
+    uniqueIdentifier: 'dsfjhweljrelwkenflm12143344xyz',
+    displayName: 'Contacts',
     details:
-      "The term set department is responsible for holding all the terms related to department related terms in IDC.The MSIT related termsets are categorized in a different termset(MSIT_DEPT) as suggested from 2011.The visibility or enablement of termsets is subject to proper access rights.Please contact your root administrator in case of any rights discrepancy.",
+      'The term set department is responsible for holding all the terms related to department related terms in IDC.The MSIT related termsets are categorized in a different termset(MSIT_DEPT) as suggested from 2011.The visibility or enablement of termsets is subject to proper access rights.Please contact your root administrator in case of any rights discrepancy.',
     contacts: [
       {
-        id: "1",
-        name: "mimanika@microsoft.com"
+        id: '1',
+        name: 'mimanika@microsoft.com'
       },
       {
-        id: "2",
-        name: "gasns@microsoft.com"
+        id: '2',
+        name: 'gasns@microsoft.com'
       }
     ]
   },
   {
-    id: "Taxonomy:People:JobTitle",
-    path: "Taxonomy:People:JobTitle",
-    type: "folder",
+    id: 'Taxonomy:People:JobTitle',
+    path: 'Taxonomy:People:JobTitle',
+    type: 'folder',
     children: [],
-    name: "JobTitle",
-    uniqueIdentifier: "sfjhweljrelwkenflm12143344xyzd",
-    displayName: "Contacts",
+    name: 'JobTitle',
+    uniqueIdentifier: 'sfjhweljrelwkenflm12143344xyzd',
+    displayName: 'Contacts',
     details:
-      "The term set job title is responsible for holding all the terms related to job title related terms in Engineering job role.Please refer to the other termsets for other job roles and responsibilities.The visibility or enablement of termsets is subject to proper access rights.Please contact your root administrator in case of any rights discrepancy.",
+      'The term set job title is responsible for holding all the terms related to job title related terms in Engineering job role.Please refer to the other termsets for other job roles and responsibilities.The visibility or enablement of termsets is subject to proper access rights.Please contact your root administrator in case of any rights discrepancy.',
     contacts: [
       {
-        id: "1",
-        name: "laa@microsoft.com"
+        id: '1',
+        name: 'laa@microsoft.com'
       },
       {
-        id: "2",
-        name: "danimmag@microsoft.com"
+        id: '2',
+        name: 'danimmag@microsoft.com'
       },
       {
-        id: "3",
-        name: "gans@microsoft.com"
+        id: '3',
+        name: 'gans@microsoft.com'
       },
       {
-        id: "4",
-        name: "ravikg@microsoft.com"
+        id: '4',
+        name: 'ravikg@microsoft.com'
       }
     ]
   },
   {
-    id: "Taxonomy:People:Location",
-    path: "Taxonomy:People:Location",
-    type: "folder",
-    children: ["Taxonomy:People:Location:India", "Taxonomy:People:Location:US"],
-    name: "Location",
-    displayName: "Contacts",
-    uniqueIdentifier: "fjhweljrelwkenflm12143344xyzds",
+    id: 'Taxonomy:People:Location',
+    path: 'Taxonomy:People:Location',
+    type: 'folder',
+    children: ['Taxonomy:People:Location:India', 'Taxonomy:People:Location:US'],
+    name: 'Location',
+    displayName: 'Contacts',
+    uniqueIdentifier: 'fjhweljrelwkenflm12143344xyzds',
     details:
-      "The term set location is responsible for holding all the terms related to work location and the relevant terms used according to the location. The visibility or enablement of termsets is subject to proper access rights.Please contact your root administrator in case of any rights discrepancy.",
+      'The term set location is responsible for holding all the terms related to work location and the relevant terms used according to the location. The visibility or enablement of termsets is subject to proper access rights.Please contact your root administrator in case of any rights discrepancy.',
     contacts: [
       {
-        id: "1",
-        name: "laa@microsoft.com"
+        id: '1',
+        name: 'laa@microsoft.com'
       },
       {
-        id: "2",
-        name: "danimmag@microsoft.com"
+        id: '2',
+        name: 'danimmag@microsoft.com'
       },
       {
-        id: "3",
-        name: "risja@microsoft.com"
+        id: '3',
+        name: 'risja@microsoft.com'
       }
     ]
   },
   {
-    id: "Taxonomy:People:Location:India",
-    path: "Taxonomy:People:Location:India",
-    type: "folder",
-    displayName: "Contacts",
+    id: 'Taxonomy:People:Location:India',
+    path: 'Taxonomy:People:Location:India',
+    type: 'folder',
+    displayName: 'Contacts',
     children: [
-      "Taxonomy:People:Location:India:Hyderabad",
-      "Taxonomy:People:Location:India:Bangalore"
+      'Taxonomy:People:Location:India:Hyderabad',
+      'Taxonomy:People:Location:India:Bangalore'
     ],
-    name: "India",
-    uniqueIdentifier: "jhweljrelwkenflm12143344xyzdsf",
+    name: 'India',
+    uniqueIdentifier: 'jhweljrelwkenflm12143344xyzdsf',
     details:
-      "This is the term India in the location term set.The enablement of addition /editing the terms is subject to access rights.Please contact administrator for any discrepancy.",
+      'This is the term India in the location term set.The enablement of addition /editing the terms is subject to access rights.Please contact administrator for any discrepancy.',
     contacts: [
       {
-        id: "1",
-        name: "laa@microsoft.com"
+        id: '1',
+        name: 'laa@microsoft.com'
       },
       {
-        id: "2",
-        name: "danimmag@microsoft.com"
+        id: '2',
+        name: 'danimmag@microsoft.com'
       },
       {
-        id: "3",
-        name: "gasns@microsoft.com"
+        id: '3',
+        name: 'gasns@microsoft.com'
       }
     ]
   },
   {
-    id: "Taxonomy:People:Location:US",
-    path: "Taxonomy:People:Location:US",
-    type: "folder",
-    children: ["Taxonomy:People:Location:US:Redmond"],
-    name: "US",
-    displayName: "Contacts",
-    uniqueIdentifier: "jhweljrelwkenflm12143344xyzdsf",
+    id: 'Taxonomy:People:Location:US',
+    path: 'Taxonomy:People:Location:US',
+    type: 'folder',
+    children: ['Taxonomy:People:Location:US:Redmond'],
+    name: 'US',
+    displayName: 'Contacts',
+    uniqueIdentifier: 'jhweljrelwkenflm12143344xyzdsf',
     details:
-      "This is the term US in the location term set.The enablement of addition /editing the terms is subject to access rights.Please contact administrator for any discrepancy.",
+      'This is the term US in the location term set.The enablement of addition /editing the terms is subject to access rights.Please contact administrator for any discrepancy.',
     contacts: [
       {
-        id: "1",
-        name: "laa@microsoft.com"
+        id: '1',
+        name: 'laa@microsoft.com'
       },
       {
-        id: "2",
-        name: "danimma@microsoft.com"
+        id: '2',
+        name: 'danimma@microsoft.com'
       },
       {
-        id: "3",
-        name: "gasns@microsoft.com"
+        id: '3',
+        name: 'gasns@microsoft.com'
       }
     ]
   },
   {
-    id: "Taxonomy:People:Location:India:Hyderabad",
-    path: "Taxonomy:People:Location:India:Hyderabad",
-    type: "folder",
-    displayName: "Contacts",
+    id: 'Taxonomy:People:Location:India:Hyderabad',
+    path: 'Taxonomy:People:Location:India:Hyderabad',
+    type: 'folder',
+    displayName: 'Contacts',
     children: [],
-    name: "Hyderabad",
-    uniqueIdentifier: "hweljrelwkenflm12143344xyzdsfj",
+    name: 'Hyderabad',
+    uniqueIdentifier: 'hweljrelwkenflm12143344xyzdsfj',
     details:
-      "This is the term Hyderabad under term India.The enablement of addition /editing the terms is subject to access rights.Please contact administrator for any discrepancy.",
+      'This is the term Hyderabad under term India.The enablement of addition /editing the terms is subject to access rights.Please contact administrator for any discrepancy.',
     contacts: [
       {
-        id: "1",
-        name: "swsingh@microsoft.com"
+        id: '1',
+        name: 'swsingh@microsoft.com'
       }
     ]
   },
   {
-    id: "Taxonomy:People:Location:India:Bangalore",
-    path: "Taxonomy:People:Location:India:Bangalore",
-    type: "folder",
-    displayName: "Contacts",
+    id: 'Taxonomy:People:Location:India:Bangalore',
+    path: 'Taxonomy:People:Location:India:Bangalore',
+    type: 'folder',
+    displayName: 'Contacts',
     children: [],
-    name: "Bangalore",
-    uniqueIdentifier: "weljrelwkenflm12143344xyzdsfjh",
+    name: 'Bangalore',
+    uniqueIdentifier: 'weljrelwkenflm12143344xyzdsfjh',
     details:
-      "This is the term Bangalore under term India.The enablement of addition /editing the terms is subject to access rights.Please contact administrator for any discrepancy.",
+      'This is the term Bangalore under term India.The enablement of addition /editing the terms is subject to access rights.Please contact administrator for any discrepancy.',
     contacts: [
       {
-        id: "1",
-        name: "swshriva@microsoft.com"
+        id: '1',
+        name: 'swshriva@microsoft.com'
       }
     ]
   },
   {
-    id: "Taxonomy:People:Location:US:Redmond",
-    path: "Taxonomy:People:Location:US:Redmond",
-    type: "folder",
-    displayName: "Contacts",
+    id: 'Taxonomy:People:Location:US:Redmond',
+    path: 'Taxonomy:People:Location:US:Redmond',
+    type: 'folder',
+    displayName: 'Contacts',
     children: [],
-    name: "Redmond",
-    uniqueIdentifier: "eljrelwkenflm12143344xyzdsfjhw",
+    name: 'Redmond',
+    uniqueIdentifier: 'eljrelwkenflm12143344xyzdsfjhw',
     details:
-      "This is the term Redmond under term US.The enablement of addition /editing the terms is subject to access rights.Please contact administrator for any discrepancy.",
+      'This is the term Redmond under term US.The enablement of addition /editing the terms is subject to access rights.Please contact administrator for any discrepancy.',
     contacts: [
       {
-        id: "1",
-        name: "swmitta@microsoft.com"
+        id: '1',
+        name: 'swmitta@microsoft.com'
       }
     ]
   },
   {
-    id: "Taxonomy:System:Hashtags",
-    path: "Taxonomy:System:Hashtags",
-    type: "folder",
+    id: 'Taxonomy:System:Hashtags',
+    path: 'Taxonomy:System:Hashtags',
+    type: 'folder',
     children: [],
-    name: "Hashtags",
-    displayName: "Contacts",
-    uniqueIdentifier: "ljrelwkenflm12143344xyzdsfjhwe",
+    name: 'Hashtags',
+    displayName: 'Contacts',
+    uniqueIdentifier: 'ljrelwkenflm12143344xyzdsfjhwe',
     details:
-      "The term set Hashtags is responsible for holding hastags used across organization for easy search,storage and retrieval of content. The visibility or enablement of termsets is subject to proper access rights.Please contact your root administrator in case of any rights discrepancy.",
+      'The term set Hashtags is responsible for holding hastags used across organization for easy search,storage and retrieval of content. The visibility or enablement of termsets is subject to proper access rights.Please contact your root administrator in case of any rights discrepancy.',
     contacts: [
       {
-        id: "1",
-        name: "laa@microsoft.com"
+        id: '1',
+        name: 'laa@microsoft.com'
       }
     ]
   },
   {
-    id: "Taxonomy:System:Keywords",
-    path: "Taxonomy:System:Keywords",
-    type: "folder",
+    id: 'Taxonomy:System:Keywords',
+    path: 'Taxonomy:System:Keywords',
+    type: 'folder',
     children: [],
-    name: "Keywords",
-    displayName: "Contacts",
-    uniqueIdentifier: "jrelwkenflm12143344xyzdsfjhwel",
+    name: 'Keywords',
+    displayName: 'Contacts',
+    uniqueIdentifier: 'jrelwkenflm12143344xyzdsfjhwel',
     details:
-      "The term set Keywords is responsible for holding hastags used across organization for easy search,storage and retrieval of content. The visibility or enablement of termsets is subject to proper access rights.Please contact your root administrator in case of any rights discrepancy.",
+      'The term set Keywords is responsible for holding hastags used across organization for easy search,storage and retrieval of content. The visibility or enablement of termsets is subject to proper access rights.Please contact your root administrator in case of any rights discrepancy.',
     contacts: [
       {
-        id: "1",
-        name: "gasns@microsoft.com"
+        id: '1',
+        name: 'gasns@microsoft.com'
       }
     ]
   },
   {
-    id: "Taxonomy:System:OrphanedTerms",
-    path: "Taxonomy:System:OrphanedTerms",
-    type: "folder",
+    id: 'Taxonomy:System:OrphanedTerms',
+    path: 'Taxonomy:System:OrphanedTerms',
+    type: 'folder',
     children: [],
-    displayName: "Contacts",
-    name: "Orphaned Terms",
-    uniqueIdentifier: "relwkenflm12143344xyzdsfjhwelj",
+    displayName: 'Contacts',
+    name: 'Orphaned Terms',
+    uniqueIdentifier: 'relwkenflm12143344xyzdsfjhwelj',
     details:
-      "The term set Orphaned terms is responsible for holding orphaned terms. The visibility or enablement of termsets is subject to proper access rights.Please contact your root administrator in case of any rights discrepancy.",
+      'The term set Orphaned terms is responsible for holding orphaned terms. The visibility or enablement of termsets is subject to proper access rights.Please contact your root administrator in case of any rights discrepancy.',
     contacts: [
       {
-        id: "1",
-        name: "gasns@microsoft.com"
+        id: '1',
+        name: 'gasns@microsoft.com'
       },
       {
-        id: "2",
-        name: "ravikg@microsoft.com"
+        id: '2',
+        name: 'ravikg@microsoft.com'
       }
     ]
   }
@@ -329,89 +329,127 @@ const ts = [
 const termStores = [
   {
     id: 0,
-    name: "Taxonomy term store",
-    type: "folder",
+    name: 'Taxonomy term store',
+    type: 'folder',
     admins: [
       {
-        email: "admin@tenantadminnewhope.onmicrosoft.com",
-        name: "Admin",
-        role: "SDE 2"
+        email: 'admin@tenantadminnewhope.onmicrosoft.com',
+        name: 'Admin',
+        role: 'SDE 2'
       },
       {
-        email: "brucewayne@tenantadminnewhope.onmicrosoft.com",
-        name: "Bruce Wayne",
+        email: 'brucewayne@tenantadminnewhope.onmicrosoft.com',
+        name: 'Bruce Wayne',
         role: "Gotham's Vigilante"
       },
       {
-        email: "tonystark@tenantadminnewhope.onmicrosoft.com",
-        name: "Tony Stark",
-        role: "CEO Stark Industries"
+        email: 'tonystark@tenantadminnewhope.onmicrosoft.com',
+        name: 'Tony Stark',
+        role: 'CEO Stark Industries'
       }
     ],
     languages: [
       {
         key: 1033,
-        name: "English",
+        name: 'English',
         default: true
       },
       {
         key: 1031,
-        name: "German"
+        name: 'German'
       },
       {
         key: 1036,
-        name: "French"
+        name: 'French'
       }
     ],
-    serviceApps: ["Taxonomy_oCW7RZ2M/WGbI1901ptpzw=="],
-    UID: "471ba91225a7437daa289558bc7597da471ba91225a7437daa289558bc7597da"
+    serviceApps: ['Taxonomy_oCW7RZ2M/WGbI1901ptpzw=='],
+    UID: '471ba91225a7437daa289558bc7597da471ba91225a7437daa289558bc7597da'
   }
 ];
 
 const termGroups = [
   {
-    id: "635e69f3-fbcf-4952-8370-fbef46d401e1",
-    type: "folder",
-    name: "People",
-    displayName: "TermGroup Managers",
-    uniqueIdentifier: "yzdsfjhweljrelwkenflm12143344x",
-    details:
-      "The termGroup people is responsible for holding different termsets and terms related to people working location, departments,designations, teams and the organization details.",
-    contacts: [
+    id: '635e69f3-fbcf-4952-8370-fbef46d401e1',
+    type: 'folder',
+    name: 'People',
+    UID: 'yzdsfjhweljrelwkenflm12143344x',
+    description:
+      'The termGroup people is responsible for holding different termsets and terms related to people working location, departments,designations, teams and the organization details.',
+    managers: [
       {
-        id: "1",
-        name: "laa@microsoft.com"
+        email: 'admin@tenantadminnewhope.onmicrosoft.com',
+        name: 'Admin',
+        role: 'SDE 2'
       },
       {
-        id: "2",
-        name: "danimmag@microsoft.com"
+        email: 'brucewayne@tenantadminnewhope.onmicrosoft.com',
+        name: 'Bruce Wayne',
+        role: "Gotham's Vigilante"
       },
       {
-        id: "3",
-        name: "gasns@microsoft.com"
+        email: 'tonystark@tenantadminnewhope.onmicrosoft.com',
+        name: 'Tony Stark',
+        role: 'CEO Stark Industries'
+      }
+    ],
+    contributors: [
+      {
+        email: 'admin@tenantadminnewhope.onmicrosoft.com',
+        name: 'Admin',
+        role: 'SDE 2'
       },
       {
-        id: "4",
-        name: "ravikg@microsoft.com"
+        email: 'brucewayne@tenantadminnewhope.onmicrosoft.com',
+        name: 'Bruce Wayne',
+        role: "Gotham's Vigilante"
+      },
+      {
+        email: 'tonystark@tenantadminnewhope.onmicrosoft.com',
+        name: 'Tony Stark',
+        role: 'CEO Stark Industries'
       }
     ]
   },
   {
-    id: "635e69f3-fbcf-4952-8370-fbef46d401e2",
-    type: "folder",
-    name: "System",
-    displayName: "TermGroup Managers",
-    uniqueIdentifier: "zdsfjhweljrelwkenflm12143344xy",
-    details:
-      "The termGroup people is responsible for holding different termsets and terms related to system settings.",
-    contacts: [
+    id: '635e69f3-fbcf-4952-8370-fbef46d401e2',
+    type: 'folder',
+    name: 'System',
+    UID: 'zdsfjhweljrelwkenflm12143344xy',
+    description:
+      'The termGroup people is responsible for holding different termsets and terms related to people working location, departments,designations, teams and the organization details.',
+    managers: [
       {
-        id: "1",
-        name: "laa@microsoft.com"
+        email: 'admin@tenantadminnewhope.onmicrosoft.com',
+        name: 'Admin',
+        role: 'SDE 2'
       },
       {
-        id: "2",
-        name: "mimanika@microsoft.com"
+        email: 'brucewayne@tenantadminnewhope.onmicrosoft.com',
+        name: 'Bruce Wayne',
+        role: "Gotham's Vigilante"
+      },
+      {
+        email: 'tonystark@tenantadminnewhope.onmicrosoft.com',
+        name: 'Tony Stark',
+        role: 'CEO Stark Industries'
+      }
+    ],
+    contributors: [
+      {
+        email: 'admin@tenantadminnewhope.onmicrosoft.com',
+        name: 'Admin',
+        role: 'SDE 2'
+      },
+      {
+        email: 'brucewayne@tenantadminnewhope.onmicrosoft.com',
+        name: 'Bruce Wayne',
+        role: "Gotham's Vigilante"
+      },
+      {
+        email: 'tonystark@tenantadminnewhope.onmicrosoft.com',
+        name: 'Tony Stark',
+        role: 'CEO Stark Industries'
       }
     ]
   }
@@ -419,866 +457,933 @@ const termGroups = [
 
 const termSets = [
   {
-    id: "635e69f3-fbcf-4952-8370-fbef46d401e1",
-    type: "folder",
-    name: "Department",
-    uniqueIdentifier: "dsfjhweljrelwkenflm12143344xyz",
-    displayName: "Contacts",
-    details:
-      "The term set department is responsible for holding all the terms related to department related terms in IDC.The MSIT related termsets are categorized in a different termset(MSIT_DEPT) as suggested from 2011.The visibility or enablement of termsets is subject to proper access rights.Please contact your root administrator in case of any rights discrepancy.",
-    contacts: [
+    id: '635e69f3-fbcf-4952-8370-fbef46d401e1',
+    name: 'Department',
+    type: 'folder',
+    contact: [
       {
-        id: "1",
-        name: "mimanika@microsoft.com"
+        email: 'admin@tenantadminnewhope.onmicrosoft.com',
+        name: 'Admin',
+        role: 'SDE 2'
       },
       {
-        id: "2",
-        name: "gasns@microsoft.com"
+        email: 'brucewayne@tenantadminnewhope.onmicrosoft.com',
+        name: 'Bruce Wayne',
+        role: "Gotham's Vigilante"
+      },
+      {
+        email: 'tonystark@tenantadminnewhope.onmicrosoft.com',
+        name: 'Tony Stark',
+        role: 'CEO Stark Industries'
       }
     ],
-    termGroupId: "635e69f3-fbcf-4952-8370-fbef46d401e1"
+    createdDateTime: '2011-10-02 18:48:05.123',
+    customSortOrder: [],
+    description:
+      'The term set department is responsible for holding all the terms related to department related terms in IDC.The MSIT related termsets are categorized in a different termset(MSIT_DEPT) as suggested from 2011.The visibility or enablement of termsets is subject to proper access rights.Please contact your root administrator in case of any rights discrepancy.',
+    isOpen: false,
+    isAvailableForTagging: false,
+    owner: [
+      {
+        email: 'admin@tenantadminnewhope.onmicrosoft.com',
+        name: 'Admin',
+        role: 'SDE 2'
+      },
+      {
+        email: 'brucewayne@tenantadminnewhope.onmicrosoft.com',
+        name: 'Bruce Wayne',
+        role: "Gotham's Vigilante"
+      }
+    ],
+    sharedProperty: '',
+    stakeHolders: [
+      {
+        email: 'admin@tenantadminnewhope.onmicrosoft.com',
+        name: 'Admin',
+        role: 'SDE 2'
+      },
+      {
+        email: 'brucewayne@tenantadminnewhope.onmicrosoft.com',
+        name: 'Bruce Wayne',
+        role: "Gotham's Vigilante"
+      }
+    ],
+    termGroupId: '635e69f3-fbcf-4952-8370-fbef46d401e1',
+    useForFacetedNavigation: false,
+    useForSiteNavigation: false
   },
   {
-    id: "635e69f3-fbcf-4952-8370-fbef46d401e2",
-    type: "folder",
-    name: "JobTitle",
-    uniqueIdentifier: "sfjhweljrelwkenflm12143344xyzd",
-    displayName: "Contacts",
-    details:
-      "The term set job title is responsible for holding all the terms related to job title related terms in Engineering job role.Please refer to the other termsets for other job roles and responsibilities.The visibility or enablement of termsets is subject to proper access rights.Please contact your root administrator in case of any rights discrepancy.",
-    contacts: [
+    id: '635e69f3-fbcf-4952-8370-fbef46d401e2',
+    name: 'JobTitle',
+    type: 'folder',
+    contact: [
       {
-        id: "1",
-        name: "laa@microsoft.com"
+        email: 'admin@tenantadminnewhope.onmicrosoft.com',
+        name: 'Admin',
+        role: 'SDE 2'
       },
       {
-        id: "2",
-        name: "danimmag@microsoft.com"
+        email: 'brucewayne@tenantadminnewhope.onmicrosoft.com',
+        name: 'Bruce Wayne',
+        role: "Gotham's Vigilante"
       },
       {
-        id: "3",
-        name: "gans@microsoft.com"
-      },
-      {
-        id: "4",
-        name: "ravikg@microsoft.com"
+        email: 'tonystark@tenantadminnewhope.onmicrosoft.com',
+        name: 'Tony Stark',
+        role: 'CEO Stark Industries'
       }
     ],
-    termGroupId: "635e69f3-fbcf-4952-8370-fbef46d401e1"
+    createdDateTime: '2011-10-02 18:48:05.123',
+    customSortOrder: [],
+    description:
+      'The term set job title is responsible for holding all the terms related to job title related terms in Engineering job role.Please refer to the other termsets for other job roles and responsibilities.The visibility or enablement of termsets is subject to proper access rights.Please contact your root administrator in case of any rights discrepancy.',
+    isOpen: false,
+    isAvailableForTagging: true,
+    owner: [
+      {
+        email: 'admin@tenantadminnewhope.onmicrosoft.com',
+        name: 'Admin',
+        role: 'SDE 2'
+      },
+      {
+        email: 'brucewayne@tenantadminnewhope.onmicrosoft.com',
+        name: 'Bruce Wayne',
+        role: "Gotham's Vigilante"
+      }
+    ],
+    sharedProperty: '',
+    stakeHolders: [
+      {
+        email: 'admin@tenantadminnewhope.onmicrosoft.com',
+        name: 'Admin',
+        role: 'SDE 2'
+      },
+      {
+        email: 'brucewayne@tenantadminnewhope.onmicrosoft.com',
+        name: 'Bruce Wayne',
+        role: "Gotham's Vigilante"
+      }
+    ],
+    termGroupId: '635e69f3-fbcf-4952-8370-fbef46d401e1',
+    useForFacetedNavigation: false,
+    useForSiteNavigation: true
   },
   {
-    id: "635e69f3-fbcf-4952-8370-fbef46d401e3",
-    type: "folder",
-    name: "Location",
-    displayName: "Contacts",
-    uniqueIdentifier: "fjhweljrelwkenflm12143344xyzds",
+    id: '635e69f3-fbcf-4952-8370-fbef46d401e3',
+    type: 'folder',
+    name: 'Location',
+    displayName: 'Contacts',
+    uniqueIdentifier: 'fjhweljrelwkenflm12143344xyzds',
     details:
-      "The term set location is responsible for holding all the terms related to work location and the relevant terms used according to the location. The visibility or enablement of termsets is subject to proper access rights.Please contact your root administrator in case of any rights discrepancy.",
+      'The term set location is responsible for holding all the terms related to work location and the relevant terms used according to the location. The visibility or enablement of termsets is subject to proper access rights.Please contact your root administrator in case of any rights discrepancy.',
     contacts: [
       {
-        id: "1",
-        name: "laa@microsoft.com"
+        id: '1',
+        name: 'laa@microsoft.com'
       },
       {
-        id: "2",
-        name: "danimmag@microsoft.com"
+        id: '2',
+        name: 'danimmag@microsoft.com'
       },
       {
-        id: "3",
-        name: "risja@microsoft.com"
+        id: '3',
+        name: 'risja@microsoft.com'
       }
     ],
-    termGroupId: "635e69f3-fbcf-4952-8370-fbef46d401e1"
+    termGroupId: '635e69f3-fbcf-4952-8370-fbef46d401e1'
   },
   {
-    id: "635e69f3-fbcf-4952-8370-fbef46d401e4",
-    type: "folder",
-    name: "Hashtags",
-    displayName: "Contacts",
-    uniqueIdentifier: "ljrelwkenflm12143344xyzdsfjhwe",
+    id: '635e69f3-fbcf-4952-8370-fbef46d401e4',
+    type: 'folder',
+    name: 'Hashtags',
+    displayName: 'Contacts',
+    uniqueIdentifier: 'ljrelwkenflm12143344xyzdsfjhwe',
     details:
-      "The term set Hashtags is responsible for holding hastags used across organization for easy search,storage and retrieval of content. The visibility or enablement of termsets is subject to proper access rights.Please contact your root administrator in case of any rights discrepancy.",
+      'The term set Hashtags is responsible for holding hastags used across organization for easy search,storage and retrieval of content. The visibility or enablement of termsets is subject to proper access rights.Please contact your root administrator in case of any rights discrepancy.',
     contacts: [
       {
-        id: "1",
-        name: "laa@microsoft.com"
+        id: '1',
+        name: 'laa@microsoft.com'
       }
     ],
-    termGroupId: "635e69f3-fbcf-4952-8370-fbef46d401e2"
+    termGroupId: '635e69f3-fbcf-4952-8370-fbef46d401e2'
   },
   {
-    id: "635e69f3-fbcf-4952-8370-fbef46d401e5",
-    type: "folder",
-    name: "Keywords",
-    displayName: "Contacts",
-    uniqueIdentifier: "jrelwkenflm12143344xyzdsfjhwel",
+    id: '635e69f3-fbcf-4952-8370-fbef46d401e5',
+    type: 'folder',
+    name: 'Keywords',
+    displayName: 'Contacts',
+    uniqueIdentifier: 'jrelwkenflm12143344xyzdsfjhwel',
     details:
-      "The term set Keywords is responsible for holding hastags used across organization for easy search,storage and retrieval of content. The visibility or enablement of termsets is subject to proper access rights.Please contact your root administrator in case of any rights discrepancy.",
+      'The term set Keywords is responsible for holding hastags used across organization for easy search,storage and retrieval of content. The visibility or enablement of termsets is subject to proper access rights.Please contact your root administrator in case of any rights discrepancy.',
     contacts: [
       {
-        id: "1",
-        name: "gasns@microsoft.com"
+        id: '1',
+        name: 'gasns@microsoft.com'
       }
     ],
-    termGroupId: "635e69f3-fbcf-4952-8370-fbef46d401e2"
+    termGroupId: '635e69f3-fbcf-4952-8370-fbef46d401e2'
   },
   {
-    id: "635e69f3-fbcf-4952-8370-fbef46d401e6",
-    type: "folder",
-    displayName: "Contacts",
-    name: "Orphaned Terms",
-    uniqueIdentifier: "relwkenflm12143344xyzdsfjhwelj",
+    id: '635e69f3-fbcf-4952-8370-fbef46d401e6',
+    type: 'folder',
+    displayName: 'Contacts',
+    name: 'Orphaned Terms',
+    uniqueIdentifier: 'relwkenflm12143344xyzdsfjhwelj',
     details:
-      "The term set Orphaned terms is responsible for holding orphaned terms. The visibility or enablement of termsets is subject to proper access rights.Please contact your root administrator in case of any rights discrepancy.",
+      'The term set Orphaned terms is responsible for holding orphaned terms. The visibility or enablement of termsets is subject to proper access rights.Please contact your root administrator in case of any rights discrepancy.',
     contacts: [
       {
-        id: "1",
-        name: "gasns@microsoft.com"
+        id: '1',
+        name: 'gasns@microsoft.com'
       },
       {
-        id: "2",
-        name: "ravikg@microsoft.com"
+        id: '2',
+        name: 'ravikg@microsoft.com'
       }
     ],
-    termGroupId: "635e69f3-fbcf-4952-8370-fbef46d401e2"
+    termGroupId: '635e69f3-fbcf-4952-8370-fbef46d401e2'
   }
 ];
 
 const terms = [
   {
-    id: "635e69f3-fbcf-4952-8370-fbef46d401e1",
-    type: "folder",
-    displayName: "Contacts",
-    name: "India",
+    id: '635e69f3-fbcf-4952-8370-fbef46d401e1',
+    type: 'folder',
+    displayName: 'Contacts',
+    name: 'India',
     isAvailableForTagging: false,
     isGloballyVisible: false,
     isCurrentlyVisible: false,
-    navNodeTitle: "hyd",
-    navHoverText: "",
+    navNodeTitle: 'hyd',
+    navHoverText: '',
     simpleLink: true,
-    friendlyUrl: "hyderabad",
+    friendlyUrl: 'hyderabad',
     localCustomProps: [
       {
-        nfjngkjr: "dwmndje"
+        nfjngkjr: 'dwmndje'
       },
       {
-        dsdw: "sdfde"
+        dsdw: 'sdfde'
       }
     ],
     sharedCustomProps: [],
     defaultLabels: [
       {
-        dqw: "English"
+        key: 'dqw',
+        value: 'English'
       },
       {
-        sfwded: "German"
+        key: 'sfwded',
+        value: 'German'
       },
       {
-        dsdw: "French"
+        key: 'dsdw',
+        value: 'French'
       }
     ],
     otherLabels: [],
-    uniqueIdentifier: "jhweljrelwkenflm12143344xyzdsf",
+    uniqueIdentifier: 'jhweljrelwkenflm12143344xyzdsf',
     details:
-      "This is the term India in the location term set.The enablement of addition /editing the terms is subject to access rights.Please contact administrator for any discrepancy.",
+      'This is the term India in the location term set.The enablement of addition /editing the terms is subject to access rights.Please contact administrator for any discrepancy.',
     contacts: [
       {
-        id: "1",
-        name: "laa@microsoft.com"
+        id: '1',
+        name: 'laa@microsoft.com'
       },
       {
-        id: "2",
-        name: "danimmag@microsoft.com"
+        id: '2',
+        name: 'danimmag@microsoft.com'
       },
       {
-        id: "3",
-        name: "gasns@microsoft.com"
+        id: '3',
+        name: 'gasns@microsoft.com'
       }
     ],
-    termSetId: "635e69f3-fbcf-4952-8370-fbef46d401e3"
+    termSetId: '635e69f3-fbcf-4952-8370-fbef46d401e3'
   },
   {
-    id: "635e69f3-fbcf-4952-8370-fbef46d401e2",
-    type: "folder",
-    name: "US",
+    id: '635e69f3-fbcf-4952-8370-fbef46d401e2',
+    type: 'folder',
+    name: 'US',
     isAvailableForTagging: false,
     isGloballyVisible: false,
     isCurrentlyVisible: false,
-    navNodeTitle: "",
-    navHoverText: "",
+    navNodeTitle: '',
+    navHoverText: '',
     simpleLink: true,
-    friendlyUrl: "",
+    friendlyUrl: '',
     localCustomProps: [],
     sharedCustomProps: [],
     defaultLabels: [],
     otherLabels: [],
-    displayName: "Contacts",
-    uniqueIdentifier: "jhweljrelwkenflm12143344xyzdsf",
+    displayName: 'Contacts',
+    uniqueIdentifier: 'jhweljrelwkenflm12143344xyzdsf',
     details:
-      "This is the term US in the location term set.The enablement of addition /editing the terms is subject to access rights.Please contact administrator for any discrepancy.",
+      'This is the term US in the location term set.The enablement of addition /editing the terms is subject to access rights.Please contact administrator for any discrepancy.',
     contacts: [
       {
-        id: "1",
-        name: "laa@microsoft.com"
+        id: '1',
+        name: 'laa@microsoft.com'
       },
       {
-        id: "2",
-        name: "danimma@microsoft.com"
+        id: '2',
+        name: 'danimma@microsoft.com'
       },
       {
-        id: "3",
-        name: "gasns@microsoft.com"
+        id: '3',
+        name: 'gasns@microsoft.com'
       }
     ],
-    termSetId: "635e69f3-fbcf-4952-8370-fbef46d401e3"
+    termSetId: '635e69f3-fbcf-4952-8370-fbef46d401e3'
   },
   {
-    id: "635e69f3-fbcf-4952-8370-fbef46d401e3",
-    type: "file",
-    displayName: "Contacts",
-    name: "Hyderabad",
+    id: '635e69f3-fbcf-4952-8370-fbef46d401e3',
+    type: 'file',
+    displayName: 'Contacts',
+    name: 'Hyderabad',
     isAvailableForTagging: false,
     isGloballyVisible: false,
     isCurrentlyVisible: false,
-    navNodeTitle: "",
-    navHoverText: "",
+    navNodeTitle: '',
+    navHoverText: '',
     simpleLink: true,
-    friendlyUrl: "",
+    friendlyUrl: '',
     localCustomProps: [],
     sharedCustomProps: [],
     defaultLabels: [],
     otherLabels: [],
-    uniqueIdentifier: "hweljrelwkenflm12143344xyzdsfj",
+    uniqueIdentifier: 'hweljrelwkenflm12143344xyzdsfj',
     details:
-      "This is the term Hyderabad under term India.The enablement of addition /editing the terms is subject to access rights.Please contact administrator for any discrepancy.",
+      'This is the term Hyderabad under term India.The enablement of addition /editing the terms is subject to access rights.Please contact administrator for any discrepancy.',
     contacts: [
       {
-        id: "1",
-        name: "swsingh@microsoft.com"
+        id: '1',
+        name: 'swsingh@microsoft.com'
       }
     ],
-    termId: "635e69f3-fbcf-4952-8370-fbef46d401e1"
+    termId: '635e69f3-fbcf-4952-8370-fbef46d401e1'
   },
   {
-    id: "635e69f3-fbcf-4952-8370-fbef46d401e4",
-    type: "file",
-    displayName: "Contacts",
-    name: "Bangalore",
+    id: '635e69f3-fbcf-4952-8370-fbef46d401e4',
+    type: 'file',
+    displayName: 'Contacts',
+    name: 'Bangalore',
     isAvailableForTagging: false,
     isGloballyVisible: false,
     isCurrentlyVisible: false,
-    navNodeTitle: "",
-    navHoverText: "",
+    navNodeTitle: '',
+    navHoverText: '',
     simpleLink: true,
-    friendlyUrl: "",
+    friendlyUrl: '',
     localCustomProps: [],
     sharedCustomProps: [],
     defaultLabels: [],
     otherLabels: [],
-    uniqueIdentifier: "weljrelwkenflm12143344xyzdsfjh",
+    uniqueIdentifier: 'weljrelwkenflm12143344xyzdsfjh',
     details:
-      "This is the term Bangalore under term India.The enablement of addition /editing the terms is subject to access rights.Please contact administrator for any discrepancy.",
+      'This is the term Bangalore under term India.The enablement of addition /editing the terms is subject to access rights.Please contact administrator for any discrepancy.',
     contacts: [
       {
-        id: "1",
-        name: "swshriva@microsoft.com"
+        id: '1',
+        name: 'swshriva@microsoft.com'
       }
     ],
-    termId: "635e69f3-fbcf-4952-8370-fbef46d401e1"
+    termId: '635e69f3-fbcf-4952-8370-fbef46d401e1'
   },
   {
-    id: "1",
-    type: "file",
-    displayName: "Contacts",
-    name: "Hyderabad",
+    id: '1',
+    type: 'file',
+    displayName: 'Contacts',
+    name: 'Hyderabad',
     isAvailableForTagging: false,
     isGloballyVisible: false,
     isCurrentlyVisible: false,
-    navNodeTitle: "",
-    navHoverText: "",
+    navNodeTitle: '',
+    navHoverText: '',
     simpleLink: true,
-    friendlyUrl: "",
+    friendlyUrl: '',
     localCustomProps: [],
     sharedCustomProps: [],
     defaultLabels: [],
     otherLabels: [],
-    uniqueIdentifier: "hweljrelwkenflm12143344xyzdsfj",
+    uniqueIdentifier: 'hweljrelwkenflm12143344xyzdsfj',
     details:
-      "This is the term Hyderabad under term India.The enablement of addition /editing the terms is subject to access rights.Please contact administrator for any discrepancy.",
+      'This is the term Hyderabad under term India.The enablement of addition /editing the terms is subject to access rights.Please contact administrator for any discrepancy.',
     contacts: [
       {
-        id: "1",
-        name: "swsingh@microsoft.com"
+        id: '1',
+        name: 'swsingh@microsoft.com'
       }
     ],
-    termId: "635e69f3-fbcf-4952-8370-fbef46d401e1"
+    termId: '635e69f3-fbcf-4952-8370-fbef46d401e1'
   },
   {
-    id: "2",
-    type: "file",
-    displayName: "Contacts",
-    name: "Hyderabad",
+    id: '2',
+    type: 'file',
+    displayName: 'Contacts',
+    name: 'Hyderabad',
     isAvailableForTagging: false,
     isGloballyVisible: false,
     isCurrentlyVisible: false,
-    navNodeTitle: "",
-    navHoverText: "",
+    navNodeTitle: '',
+    navHoverText: '',
     simpleLink: true,
-    friendlyUrl: "",
+    friendlyUrl: '',
     localCustomProps: [],
     sharedCustomProps: [],
     defaultLabels: [],
     otherLabels: [],
-    uniqueIdentifier: "hweljrelwkenflm12143344xyzdsfj",
+    uniqueIdentifier: 'hweljrelwkenflm12143344xyzdsfj',
     details:
-      "This is the term Hyderabad under term India.The enablement of addition /editing the terms is subject to access rights.Please contact administrator for any discrepancy.",
+      'This is the term Hyderabad under term India.The enablement of addition /editing the terms is subject to access rights.Please contact administrator for any discrepancy.',
     contacts: [
       {
-        id: "1",
-        name: "swsingh@microsoft.com"
+        id: '1',
+        name: 'swsingh@microsoft.com'
       }
     ],
-    termId: "635e69f3-fbcf-4952-8370-fbef46d401e1"
+    termId: '635e69f3-fbcf-4952-8370-fbef46d401e1'
   },
   {
-    id: "3",
-    type: "file",
-    displayName: "Contacts",
-    name: "Hyderabad",
+    id: '3',
+    type: 'file',
+    displayName: 'Contacts',
+    name: 'Hyderabad',
     isAvailableForTagging: false,
     isGloballyVisible: false,
     isCurrentlyVisible: false,
-    navNodeTitle: "",
-    navHoverText: "",
+    navNodeTitle: '',
+    navHoverText: '',
     simpleLink: true,
-    friendlyUrl: "",
+    friendlyUrl: '',
     localCustomProps: [],
     sharedCustomProps: [],
     defaultLabels: [],
     otherLabels: [],
-    uniqueIdentifier: "hweljrelwkenflm12143344xyzdsfj",
+    uniqueIdentifier: 'hweljrelwkenflm12143344xyzdsfj',
     details:
-      "This is the term Hyderabad under term India.The enablement of addition /editing the terms is subject to access rights.Please contact administrator for any discrepancy.",
+      'This is the term Hyderabad under term India.The enablement of addition /editing the terms is subject to access rights.Please contact administrator for any discrepancy.',
     contacts: [
       {
-        id: "1",
-        name: "swsingh@microsoft.com"
+        id: '1',
+        name: 'swsingh@microsoft.com'
       }
     ],
-    termId: "635e69f3-fbcf-4952-8370-fbef46d401e1"
+    termId: '635e69f3-fbcf-4952-8370-fbef46d401e1'
   },
   {
-    id: "4",
-    type: "file",
-    displayName: "Contacts",
-    name: "Hyderabad",
+    id: '4',
+    type: 'file',
+    displayName: 'Contacts',
+    name: 'Hyderabad',
     isAvailableForTagging: false,
     isGloballyVisible: false,
     isCurrentlyVisible: false,
-    navNodeTitle: "",
-    navHoverText: "",
+    navNodeTitle: '',
+    navHoverText: '',
     simpleLink: true,
-    friendlyUrl: "",
+    friendlyUrl: '',
     localCustomProps: [],
     sharedCustomProps: [],
     defaultLabels: [],
     otherLabels: [],
-    uniqueIdentifier: "hweljrelwkenflm12143344xyzdsfj",
+    uniqueIdentifier: 'hweljrelwkenflm12143344xyzdsfj',
     details:
-      "This is the term Hyderabad under term India.The enablement of addition /editing the terms is subject to access rights.Please contact administrator for any discrepancy.",
+      'This is the term Hyderabad under term India.The enablement of addition /editing the terms is subject to access rights.Please contact administrator for any discrepancy.',
     contacts: [
       {
-        id: "1",
-        name: "swsingh@microsoft.com"
+        id: '1',
+        name: 'swsingh@microsoft.com'
       }
     ],
-    termId: "635e69f3-fbcf-4952-8370-fbef46d401e1"
+    termId: '635e69f3-fbcf-4952-8370-fbef46d401e1'
   },
   {
-    id: "5",
-    type: "file",
-    displayName: "Contacts",
-    name: "Hyderabad",
+    id: '5',
+    type: 'file',
+    displayName: 'Contacts',
+    name: 'Hyderabad',
     isAvailableForTagging: false,
     isGloballyVisible: false,
     isCurrentlyVisible: false,
-    navNodeTitle: "",
-    navHoverText: "",
+    navNodeTitle: '',
+    navHoverText: '',
     simpleLink: true,
-    friendlyUrl: "",
+    friendlyUrl: '',
     localCustomProps: [],
     sharedCustomProps: [],
     defaultLabels: [],
     otherLabels: [],
-    uniqueIdentifier: "hweljrelwkenflm12143344xyzdsfj",
+    uniqueIdentifier: 'hweljrelwkenflm12143344xyzdsfj',
     details:
-      "This is the term Hyderabad under term India.The enablement of addition /editing the terms is subject to access rights.Please contact administrator for any discrepancy.",
+      'This is the term Hyderabad under term India.The enablement of addition /editing the terms is subject to access rights.Please contact administrator for any discrepancy.',
     contacts: [
       {
-        id: "1",
-        name: "swsingh@microsoft.com"
+        id: '1',
+        name: 'swsingh@microsoft.com'
       }
     ],
-    termId: "635e69f3-fbcf-4952-8370-fbef46d401e1"
+    termId: '635e69f3-fbcf-4952-8370-fbef46d401e1'
   },
   {
-    id: "6",
-    type: "file",
-    displayName: "Contacts",
-    name: "Hyderabad",
+    id: '6',
+    type: 'file',
+    displayName: 'Contacts',
+    name: 'Hyderabad',
     isAvailableForTagging: false,
     isGloballyVisible: false,
     isCurrentlyVisible: false,
-    navNodeTitle: "",
-    navHoverText: "",
+    navNodeTitle: '',
+    navHoverText: '',
     simpleLink: true,
-    friendlyUrl: "",
+    friendlyUrl: '',
     localCustomProps: [],
     sharedCustomProps: [],
     defaultLabels: [],
     otherLabels: [],
-    uniqueIdentifier: "hweljrelwkenflm12143344xyzdsfj",
+    uniqueIdentifier: 'hweljrelwkenflm12143344xyzdsfj',
     details:
-      "This is the term Hyderabad under term India.The enablement of addition /editing the terms is subject to access rights.Please contact administrator for any discrepancy.",
+      'This is the term Hyderabad under term India.The enablement of addition /editing the terms is subject to access rights.Please contact administrator for any discrepancy.',
     contacts: [
       {
-        id: "1",
-        name: "swsingh@microsoft.com"
+        id: '1',
+        name: 'swsingh@microsoft.com'
       }
     ],
-    termId: "635e69f3-fbcf-4952-8370-fbef46d401e1"
+    termId: '635e69f3-fbcf-4952-8370-fbef46d401e1'
   },
   {
-    id: "7",
-    type: "file",
-    displayName: "Contacts",
-    name: "Hyderabad",
+    id: '7',
+    type: 'file',
+    displayName: 'Contacts',
+    name: 'Hyderabad',
     isAvailableForTagging: false,
     isGloballyVisible: false,
     isCurrentlyVisible: false,
-    navNodeTitle: "",
-    navHoverText: "",
+    navNodeTitle: '',
+    navHoverText: '',
     simpleLink: true,
-    friendlyUrl: "",
+    friendlyUrl: '',
     localCustomProps: [],
     sharedCustomProps: [],
     defaultLabels: [],
     otherLabels: [],
-    uniqueIdentifier: "hweljrelwkenflm12143344xyzdsfj",
+    uniqueIdentifier: 'hweljrelwkenflm12143344xyzdsfj',
     details:
-      "This is the term Hyderabad under term India.The enablement of addition /editing the terms is subject to access rights.Please contact administrator for any discrepancy.",
+      'This is the term Hyderabad under term India.The enablement of addition /editing the terms is subject to access rights.Please contact administrator for any discrepancy.',
     contacts: [
       {
-        id: "1",
-        name: "swsingh@microsoft.com"
+        id: '1',
+        name: 'swsingh@microsoft.com'
       }
     ],
-    termId: "635e69f3-fbcf-4952-8370-fbef46d401e1"
+    termId: '635e69f3-fbcf-4952-8370-fbef46d401e1'
   },
   {
-    id: "8",
-    type: "file",
-    displayName: "Contacts",
-    name: "Hyderabad",
+    id: '8',
+    type: 'file',
+    displayName: 'Contacts',
+    name: 'Hyderabad',
     isAvailableForTagging: false,
     isGloballyVisible: false,
     isCurrentlyVisible: false,
-    navNodeTitle: "",
-    navHoverText: "",
+    navNodeTitle: '',
+    navHoverText: '',
     simpleLink: true,
-    friendlyUrl: "",
+    friendlyUrl: '',
     localCustomProps: [],
     sharedCustomProps: [],
     defaultLabels: [],
     otherLabels: [],
-    uniqueIdentifier: "hweljrelwkenflm12143344xyzdsfj",
+    uniqueIdentifier: 'hweljrelwkenflm12143344xyzdsfj',
     details:
-      "This is the term Hyderabad under term India.The enablement of addition /editing the terms is subject to access rights.Please contact administrator for any discrepancy.",
+      'This is the term Hyderabad under term India.The enablement of addition /editing the terms is subject to access rights.Please contact administrator for any discrepancy.',
     contacts: [
       {
-        id: "1",
-        name: "swsingh@microsoft.com"
+        id: '1',
+        name: 'swsingh@microsoft.com'
       }
     ],
-    termId: "635e69f3-fbcf-4952-8370-fbef46d401e1"
+    termId: '635e69f3-fbcf-4952-8370-fbef46d401e1'
   },
   {
-    id: "9",
-    type: "file",
-    displayName: "Contacts",
-    name: "Hyderabad",
+    id: '9',
+    type: 'file',
+    displayName: 'Contacts',
+    name: 'Hyderabad',
     isAvailableForTagging: false,
     isGloballyVisible: false,
     isCurrentlyVisible: false,
-    navNodeTitle: "",
-    navHoverText: "",
+    navNodeTitle: '',
+    navHoverText: '',
     simpleLink: true,
-    friendlyUrl: "",
+    friendlyUrl: '',
     localCustomProps: [],
     sharedCustomProps: [],
     defaultLabels: [],
     otherLabels: [],
-    uniqueIdentifier: "hweljrelwkenflm12143344xyzdsfj",
+    uniqueIdentifier: 'hweljrelwkenflm12143344xyzdsfj',
     details:
-      "This is the term Hyderabad under term India.The enablement of addition /editing the terms is subject to access rights.Please contact administrator for any discrepancy.",
+      'This is the term Hyderabad under term India.The enablement of addition /editing the terms is subject to access rights.Please contact administrator for any discrepancy.',
     contacts: [
       {
-        id: "1",
-        name: "swsingh@microsoft.com"
+        id: '1',
+        name: 'swsingh@microsoft.com'
       }
     ],
-    termId: "635e69f3-fbcf-4952-8370-fbef46d401e1"
+    termId: '635e69f3-fbcf-4952-8370-fbef46d401e1'
   },
   {
-    id: "10",
-    type: "file",
-    displayName: "Contacts",
-    name: "Hyderabad",
+    id: '10',
+    type: 'file',
+    displayName: 'Contacts',
+    name: 'Hyderabad',
     isAvailableForTagging: false,
     isGloballyVisible: false,
     isCurrentlyVisible: false,
-    navNodeTitle: "",
-    navHoverText: "",
+    navNodeTitle: '',
+    navHoverText: '',
     simpleLink: true,
-    friendlyUrl: "",
+    friendlyUrl: '',
     localCustomProps: [],
     sharedCustomProps: [],
     defaultLabels: [],
     otherLabels: [],
-    uniqueIdentifier: "hweljrelwkenflm12143344xyzdsfj",
+    uniqueIdentifier: 'hweljrelwkenflm12143344xyzdsfj',
     details:
-      "This is the term Hyderabad under term India.The enablement of addition /editing the terms is subject to access rights.Please contact administrator for any discrepancy.",
+      'This is the term Hyderabad under term India.The enablement of addition /editing the terms is subject to access rights.Please contact administrator for any discrepancy.',
     contacts: [
       {
-        id: "1",
-        name: "swsingh@microsoft.com"
+        id: '1',
+        name: 'swsingh@microsoft.com'
       }
     ],
-    termId: "635e69f3-fbcf-4952-8370-fbef46d401e1"
+    termId: '635e69f3-fbcf-4952-8370-fbef46d401e1'
   },
   {
-    id: "11",
-    type: "file",
-    displayName: "Contacts",
-    name: "Hyderabad",
+    id: '11',
+    type: 'file',
+    displayName: 'Contacts',
+    name: 'Hyderabad',
     isAvailableForTagging: false,
     isGloballyVisible: false,
     isCurrentlyVisible: false,
-    navNodeTitle: "",
-    navHoverText: "",
+    navNodeTitle: '',
+    navHoverText: '',
     simpleLink: true,
-    friendlyUrl: "",
+    friendlyUrl: '',
     localCustomProps: [],
     sharedCustomProps: [],
     defaultLabels: [],
     otherLabels: [],
-    uniqueIdentifier: "hweljrelwkenflm12143344xyzdsfj",
+    uniqueIdentifier: 'hweljrelwkenflm12143344xyzdsfj',
     details:
-      "This is the term Hyderabad under term India.The enablement of addition /editing the terms is subject to access rights.Please contact administrator for any discrepancy.",
+      'This is the term Hyderabad under term India.The enablement of addition /editing the terms is subject to access rights.Please contact administrator for any discrepancy.',
     contacts: [
       {
-        id: "1",
-        name: "swsingh@microsoft.com"
+        id: '1',
+        name: 'swsingh@microsoft.com'
       }
     ],
-    termId: "635e69f3-fbcf-4952-8370-fbef46d401e1"
+    termId: '635e69f3-fbcf-4952-8370-fbef46d401e1'
   },
   {
-    id: "12",
-    type: "file",
-    displayName: "Contacts",
-    name: "Hyderabad",
+    id: '12',
+    type: 'file',
+    displayName: 'Contacts',
+    name: 'Hyderabad',
     isAvailableForTagging: false,
     isGloballyVisible: false,
     isCurrentlyVisible: false,
-    navNodeTitle: "",
-    navHoverText: "",
+    navNodeTitle: '',
+    navHoverText: '',
     simpleLink: true,
-    friendlyUrl: "",
+    friendlyUrl: '',
     localCustomProps: [],
     sharedCustomProps: [],
     defaultLabels: [],
     otherLabels: [],
-    uniqueIdentifier: "hweljrelwkenflm12143344xyzdsfj",
+    uniqueIdentifier: 'hweljrelwkenflm12143344xyzdsfj',
     details:
-      "This is the term Hyderabad under term India.The enablement of addition /editing the terms is subject to access rights.Please contact administrator for any discrepancy.",
+      'This is the term Hyderabad under term India.The enablement of addition /editing the terms is subject to access rights.Please contact administrator for any discrepancy.',
     contacts: [
       {
-        id: "1",
-        name: "swsingh@microsoft.com"
+        id: '1',
+        name: 'swsingh@microsoft.com'
       }
     ],
-    termId: "635e69f3-fbcf-4952-8370-fbef46d401e1"
+    termId: '635e69f3-fbcf-4952-8370-fbef46d401e1'
   },
   {
-    id: "13",
-    type: "file",
-    displayName: "Contacts",
-    name: "Hyderabad",
+    id: '13',
+    type: 'file',
+    displayName: 'Contacts',
+    name: 'Hyderabad',
     isAvailableForTagging: false,
     isGloballyVisible: false,
     isCurrentlyVisible: false,
-    navNodeTitle: "",
-    navHoverText: "",
+    navNodeTitle: '',
+    navHoverText: '',
     simpleLink: true,
-    friendlyUrl: "",
+    friendlyUrl: '',
     localCustomProps: [],
     sharedCustomProps: [],
     defaultLabels: [],
     otherLabels: [],
-    uniqueIdentifier: "hweljrelwkenflm12143344xyzdsfj",
+    uniqueIdentifier: 'hweljrelwkenflm12143344xyzdsfj',
     details:
-      "This is the term Hyderabad under term India.The enablement of addition /editing the terms is subject to access rights.Please contact administrator for any discrepancy.",
+      'This is the term Hyderabad under term India.The enablement of addition /editing the terms is subject to access rights.Please contact administrator for any discrepancy.',
     contacts: [
       {
-        id: "1",
-        name: "swsingh@microsoft.com"
+        id: '1',
+        name: 'swsingh@microsoft.com'
       }
     ],
-    termId: "635e69f3-fbcf-4952-8370-fbef46d401e1"
+    termId: '635e69f3-fbcf-4952-8370-fbef46d401e1'
   },
   {
-    id: "14",
-    type: "file",
-    displayName: "Contacts",
-    name: "Hyderabad",
+    id: '14',
+    type: 'file',
+    displayName: 'Contacts',
+    name: 'Hyderabad',
     isAvailableForTagging: false,
     isGloballyVisible: false,
     isCurrentlyVisible: false,
-    navNodeTitle: "",
-    navHoverText: "",
+    navNodeTitle: '',
+    navHoverText: '',
     simpleLink: true,
-    friendlyUrl: "",
+    friendlyUrl: '',
     localCustomProps: [],
     sharedCustomProps: [],
     defaultLabels: [],
     otherLabels: [],
-    uniqueIdentifier: "hweljrelwkenflm12143344xyzdsfj",
+    uniqueIdentifier: 'hweljrelwkenflm12143344xyzdsfj',
     details:
-      "This is the term Hyderabad under term India.The enablement of addition /editing the terms is subject to access rights.Please contact administrator for any discrepancy.",
+      'This is the term Hyderabad under term India.The enablement of addition /editing the terms is subject to access rights.Please contact administrator for any discrepancy.',
     contacts: [
       {
-        id: "1",
-        name: "swsingh@microsoft.com"
+        id: '1',
+        name: 'swsingh@microsoft.com'
       }
     ],
-    termId: "635e69f3-fbcf-4952-8370-fbef46d401e1"
+    termId: '635e69f3-fbcf-4952-8370-fbef46d401e1'
   },
   {
-    id: "15",
-    type: "file",
-    displayName: "Contacts",
-    name: "Hyderabad",
+    id: '15',
+    type: 'file',
+    displayName: 'Contacts',
+    name: 'Hyderabad',
     isAvailableForTagging: false,
     isGloballyVisible: false,
     isCurrentlyVisible: false,
-    navNodeTitle: "",
-    navHoverText: "",
+    navNodeTitle: '',
+    navHoverText: '',
     simpleLink: true,
-    friendlyUrl: "",
+    friendlyUrl: '',
     localCustomProps: [],
     sharedCustomProps: [],
     defaultLabels: [],
     otherLabels: [],
-    uniqueIdentifier: "hweljrelwkenflm12143344xyzdsfj",
+    uniqueIdentifier: 'hweljrelwkenflm12143344xyzdsfj',
     details:
-      "This is the term Hyderabad under term India.The enablement of addition /editing the terms is subject to access rights.Please contact administrator for any discrepancy.",
+      'This is the term Hyderabad under term India.The enablement of addition /editing the terms is subject to access rights.Please contact administrator for any discrepancy.',
     contacts: [
       {
-        id: "1",
-        name: "swsingh@microsoft.com"
+        id: '1',
+        name: 'swsingh@microsoft.com'
       }
     ],
-    termId: "635e69f3-fbcf-4952-8370-fbef46d401e1"
+    termId: '635e69f3-fbcf-4952-8370-fbef46d401e1'
   },
   {
-    id: "16",
-    type: "file",
-    displayName: "Contacts",
-    name: "Hyderabad",
+    id: '16',
+    type: 'file',
+    displayName: 'Contacts',
+    name: 'Hyderabad',
     isAvailableForTagging: false,
     isGloballyVisible: false,
     isCurrentlyVisible: false,
-    navNodeTitle: "",
-    navHoverText: "",
+    navNodeTitle: '',
+    navHoverText: '',
     simpleLink: true,
-    friendlyUrl: "",
+    friendlyUrl: '',
     localCustomProps: [],
     sharedCustomProps: [],
     defaultLabels: [],
     otherLabels: [],
-    uniqueIdentifier: "hweljrelwkenflm12143344xyzdsfj",
+    uniqueIdentifier: 'hweljrelwkenflm12143344xyzdsfj',
     details:
-      "This is the term Hyderabad under term India.The enablement of addition /editing the terms is subject to access rights.Please contact administrator for any discrepancy.",
+      'This is the term Hyderabad under term India.The enablement of addition /editing the terms is subject to access rights.Please contact administrator for any discrepancy.',
     contacts: [
       {
-        id: "1",
-        name: "swsingh@microsoft.com"
+        id: '1',
+        name: 'swsingh@microsoft.com'
       }
     ],
-    termId: "635e69f3-fbcf-4952-8370-fbef46d401e1"
+    termId: '635e69f3-fbcf-4952-8370-fbef46d401e1'
   },
   {
-    id: "17",
-    type: "file",
-    displayName: "Contacts",
-    name: "Hyderabad",
+    id: '17',
+    type: 'file',
+    displayName: 'Contacts',
+    name: 'Hyderabad',
     isAvailableForTagging: false,
     isGloballyVisible: false,
     isCurrentlyVisible: false,
-    navNodeTitle: "",
-    navHoverText: "",
+    navNodeTitle: '',
+    navHoverText: '',
     simpleLink: true,
-    friendlyUrl: "",
+    friendlyUrl: '',
     localCustomProps: [],
     sharedCustomProps: [],
     defaultLabels: [],
     otherLabels: [],
-    uniqueIdentifier: "hweljrelwkenflm12143344xyzdsfj",
+    uniqueIdentifier: 'hweljrelwkenflm12143344xyzdsfj',
     details:
-      "This is the term Hyderabad under term India.The enablement of addition /editing the terms is subject to access rights.Please contact administrator for any discrepancy.",
+      'This is the term Hyderabad under term India.The enablement of addition /editing the terms is subject to access rights.Please contact administrator for any discrepancy.',
     contacts: [
       {
-        id: "1",
-        name: "swsingh@microsoft.com"
+        id: '1',
+        name: 'swsingh@microsoft.com'
       }
     ],
-    termId: "635e69f3-fbcf-4952-8370-fbef46d401e1"
+    termId: '635e69f3-fbcf-4952-8370-fbef46d401e1'
   },
   {
-    id: "18",
-    type: "file",
-    displayName: "Contacts",
-    name: "Hyderabad",
+    id: '18',
+    type: 'file',
+    displayName: 'Contacts',
+    name: 'Hyderabad',
     isAvailableForTagging: false,
     isGloballyVisible: false,
     isCurrentlyVisible: false,
-    navNodeTitle: "",
-    navHoverText: "",
+    navNodeTitle: '',
+    navHoverText: '',
     simpleLink: true,
-    friendlyUrl: "",
+    friendlyUrl: '',
     localCustomProps: [],
     sharedCustomProps: [],
     defaultLabels: [],
     otherLabels: [],
-    uniqueIdentifier: "hweljrelwkenflm12143344xyzdsfj",
+    uniqueIdentifier: 'hweljrelwkenflm12143344xyzdsfj',
     details:
-      "This is the term Hyderabad under term India.The enablement of addition /editing the terms is subject to access rights.Please contact administrator for any discrepancy.",
+      'This is the term Hyderabad under term India.The enablement of addition /editing the terms is subject to access rights.Please contact administrator for any discrepancy.',
     contacts: [
       {
-        id: "1",
-        name: "swsingh@microsoft.com"
+        id: '1',
+        name: 'swsingh@microsoft.com'
       }
     ],
-    termId: "635e69f3-fbcf-4952-8370-fbef46d401e1"
+    termId: '635e69f3-fbcf-4952-8370-fbef46d401e1'
   },
   {
-    id: "19",
-    type: "file",
-    displayName: "Contacts",
-    name: "Hyderabad",
+    id: '19',
+    type: 'file',
+    displayName: 'Contacts',
+    name: 'Hyderabad',
     isAvailableForTagging: false,
     isGloballyVisible: false,
     isCurrentlyVisible: false,
-    navNodeTitle: "",
-    navHoverText: "",
+    navNodeTitle: '',
+    navHoverText: '',
     simpleLink: true,
-    friendlyUrl: "",
+    friendlyUrl: '',
     localCustomProps: [],
     sharedCustomProps: [],
     defaultLabels: [],
     otherLabels: [],
-    uniqueIdentifier: "hweljrelwkenflm12143344xyzdsfj",
+    uniqueIdentifier: 'hweljrelwkenflm12143344xyzdsfj',
     details:
-      "This is the term Hyderabad under term India.The enablement of addition /editing the terms is subject to access rights.Please contact administrator for any discrepancy.",
+      'This is the term Hyderabad under term India.The enablement of addition /editing the terms is subject to access rights.Please contact administrator for any discrepancy.',
     contacts: [
       {
-        id: "1",
-        name: "swsingh@microsoft.com"
+        id: '1',
+        name: 'swsingh@microsoft.com'
       }
     ],
-    termId: "635e69f3-fbcf-4952-8370-fbef46d401e1"
+    termId: '635e69f3-fbcf-4952-8370-fbef46d401e1'
   },
   {
-    id: "20",
-    type: "file",
-    displayName: "Contacts",
-    name: "Hyderabad",
+    id: '20',
+    type: 'file',
+    displayName: 'Contacts',
+    name: 'Hyderabad',
     isAvailableForTagging: false,
     isGloballyVisible: false,
     isCurrentlyVisible: false,
-    navNodeTitle: "",
-    navHoverText: "",
+    navNodeTitle: '',
+    navHoverText: '',
     simpleLink: true,
-    friendlyUrl: "",
+    friendlyUrl: '',
     localCustomProps: [],
     sharedCustomProps: [],
     defaultLabels: [],
     otherLabels: [],
-    uniqueIdentifier: "hweljrelwkenflm12143344xyzdsfj",
+    uniqueIdentifier: 'hweljrelwkenflm12143344xyzdsfj',
     details:
-      "This is the term Hyderabad under term India.The enablement of addition /editing the terms is subject to access rights.Please contact administrator for any discrepancy.",
+      'This is the term Hyderabad under term India.The enablement of addition /editing the terms is subject to access rights.Please contact administrator for any discrepancy.',
     contacts: [
       {
-        id: "1",
-        name: "swsingh@microsoft.com"
+        id: '1',
+        name: 'swsingh@microsoft.com'
       }
     ],
-    termId: "635e69f3-fbcf-4952-8370-fbef46d401e1"
+    termId: '635e69f3-fbcf-4952-8370-fbef46d401e1'
   },
   {
-    id: "21",
-    type: "file",
-    displayName: "Contacts",
-    name: "Hyderabad",
+    id: '21',
+    type: 'file',
+    displayName: 'Contacts',
+    name: 'Hyderabad',
     isAvailableForTagging: false,
     isGloballyVisible: false,
     isCurrentlyVisible: false,
-    navNodeTitle: "",
-    navHoverText: "",
+    navNodeTitle: '',
+    navHoverText: '',
     simpleLink: true,
-    friendlyUrl: "",
+    friendlyUrl: '',
     localCustomProps: [],
     sharedCustomProps: [],
     defaultLabels: [],
     otherLabels: [],
-    uniqueIdentifier: "hweljrelwkenflm12143344xyzdsfj",
+    uniqueIdentifier: 'hweljrelwkenflm12143344xyzdsfj',
     details:
-      "This is the term Hyderabad under term India.The enablement of addition /editing the terms is subject to access rights.Please contact administrator for any discrepancy.",
+      'This is the term Hyderabad under term India.The enablement of addition /editing the terms is subject to access rights.Please contact administrator for any discrepancy.',
     contacts: [
       {
-        id: "1",
-        name: "swsingh@microsoft.com"
+        id: '1',
+        name: 'swsingh@microsoft.com'
       }
     ],
-    termId: "635e69f3-fbcf-4952-8370-fbef46d401e1"
+    termId: '635e69f3-fbcf-4952-8370-fbef46d401e1'
   },
   {
-    id: "635e69f3-fbcf-4952-8370-fbef46d401e5",
-    type: "file",
-    displayName: "Contacts",
-    name: "Redmond",
+    id: '635e69f3-fbcf-4952-8370-fbef46d401e5',
+    type: 'file',
+    displayName: 'Contacts',
+    name: 'Redmond',
     isAvailableForTagging: false,
     isGloballyVisible: false,
     isCurrentlyVisible: false,
-    navNodeTitle: "",
-    navHoverText: "",
+    navNodeTitle: '',
+    navHoverText: '',
     simpleLink: true,
-    friendlyUrl: "",
+    friendlyUrl: '',
     localCustomProps: [],
     sharedCustomProps: [],
     defaultLabels: [],
     otherLabels: [],
-    uniqueIdentifier: "eljrelwkenflm12143344xyzdsfjhw",
+    uniqueIdentifier: 'eljrelwkenflm12143344xyzdsfjhw',
     details:
-      "This is the term Redmond under term US.The enablement of addition /editing the terms is subject to access rights.Please contact administrator for any discrepancy.",
+      'This is the term Redmond under term US.The enablement of addition /editing the terms is subject to access rights.Please contact administrator for any discrepancy.',
     contacts: [
       {
-        id: "1",
-        name: "swmitta@microsoft.com"
+        id: '1',
+        name: 'swmitta@microsoft.com'
       }
     ],
-    termId: "635e69f3-fbcf-4952-8370-fbef46d401e2"
+    termId: '635e69f3-fbcf-4952-8370-fbef46d401e2'
   }
 ];
 
